@@ -1,0 +1,13 @@
+import dotenv from 'dotenv'
+dotenv.config({ path: process.env.ENVIRONMENT ? `.env.${process.env.ENVIRONMENT}` : '.env' });
+
+export default {
+    db: {
+        host: process.env.NODE_MONGO_HOST || 'localhost',
+        port: process.env.NODE_MONGO_PORT || 27017,
+        dbName: process.env.NODE_MONGO_DB || 'technical_assistant'
+    },
+    jwt_key: {
+        key: process.env.JWT_KEY || '463ca1b82b92aa98e76b6720abc5daf122f6e29a'
+    }
+}
