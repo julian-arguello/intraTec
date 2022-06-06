@@ -47,7 +47,7 @@ function App() {
     
     <div className="App">
       
-      <AuthRoute>
+     
         <h1>COMPONENTE NAV</h1>
         <nav>
           <ul> 
@@ -57,7 +57,7 @@ function App() {
             <li><Link to='/perfil'>perfil</Link></li>
           </ul>
         </nav>
-      </AuthRoute>
+    
 
 
       <Routes>

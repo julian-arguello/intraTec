@@ -15,16 +15,21 @@ function Login(props){
     }
 
     return (
-        <div>
-            <form onSubmit={(e)=>submit(e)}>
-                <br />
-                Email:
-                <input type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>  
-                <br />
-                Password:
-                <input type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>  
-                <br />
-                <button type='submit'>Acceder</button>
+        <div className="mb-3 p-5">
+            <form onSubmit={(e)=>submit(e)} className="w-50 m-auto">
+                <div className="mb-3">
+                    <label  className="form-label">Email address
+                        <input type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </label>
+                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Password
+                        <input type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} className="form-control" id="exampleInputPassword1" />
+                    </label>
+                </div>
+                
+                <button type="submit" className="btn btn-primary">Submit</button>
             </form>
             {state.error !== '' ? <p>{state.error}</p> : ''}
         </div>
