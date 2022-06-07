@@ -10,7 +10,7 @@ import * as yup from 'yup';
  */
 export const schemaUserRegister = yup.object().shape({
     email: yup.string().email().required('El email es obligatorio.'),
-    password: yup.string().min(6).required('La contraseña es obligatoria.'),
+    password: yup.string().min(5).required('La contraseña es obligatoria.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
 /**

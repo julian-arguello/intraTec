@@ -12,6 +12,7 @@ import bcrypt from 'bcrypt';
  * @param {*} res 
  */
 export function login(req, res) {
+    console.log("login:", req.body)
     schemaLogin.validate(req.body)
         .then(async (entity) => {
             const user = await usersDao.findByEmail(entity.email)
@@ -26,12 +27,12 @@ export function login(req, res) {
                     return res.status(401).json({ err: 401, msg: "El password no coincide." })
                 }
             } else {
-                return res.status(400).json({ error: 400, msg: "El email no existe" })
+                return res.status(400).json({ err: 401, msg: "El email no existe" })
             }
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "Error al validar", validateError: err.errors
+                err: 500, msg: "Error al validar", validateError: err.errors
             })
         })
 }
