@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { useAuth } from '../context/Auth.Context';
-//import * as API from '../api/auth.api';
 
-function Login(props){
+function Login(){
     const { state, login } = useAuth()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    //const [error, setError] = useState("")
 
     function submit(e){
         e.preventDefault()

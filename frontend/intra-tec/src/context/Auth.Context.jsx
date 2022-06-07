@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import AuthReducer from "../reducer/Auth.Reducer";
-import { ActionLogin, ActionError } from "../action/Auth.Actions"
+import { ActionLogin, ActionLogout, ActionError } from "../action/Auth.Actions"
 import * as API from '../api/auth.api';
 
 const AuthContext = createContext();
@@ -29,9 +29,16 @@ export function AuthProvider({ children }){
         })
     }
 
+    const logout = () =>{
+        console.log('Auth.Context->login()->logout')
+        localStorage.removeItem('auth-token');
+        localStorage.removeItem('user');
+        dispatch(ActionLogout())
+    }
+
     //return
     return(
-        <AuthContext.Provider value={{ state, dispatch, login}}>
+        <AuthContext.Provider value={{ state, dispatch, login, logout}}>
             {children}
         </AuthContext.Provider>
     );

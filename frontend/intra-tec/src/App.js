@@ -1,7 +1,7 @@
-import './App.css';
+import './App.scss';
 import { useEffect } from 'react';
 //Routes
-import { Route, Routes, Link, Navigate, useNavigate  } from 'react-router-dom';
+import { Route, Routes, Navigate, useNavigate  } from 'react-router-dom';
 
 //pages
 import Login from './pages/Login';
@@ -13,6 +13,9 @@ import Profile from './pages/Profile';
 import PageNotFound from './pages/PageNotFound';
 //components
 import AuthRoute from './components/AuthRoute';
+import AuthComponent from './components/AuthComponent';
+import Navbar from './components/Navbar';
+ 
 
 //Context
 import { useAuth }  from './context/Auth.Context';
@@ -43,43 +46,23 @@ function App() {
   //---------------------------------------
 
   return (
-
-    
     <div className="App">
       
-     
-        <h1>COMPONENTE NAV</h1>
-        <nav>
-          <ul> 
-            <li><Link to='/inicio'>Inicio</Link></li>
-            <li><Link to='/clientes'>clientes</Link></li>
-            <li><Link to='/servicios'>servicios</Link></li>
-            <li><Link to='/perfil'>perfil</Link></li>
-          </ul>
-        </nav>
-    
-
+      <AuthComponent>
+        <Navbar />
+      </AuthComponent>
 
       <Routes>
-
         <Route path='/' element={<Login/>} />
-        
         <Route path='/inicio' element={<AuthRoute><Home/></AuthRoute>} />
-        
-       
-        <Route path='/clientes' element={<Clients/>} />
-        <Route path='/cliente/:id' element={<Client/>} />
-
-        <Route path='/servicios' element={<Services/>} />
-       
-        <Route path='/perfil' element={<Profile/>} />
-
-
+        <Route path='/clientes' element={<AuthRoute><Clients/></AuthRoute>} />
+        <Route path='/cliente/:id' element={<AuthRoute><Client/></AuthRoute>} />
+        <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>} />
+        <Route path='/perfil' element={<AuthRoute><Profile/></AuthRoute>} />
         <Route path='/404' element={<PageNotFound/>} />
         <Route path='*' element={<Navigate to='/404'/>} />
-        
+      </Routes>
 
-     </Routes>
     </div>
   );
 }
