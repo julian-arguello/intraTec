@@ -15,10 +15,10 @@ import PageNotFound from './pages/PageNotFound';
 import AuthRoute from './components/AuthRoute';
 import AuthComponent from './components/AuthComponent';
 import Navbar from './components/Navbar';
- 
 
 //Context
 import { useAuth }  from './context/Auth.Context';
+
 
 function App() {
 

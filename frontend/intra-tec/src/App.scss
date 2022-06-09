@@ -1,0 +1,32 @@
+// CSS :::::::::::::::::::::::::::::::::::::::::::::::::
+
+* {
+    /*outline: 1px solid red;*/
+}
+
+.fondo {
+    background: blue;
+    background: linear-gradient(87deg, rgba(255,255,255,1) 0%, rgba(0,102,153,1) 100%);
+    height: 100vh;
+    width: auto;
+}
+
+
+.loginBox {
+    padding: 30px;
+    background: white;
+    color: black;
+    border-radius: 15px;
+    position: absolute;
+    justify-content: center;
+
+
+}
+
+.loginBox form,
+.loginBox div,
+.loginBox label,
+.loginBox input,
+.loginBox button {
+    background: white;
+}
