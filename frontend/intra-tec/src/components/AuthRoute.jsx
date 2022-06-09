@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom'
 function AuthRoute({ children }){
     const { state } = useAuth()
     return(
+        
         state.isAuth ? children : <Navigate to="/" />
     );
 }
