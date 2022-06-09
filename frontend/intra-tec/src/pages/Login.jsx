@@ -10,7 +10,6 @@ function Login(){
 
     function submit(e){
         e.preventDefault()
-        console.log("Login->login()")
         login(email, password)
     }
 

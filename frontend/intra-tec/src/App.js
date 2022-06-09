@@ -8,7 +8,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Clients from './pages/clients/Clients';
 import Client from './pages/clients/Client';
-import Services from './pages/Services';
+import Services from './pages/services/Services';
 import Profile from './pages/Profile';
 import PageNotFound from './pages/PageNotFound';
 //components

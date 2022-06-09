@@ -9,13 +9,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 //Auth
 import { AuthProvider } from './context/Auth.Context';
+//Service
+import { ServiceProvider } from './context/Service.Context';
+//Client
+import { ClientProvider } from './context/Client.Context';
 
+console.log("index")
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <App />
+        <ClientProvider>
+          <ServiceProvider>
+            <App />
+          </ServiceProvider>
+        </ClientProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
