@@ -1,72 +1,144 @@
 function Home(props){
 
     return(
-        <div className="container pt-4">
-            <h2>Home</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis labore odio, ex veritatis consequat
-                ur possimus odit cupiditate molestias adipisci officiis quidem veniam, officia dolorum eaque error exercitat
-                ionem quis. Magnam, officia.
-            </p>
+        <div className="container">
+            <h2 className="d-none" >Home</h2>
 
-            <div className="grid d-flex justify-content-evenly w-100 text-white pt-4 pb-4">
-                <div className="bg-secondary p-5 rounded-4">
+            <div className="row text-white d-xs-inline d-sm-flex pt-4 pb-4
+                            justify-content-center align-items-center justify-content-lg-evenly">
+                
+                <div className="bg-secondary p-4 m-1 rounded-4 col-11 col-sm-5 col-lg-2">
                     <p className="h3"><strong>10</strong></p>
                     <strong>Presupuestos</strong>
                 </div>
-                <div className="bg-primary p-5 rounded-4">
+                <div className="bg-primary p-4 m-1 rounded-4 col-11 col-sm-5 col-lg-2">
                     <p className="h3"><strong>10</strong></p>
                     <strong>En Proceso</strong>
                 </div>
-                <div className="bg-success p-5 rounded-4">
+                <div className="bg-success p-4 m-1 rounded-4 col-11 col-sm-5 col-lg-2">
                     <p className="h3"><strong>10</strong></p>
                     <strong>Reparados</strong>
                 </div>
-                <div className="bg-danger p-5 rounded-4">
+                <div className="bg-danger p-4 m-1 rounded-4 col-11 col-sm-5 col-lg-2">
                     <p className="h3"><strong>10</strong></p>
                     <strong>Sin Reparación </strong>
                 </div>
             </div>
 
             <hr />
-            <div className="pt-4 pb-4">
-                <h3 >Servicios más recientes:</h3>
-                <div className="grid d-flex justify-content-evenly w-100 pt-4">                
-                
 
-                
+            <div className="pt-4 pb-4">
+                <h3>Servicios más recientes:</h3>      
+                <div className="row d-xs-inline d-sm-flex
+                                justify-content-center align-items-center justify-content-lg-evenly">                
                     
-                        <div class="card card-body">
-                            <h5 class="card-subtitle mb-2 text-muted h6">Ingresó</h5>
-                            <p class="card-title h5">Carlos Juarez</p>                            
-                            <p class="card-text">Equipo Ingresado.</p>
-                            <p class="card-text text-muted">Fecha</p>
-                            <div>
-                                <a href="#" class="">Card link</a>
-                                <a href="#" class="">Another link</a>
+                        <div className="card card-body text-white bg-dark col-8 col-md-5 col-xl-3 m-2">
+
+                            <div className="d-flex justify-content-between">
+                                <p className="card-subtitle fw-light">Cliente:</p>
+                                <p className="card-title h5">Quilmes</p>  
+                            </div>                            
+                            <div className="d-flex justify-content-between">
+                                <p className="text-white fw-light">Equipo Ingresado: </p>                                
+                                <p className="text-white fw-semibold"> XMZ-H30000</p>
+                            </div>
+
+                            <hr className="m-0 mb-2" />
+
+                            <div className="d-flex justify-content-between">                     
+                                <div>                                    
+                                    <p className="card-title h5 m-0">
+                                        <span className="card-subtitle mb-2 fw-light badge p-0">Ingreso: </span> Nombre del técnico.
+                                    </p> 
+                                    <p className="text-white fw-light badge p-0 m-0">Fecha</p> 
+                                </div>
+                                <button href="#" className="btn btn-info text-white"><strong>Ver +</strong></button>
+                            </div>
+                        </div>
+
+                        <div className="card card-body text-white bg-dark col-8 col-md-5 col-xl-3 m-2">
+
+                            <div className="d-flex justify-content-between">
+                                <p className="card-subtitle fw-light">Cliente:</p>
+                                <p className="card-title h5">Coca-cola</p>  
+                            </div>                            
+                            <div className="d-flex justify-content-between">
+                                <p className="text-white fw-light">Equipo Ingresado: </p>                                
+                                <p className="text-white fw-semibold"> Condensadora Z-200</p>
+                            </div>
+
+                            <hr className="m-0 mb-2" />
+                            
+                            <div className="d-flex justify-content-between">                     
+                                <div>                                    
+                                    <p className="card-title h5 m-0">
+                                        <span className="card-subtitle mb-2 fw-light badge p-0">Ingreso: </span> Nombre del técnico.
+                                    </p> 
+                                    <p className="text-white fw-light badge p-0 m-0">Fecha</p> 
+                                </div>
+                                <button href="#" className="btn btn-info text-white"><strong>Ver +</strong></button>
                             </div>
                         </div>
                     
+                        <div className="card card-body text-white bg-dark col-8 col-md-5 col-xl-3 m-2">
 
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="">Card link</a>
-                            <a href="#" class="">Another link</a>
+                            <div className="d-flex justify-content-between">
+                                <p className="card-subtitle fw-light">Cliente:</p>
+                                <p className="card-title h5">Pepsi Co.</p>  
+                            </div>                            
+                            <div className="d-flex justify-content-between">
+                                <p className="text-white fw-light">Equipo Ingresado: </p>                                
+                                <p className="text-white fw-semibold"> XMZ-H420000</p>
+                            </div>
+
+                            <hr className="m-0 mb-2" />
+                            
+                            <div className="d-flex justify-content-between">                     
+                                <div>                                    
+                                    <p className="card-title h5 m-0">
+                                        <span className="card-subtitle mb-2 fw-light badge p-0">Ingreso: </span> Nombre del técnico.
+                                    </p> 
+                                    <p className="text-white fw-light badge p-0 m-0">Fecha</p> 
+                                </div>
+                                <button href="#" className="btn btn-info text-white"><strong>Ver +</strong></button>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="">Card link</a>
-                            <a href="#" class="">Another link</a>
-                        </div>
-                    </div>
+                        <div className="card card-body text-white bg-dark col-8 col-md-5 col-xl-3 m-2">
 
+                            <div className="d-flex justify-content-between">
+                                <p className="card-subtitle fw-light">Cliente:</p>
+                                <p className="card-title h5">Tecno Alimentación</p>  
+                            </div>                            
+                            <div className="d-flex justify-content-between">
+                                <p className="text-white fw-light">Equipo Ingresado: </p>                                
+                                <p className="text-white fw-semibold"> Cortina Electrica PZH</p>
+                            </div>
+
+                            <hr className="m-0 mb-2" />
+                            
+                            <div className="d-flex justify-content-between">                     
+                                <div>                                    
+                                    <p className="card-title h5 m-0">
+                                        <span className="card-subtitle mb-2 fw-light badge p-0">Ingreso: </span> Nombre del técnico.
+                                    </p> 
+                                    <p className="text-white fw-light badge p-0 m-0">Fecha</p> 
+                                </div>
+                                <button href="#" className="btn btn-info text-white"><strong>Ver +</strong></button>
+                            </div>
+                        </div>                        
+
+                </div>
+
+                
+                <div className="pt-5">
+                    <ul class="pagination justify-content-center align-items-center">
+                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">Previous</a></li>
+                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">1</a></li>
+                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">2</a></li>
+                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">3</a></li>
+                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">Next</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
