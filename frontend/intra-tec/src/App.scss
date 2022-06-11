@@ -1,4 +1,4 @@
-// CSS :::::::::::::::::::::::::::::::::::::::::::::::::
+// CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
 
 * {
     /*outline: 1px solid red;*/
@@ -13,14 +13,12 @@
 
 
 .loginBox {
-    padding: 30px;
+   // padding: 40px;
     background: white;
     color: black;
-    border-radius: 15px;
-    position: absolute;
+    border-radius: 15px;    
     justify-content: center;
-
-
+    align-items: center;
 }
 
 .loginBox form,
@@ -30,3 +28,4 @@
 .loginBox button {
     background: white;
 }
+

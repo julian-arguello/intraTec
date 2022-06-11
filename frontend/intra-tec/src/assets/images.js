@@ -1,7 +1,11 @@
-import logo from '../assets/logo-desk.png';
+import desk from '../assets/desk.png';
+import tablet from '../assets/tablet.png';
+import mob from '../assets/mob.png';
 import edificios from '../assets/edificio.png';
 
 export default {
-    "logo": logo,
+    "desk": desk,
+    "tablet": tablet,
+    "mob": mob,
     "edificios": edificios
 }
