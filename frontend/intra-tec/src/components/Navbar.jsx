@@ -20,17 +20,17 @@ function Navbar(){
                         <Link className="nav-link text-white active" aria-current="page" to='/inicio'>Inicio</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link text-white" to='/clientes'>clientes</Link>
+                        <Link className="nav-link text-white" to='/clientes'>Clientes</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link text-white" to='/servicios'>servicios</Link>
+                        <Link className="nav-link text-white" to='/servicios'>Servicios</Link>
                         </li>
                         <li className="nav-item dropdown">
                         <Link className="nav-link text-white dropdown-toggle" to='/perfil' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {state.user.email}
                         </Link>
                         <ul className="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                            <li><Link className="dropdown-item text-white" to="#">Ver perfil</Link></li>
+                            <li><Link className="dropdown-item text-white" to='/perfil'>Ver perfil</Link></li>
                             <li><Link className="dropdown-item text-white" to="#">Editar</Link></li>
                             <li><hr className="dropdown-divider" /></li>
                             <li><button className="dropdown-item text-white" onClick={() => logout()}>Cerrar Session</button></li>
