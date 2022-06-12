@@ -23,12 +23,12 @@ a {
 
 
 .loginBox {
-   // padding: 40px;
     background: white;
     color: black;
     border-radius: 15px;    
     justify-content: center;
     align-items: center;
+    min-width: 300px;
 }
 
 .loginBox form,

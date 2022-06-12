@@ -26,7 +26,7 @@ function Login(){
                 </div>
 
                 <div className="flex-grow-1 ms-md-5 col-xs-12">                    
-                    <h1 className="text-center text-md-start h2 pb-2 pb-md-0">Bienvenido</h1>
+                    <h2 className="text-center text-md-start h2 pb-2 pb-md-0">Bienvenido</h2>
                     <form   onSubmit={(e)=>submit(e)} className="w-100 m-auto text-center">
                         <div className="mb-3">
                             <label  className="form-label text-start  w-100">Email
