@@ -6,6 +6,14 @@
     // para quitar stylos por className usar ' list-unstyled '
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none!important;
+}
+
 .fondo {
     background: blue;
     background: linear-gradient(87deg, rgba(255,255,255,1) 0%, rgba(0,102,153,1) 100%);
@@ -29,5 +37,142 @@
 .loginBox input,
 .loginBox button {
     background: white;
+}
+
+
+/* NAVBAR */ 
+
+.logo {
+    display: inline-block;
+    width: min-content;
+    margin-bottom: 20px;
+}
+
+.logo-user {
+    width: 80px;
+}
+
+h1 {
+    background-image: url('assets/logo-desk.png');
+    background-repeat: no-repeat;
+    font-size: 0!important;
+    width: 195px;
+    height: 59px;
+    text-align: left;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow: hidden;
+    padding: 55px 20px;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR MOBILE */
+
+@media only screen and (max-width: 575px) {
+
+    .sidebar {
+        width: 100vw;
+        height: 100vh;
+        padding: 20px 15px;
+        position: relative;
+    }
+
+    .closeSidebar {
+        height: 55px;
+        width: 100vw!important;
+    }
+
+    .closeSidebar #closebtn {
+        margin: 0!important;
+        margin-left: 30px!important;
+    }
+
+    .logo {
+        margin-top: 50px;
+    }
+
+    .main-margin-open {
+        margin-left: 0!important;
+    }
+} 
+
+.sidebar #closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 20px;
+    font-size: 36px;
+    color: white;
+    display: inline-block;
+    width: min-content;
+}
+
+.sidebar > ul {
+    height: inherit;
+}
+
+.sidebar a{
+    color: white!important;
+}
+
+.sidebar a:hover {
+    color: #006699!important; 
+}
+
+.sidebar ul {
+    min-width: 210px;
+}
+
+.closeSidebar {
+    width: 66px;
+}
+
+.closeSidebar h3, .closeSidebar .user {
+    visibility: hidden;
+}
+
+.closeSidebar #closebtn {
+    margin-right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.closeSidebar hr {
+    width: 30px;
+}
+
+.nav-icon {
+    width: 30px;
+    min-width: 30px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    padding: 40px;
+}
+
+.main-margin-open {
+    margin-left: 250px;
+}
+
+.main-margin-close {
+    margin-left: 50px;
+}
+
+.hr {
+    color: #006699;
+    opacity: 1;
+    border-top: 3px solid;
 }
 
