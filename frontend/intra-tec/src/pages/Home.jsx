@@ -6,7 +6,7 @@ function Home(props){
 
 
     return(
-        <div className="container pt-4">
+        <div className="container">
             <h2>Home</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis labore odio, ex veritatis consequat
                 ur possimus odit cupiditate molestias adipisci officiis quidem veniam, officia dolorum eaque error exercitat
@@ -40,35 +40,35 @@ function Home(props){
 
                 
                     
-                        <div class="card card-body">
-                            <h5 class="card-subtitle mb-2 text-muted h6">Ingresó</h5>
-                            <p class="card-title h5">Carlos Juarez</p>                            
-                            <p class="card-text">Equipo Ingresado.</p>
-                            <p class="card-text text-muted">Fecha</p>
+                        <div className="card card-body">
+                            <h5 className="card-subtitle mb-2 text-muted h6">Ingresó</h5>
+                            <p className="card-title h5">Carlos Juarez</p>                            
+                            <p className="card-text">Equipo Ingresado.</p>
+                            <p className="card-text text-muted">Fecha</p>
                             <div>
-                                <a href="#" class="">Card link</a>
-                                <a href="#" class="">Another link</a>
+                                <a href="#" className="">Card link</a>
+                                <a href="#" className="">Another link</a>
                             </div>
                         </div>
                     
 
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="">Card link</a>
-                            <a href="#" class="">Another link</a>
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">Card title</h5>
+                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" className="">Card link</a>
+                            <a href="#" className="">Another link</a>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="">Card link</a>
-                            <a href="#" class="">Another link</a>
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">Card title</h5>
+                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" className="">Card link</a>
+                            <a href="#" className="">Another link</a>
                         </div>
                     </div>
 
