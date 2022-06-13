@@ -1,6 +1,7 @@
 function Profile(props){
 
     return(
+        
         <div className="container pt-4">
             <h2>Perfil de Técnico</h2>
             <div className="d-flex justify-content-end pb-4">

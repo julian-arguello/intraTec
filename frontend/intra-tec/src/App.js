@@ -92,7 +92,7 @@ function App() {
             <AuthRoute>
               <div id='main' className='main-margin-open'>
                 <Link to='/inicio' className='logo'><h1>Intratec</h1></Link>
-                <Profile/>
+                <Profile />
               </div>
             </AuthRoute>
           }/>

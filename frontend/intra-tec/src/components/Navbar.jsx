@@ -45,11 +45,12 @@ function Navbar(){
                     <ul className='p-0'>
                         <li className='mb-3 d-flex align-items-center'>
                             <img src={ imagenes.perfil } alt="ver perfil" className='nav-icon me-3' />
-                            <a href="">Ver perfil</a>
+                            <Link to='/perfil' onClick={toggleMenu}>Ver perfil</Link>
                         </li>
                         <li className='mb-3 d-flex align-items-center'>
                             <img src={ imagenes.sesion } alt="cerrar sesion" className='nav-icon me-3' />
-                            <a href='#' onClick={() => logout()}>Cerrar sesión</a>
+                         
+                            <Link to='/' onClick={() => logout()}>Cerrar sesión</Link>
                         </li>
                     </ul>
                 </li>
