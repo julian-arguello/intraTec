@@ -18,7 +18,7 @@ console.log("index")
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-  <React.StrictMode>
+
     <BrowserRouter>
       <AuthProvider>
         <ClientProvider>
@@ -28,5 +28,5 @@ root.render(
         </ClientProvider>
       </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>
+
 );

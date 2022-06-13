@@ -13,7 +13,7 @@ function Clients(props){
 
     return(
         <div>
-            <h2 className="m-3 text-center ">Clientes</h2>
+            <h2 className="m-3 text-center">Clientes</h2>
             <div className='p-5'>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {console.log(state.clients)}

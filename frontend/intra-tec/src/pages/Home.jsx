@@ -1,10 +1,6 @@
 
 function Home(props){
 
-
-
-
-
     return(
         <div className="container">
             <h2 className="d-none" >Home</h2>
@@ -109,42 +105,10 @@ function Home(props){
                             </div>
                         </div>
 
-                        <div className="card card-body text-white bg-dark col-8 col-md-5 col-xl-3 m-2">
-
-                            <div className="d-flex justify-content-between">
-                                <p className="card-subtitle fw-light">Cliente:</p>
-                                <p className="card-title h5">Tecno Alimentación</p>  
-                            </div>                            
-                            <div className="d-flex justify-content-between">
-                                <p className="text-white fw-light">Equipo Ingresado: </p>                                
-                                <p className="text-white fw-semibold"> Cortina Electrica PZH</p>
-                            </div>
-
-                            <hr className="m-0 mb-2" />
-                            
-                            <div className="d-flex justify-content-between">                     
-                                <div>                                    
-                                    <p className="card-title h5 m-0">
-                                        <span className="card-subtitle mb-2 fw-light badge p-0">Ingreso: </span> Nombre del técnico.
-                                    </p> 
-                                    <p className="text-white fw-light badge p-0 m-0">Fecha</p> 
-                                </div>
-                                <button href="#" className="btn btn-info text-white"><strong>Ver +</strong></button>
-                            </div>
-                        </div>                        
+                        
 
                 </div>
 
-                
-                <div className="pt-5">
-                    <ul class="pagination justify-content-center align-items-center">
-                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">Previous</a></li>
-                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">1</a></li>
-                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">2</a></li>
-                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">3</a></li>
-                        <li className="page-item"><a className="page-link bg-dark text-white m-1" href="#">Next</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     )
