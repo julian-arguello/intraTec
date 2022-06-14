@@ -6,6 +6,9 @@ import servicio from '../assets/servicio.svg';
 import cliente from '../assets/cliente.svg';
 import perfil from '../assets/perfil.svg';
 import sesion from '../assets/cerrar-sesion.svg';
+import ver from '../assets/ver.svg';
+import editar from '../assets/editar.svg';
+import borrar from '../assets/borrar.svg';
 
 export default {
     "logo": logo,
@@ -16,4 +19,7 @@ export default {
     "cliente": cliente,
     "perfil": perfil,
     "sesion": sesion,
+    "ver": ver,
+    "editar": editar,
+    "borrar": borrar,
 }

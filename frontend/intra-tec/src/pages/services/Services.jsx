@@ -13,7 +13,7 @@ function Services(props){
 
     return(
         <div>
-            <h2>Servicios</h2>
+            <h2 className='h4 mb-5 ms-md-5 mt-5'>Servicios</h2>
             <ServiceList />
         </div>
     )

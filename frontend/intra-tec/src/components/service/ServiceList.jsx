@@ -4,7 +4,7 @@ import  ServiceItem from './ServiceItem';
 export function ServiceList(){
 
     return(    
-        <div className='p-5'>
+        <div>
             <ServiceItem />
         </div>
     )
