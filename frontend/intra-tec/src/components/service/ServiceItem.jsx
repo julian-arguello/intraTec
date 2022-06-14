@@ -1,17 +1,18 @@
 import { useService }  from '../../context/Service.Context';
-import stateClass from '../../service/service.state'
+import stateClass from '../../service/service.state';
+import imagenes from '../../assets/images';
+
 
 export function ServiceItem(){
     const { state } = useService()
     let classState = "card-header alert m-0 "
   
     return(
-          <div className="row row-cols-1 row-cols-md-3 g-4">
-            {console.log(state.services)}
+          <div className="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-5 px-md-5">
           {state.services.map((service)=>(
 
-            <div key={service._id} className="col" >
-              <div className="card h-100">
+            <div key={service._id}>
+              <div className="card h-100 bg-black text-white border-0">
                 <div className={classState + stateClass(service.state)}>
                   <small className="text-muted"><strong>Estado: {service.state}</strong></small>
                 </div>
@@ -23,13 +24,20 @@ export function ServiceItem(){
                     <li>Ingreso : {service.create_at}</li>
                   </ul>
                 </div>
-                <div className="card-footer btn-group">
-                    <button type="button" className="btn btn-outline-primary">Detalle</button>
-                    <button type="button" className="btn btn-outline-primary">Editar</button>
-                    <button type="button" className="btn btn-outline-primary">Borrar</button>
+                <div className="card-footer btn-group py-4">
+                    <button type="button" className="btn btn-outline-primary text-white">
+                      <img src={ imagenes.ver } alt="ver detalle" className='btn-icon me-2'/> Detalle
+                    </button>
+                    <button type="button" className="btn btn-outline-success text-white">
+                      <img src={ imagenes.editar } alt="ver detalle" className='btn-icon me-2'/>Editar
+                    </button>
+                    <button type="button" className="btn btn-outline-danger text-white">
+                      <img src={ imagenes.borrar } alt="ver detalle" className='btn-icon me-2'/>Borrar
+                    </button>
                 </div>
               </div>
             </div>
+            
           ))}
           </div>
     );

@@ -13,7 +13,11 @@ function Services(props){
 
     return(
         <div>
+<<<<<<< HEAD
             <h2 className='m-3 text-center'>Servicios</h2>
+=======
+            <h2 className='h4 mb-5 ms-md-5 mt-5'>Servicios</h2>
+>>>>>>> omega
             <ServiceList />
         </div>
     )
