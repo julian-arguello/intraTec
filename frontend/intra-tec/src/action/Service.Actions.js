@@ -5,6 +5,13 @@ export function ActionGet( services ){
         payload: services
     };
 }
+//GETID
+export function ActionGetId( service ){
+    return {
+        type: 'GETID',
+        payload: service
+    };
+}
 //ADD
 export function ActionAdd( service ){
     return {

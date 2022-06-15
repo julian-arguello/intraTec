@@ -1,4 +1,5 @@
 import { useService }  from '../../context/Service.Context';
+import { Link } from 'react-router-dom';
 import stateClass from '../../service/service.state';
 import imagenes from '../../assets/images';
 
@@ -25,9 +26,9 @@ export function ServiceItem(){
                   </ul>
                 </div>
                 <div className="card-footer btn-group py-4">
-                    <button type="button" className="btn btn-outline-primary text-white">
+                    <Link to={`/servicios/${service._id}`} className="btn btn-outline-primary text-white">
                       <img src={ imagenes.ver } alt="ver detalle" className='btn-icon me-2'/> Detalle
-                    </button>
+                    </Link>
                     <button type="button" className="btn btn-outline-success text-white">
                       <img src={ imagenes.editar } alt="ver detalle" className='btn-icon me-2'/>Editar
                     </button>
