@@ -19,8 +19,8 @@ function Navbar(){
                             <img src={ imagenes.usuario} alt="usuario" className='logo-user'/>
                         </div>
                         <div className='ms-2 text-white'>
-                            <h2 className='d-block mb-2 h6'>Nombre de usuario</h2>
-                            <span className='d-block'>Rol de usuario</span>
+                            <h2 className='d-block mb-2 h6'>Alessandro Signorini</h2>
+                            <small><span className='d-block'>Superadmin</span></small>
                         </div>
                     </div>
                     <hr className='hr mb-4' />
