@@ -1,3 +1,4 @@
+import imagenes from '../assets/images';
 
 function Home(props){
 
@@ -5,33 +6,47 @@ function Home(props){
         <div className="container">
             <h2 className="d-none">Home</h2>
 
-            <div className="row text-white d-xs-inline d-sm-flex pt-4 pb-4
+            <div className="row text-white d-xs-inline d-sm-flex 
                             justify-content-evenly align-items-center text-center text-sm-start">
                 
-                <div className="bg-secondary p-3 m-1 rounded-4 col-5 col-lg-2">
-                    <p className="h3"><strong>10</strong></p>
-                    <strong>Presupuestos</strong>
+                <div className="box-recepcionados p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
+                    <div  className="d-flex align-items-center">
+                        <p className="h3"><strong>10</strong></p>
+                        <img src={ imagenes.recepcionado } alt="recepcion-logo" className="mx-auto h-100"/>
+                    </div>
+                    <p className="m-0"><strong>Recepcionados</strong></p>
                 </div>
-                <div className="bg-primary p-3 m-1 rounded-4 col-5 col-lg-2">
-                    <p className="h3"><strong>10</strong></p>
-                    <strong>En Proceso</strong>
+                <div className="box-proceso p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
+                    <div  className="d-flex align-items-center">
+                        <p className="h3"><strong>10</strong></p>
+                        <img src={ imagenes.proceso } alt="enproceso-logo" className="mx-auto h-100" />
+                    </div>
+                    <p className="m-0"><strong>En Proceso</strong></p>
                 </div>
-                <div className="bg-success p-3 m-1 rounded-4 col-5 col-lg-2">
-                    <p className="h3"><strong>10</strong></p>
-                    <strong>Reparados</strong>
+                <div className="box-reparados p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
+                    <div  className="d-flex align-items-center">
+                        <p className="h3"><strong>10</strong></p>
+                        <img src={ imagenes.reparado } alt="reparados-logo" className="mx-auto h-100" />
+                    </div>
+                    <p className="m-0"><strong>Reparados</strong></p>
                 </div>
-                <div className="bg-danger p-3 m-1 rounded-4 col-5 col-lg-2">
-                    <p className="h3"><strong>10</strong></p>
-                    <strong>Sin Reparación </strong>
+                <div className="sinreparacion p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
+                    <div className="d-flex align-items-center">
+                        <p className="h3"><strong>10</strong></p>
+                        <img src={ imagenes.sinreparar } alt="sinreparacion-logo" className="mx-auto h-100" />
+                    </div>
+                    <p className="m-0"><strong>Sin Reparación </strong></p>
                 </div>
             </div>
 
             <hr />
 
+
+
             <div className="pt-4 pb-4 d-flex flex-wrap">
                 <h3 className="col-12 text-center text-md-start">Servicios más recientes</h3>   
 
-                <div className="d-xs-inline d-sm-flex align-items-center col-12 col-md-6 col-xl-4">                
+                <div className="d-xs-inline d-sm-flex align-items-center col-12 col-md-6 col-xl-4">              
                 
                     <div className="card card-body text-white bg-dark m-2">
 
@@ -53,7 +68,10 @@ function Home(props){
                                 </p> 
                                 <p className="text-white fw-light badge p-0 m-0">Fecha</p> 
                             </div>
-                            <button href="#" className="btn btn-info text-white"><strong>Ver +</strong></button>
+                            <button href="#" className="btn btn-info text-white">
+                                <img src={ imagenes.ver } alt="ver-card" className='m-1' />
+                                <strong>Ver</strong>
+                                </button>
                         </div>
                     </div>
 
@@ -81,7 +99,10 @@ function Home(props){
                                 </p> 
                                 <p className="text-white fw-light badge p-0 m-0">Fecha</p> 
                             </div>
-                            <button href="#" className="btn btn-info text-white"><strong>Ver +</strong></button>
+                            <button href="#" className="btn btn-info text-white">
+                                <img src={ imagenes.ver } alt="ver-card" className='m-1' />
+                                <strong>Ver</strong>
+                                </button>
                         </div>
                     </div>
 
@@ -109,7 +130,10 @@ function Home(props){
                                 </p> 
                                 <p className="text-white fw-light badge p-0 m-0">Fecha</p> 
                             </div>
-                            <button href="#" className="btn btn-info text-white"><strong>Ver +</strong></button>
+                            <button href="#" className="btn btn-info text-white">
+                                <img src={ imagenes.ver } alt="ver-card" className='m-1' />
+                                <strong>Ver</strong>
+                                </button>
                         </div>
                     </div>
                 </div>
