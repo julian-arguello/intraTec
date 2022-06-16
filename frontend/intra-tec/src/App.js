@@ -9,6 +9,8 @@ import Home from './pages/Home';
 import Clients from './pages/clients/Clients';
 import Client from './pages/clients/Client';
 import Services from './pages/services/Services';
+import ServiceDetail from './pages/services/ServiceDetail';
+
 import Profile from './pages/Profile';
 import PageNotFound from './pages/PageNotFound';
 //components
@@ -56,47 +58,15 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Login/>} />
-          <Route path='/inicio' element={
-            <AuthRoute>
-              <div id='main' className='main-margin-open'>
-                <Link to='/inicio' className='logo'><h1>Intratec</h1></Link>
-                <Home/>
-              </div>
-            </AuthRoute>
-          }/>
-          <Route path='/clientes' element={
-            <AuthRoute>
-              <div id='main' className='main-margin-open'>
-                <Link to='/inicio' className='logo'><h1>Intratec</h1></Link>
-                <Clients/>
-              </div>
-            </AuthRoute>
-          }/>
-          <Route path='/cliente/:id' element={
-            <AuthRoute>
-              <div id='main' className='main-margin-open'>
-                <Link to='/inicio' className='logo'><h1>Intratec</h1></Link>
-                <Client/>
-              </div>
-            </AuthRoute>
-          }/>
-          <Route path='/servicios' element={
-            <AuthRoute>
-              <div id='main' className='main-margin-open'>
-                <Link to='/inicio' className='logo'><h1>Intratec</h1></Link>
-                <Services/>
-              </div>
-            </AuthRoute>
-          }/>
-          <Route path='/perfil' element={
-            <AuthRoute>
-              <div id='main' className='main-margin-open'>
-                <Link to='/inicio' className='logo'><h1>Intratec</h1></Link>
-                <Profile />
-              </div>
-            </AuthRoute>
-          }/>
-          <Route path='/404' element={<PageNotFound/>} />
+          <Route path='/inicio' element={<AuthRoute><Home/></AuthRoute>}/>
+          <Route path='/clientes' element={<AuthRoute><Clients/></AuthRoute>}/>
+          <Route path='/cliente/:id' element={<AuthRoute><Client/></AuthRoute>}/>
+
+          <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
+          <Route path='/servicios/:id' element={<AuthRoute><ServiceDetail/></AuthRoute>}/>
+
+          <Route path='/perfil' element={<AuthRoute><Profile /></AuthRoute>}/>
+          <Route path='/404' element={<PageNotFound/>}/>
           <Route path='*' element={<Navigate to='/404'/>} />
         </Routes>
 

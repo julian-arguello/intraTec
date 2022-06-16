@@ -2,8 +2,15 @@ export default function ServiceReducer(state, action){
     switch(action.type){
         case "GET":
             return {
+                ...state,
                 services:  action.payload   
             }
+        case "GETID":
+            return {
+                ...state,
+                service:  action.payload   
+            }
+
         case "ADD":
             return[ ...state, action.payload ];
         case "REMOVE":
