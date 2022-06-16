@@ -1,19 +1,20 @@
 export function stateClass(state){
     switch(state){
         case "Recepcionado":
-            return "alert-secondary";
+            return "box-recepcionados";
 
         case "Revisado":
-            return "alert-warning";
+            return "box-proceso";
         
         case "Reparado":
-            return "alert-success";
+            return "box-reparados";
         
         case "Sin reparación":
-            return "alert-danger";
+            return "sinreparacion";
 
         default:
             return "";
     }
 }
 export default stateClass;
+
