@@ -10,6 +10,7 @@ import Clients from './pages/clients/Clients';
 import Client from './pages/clients/Client';
 import Services from './pages/services/Services';
 import ServiceDetail from './pages/services/ServiceDetail';
+import ServiceAdd from './pages/services/ServiceAdd';
 
 import Profile from './pages/Profile';
 import PageNotFound from './pages/PageNotFound';
@@ -64,6 +65,8 @@ function App() {
 
           <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
           <Route path='/servicios/:id' element={<AuthRoute><ServiceDetail/></AuthRoute>}/>
+          <Route path='/servicios/nuevo' element={<AuthRoute><ServiceAdd/></AuthRoute>}/>
+          
 
           <Route path='/perfil' element={<AuthRoute><Profile /></AuthRoute>}/>
           <Route path='/404' element={<PageNotFound/>}/>

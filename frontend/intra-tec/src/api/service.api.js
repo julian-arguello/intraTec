@@ -21,6 +21,7 @@ export async function viewAlls(){
     })
 }
 /*------------------------------------------------------------------------*/
+//trae un servico
 export async function viewId(id){
     return fetch(`${config.api.url}/servicios/${id}`,{
         method: "GET",
@@ -29,6 +30,26 @@ export async function viewId(id){
             'auth-token': localStorage.getItem('auth-token')
         },
         
+    })
+    .then(async (res) => {
+        const data = await res.json()
+        if(res.status === 200) {
+            return data;
+        }else{
+            throw new Error(data.msg)
+        }
+    })
+}
+/*------------------------------------------------------------------------*/
+//Crea un servicio
+export async function add(service){
+    return fetch(`${config.api.url}/servicios`,{
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('auth-token')
+        },
+        body: JSON.stringify(service)
     })
     .then(async (res) => {
         const data = await res.json()
