@@ -14,7 +14,8 @@ export function ServiceProvider({ children }){
     //useReducer recibe dos parametros (funcion reduce, {states por defectos})
     const [state, dispatch] = useReducer(ServiceReducer, { services:[], service: {}})
 
-    //function viewAlls
+/*-----------------------------------------------------------------*/
+//function viewAlls traemos todos los servicios
     const findService = async () =>{
         API.viewAlls()
         .then((data)=>{
@@ -25,40 +26,37 @@ export function ServiceProvider({ children }){
             
         })
     }
-
-        //function viewAlls
-       /* const findServiceId = async (id) =>{
-            console.log(id);
-            
-            API.viewId()
-            .then((data)=>{
-                dispatch(ActionGet(data))
-                
-            })
-            .catch(function(err){
-                console.log('Auth.Context->login()->Error',err.message)
-                
-            })
-        }*/
-
-        //async function findServiceId(id){
-            const findServiceId = async (id) =>{
-            console.log("findServiceId -> ",id);
-             API.viewId(id)
-            .then((data)=>{
-                console.log("viewId -> ",data)
-                dispatch(ActionGetId(data))
-            })
-            .then(()=>{console.log("state",state)})
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+//Tremos un servioco por id
+    const findServiceId = async (id) =>{
+    console.log("findServiceId -> ",id);
+        API.viewId(id)
+    .then((data)=>{
+        console.log("viewId -> ",data)
+        dispatch(ActionGetId(data))
+    })
+    .then(()=>{console.log("state",state)})
+    }
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+//Nuevo servicio
+    const addService = async (service) =>{
+        console.log("addService -> " ,service);
+            API.add(service)
+        .then((data)=>{
+            console.log("addService then-> ",data)
+            //dispatch(ActionGetId(data))
+        })
+        .then(()=>{console.log("state",state)})
         }
-
-
-
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 
 
     //return
     return(
-        <ServiceContext.Provider value={{ state, dispatch, findService, findServiceId}}>
+        <ServiceContext.Provider value={{ state, dispatch, findService, findServiceId, addService}}>
             {children}
         </ServiceContext.Provider>
     );

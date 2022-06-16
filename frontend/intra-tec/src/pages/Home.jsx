@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
 
 function Home(props){
 
     return(
         <div className="container">
+            <Link to='/servicios/nuevo'><p>Nuevo Servicios</p></Link>
             <h2 className="d-none" >Home</h2>
 
             <div className="row text-white d-xs-inline d-sm-flex pt-4 pb-4
