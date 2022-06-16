@@ -1,3 +1,4 @@
+import imagenes from '../assets/images';
 function Profile(props){
 
     return(
@@ -36,12 +37,12 @@ function Profile(props){
                         <li>
                             <p className=" text-dark badge p-0">Cantidad de equipos recepcionados</p>
                             <br />
-                            <p className="text-center p-2 rounded-2 bg-info text-white h3">244</p>
+                            <p className="text-center p-2 text-white box-proceso rounded-4 border-0 h3">244</p>
                         </li>
                         <li>
                             <p className=" text-dark badge p-0">Cantidad de equipos reparados</p>
                             <br />
-                            <p className="text-center p-2 rounded-2 bg-success text-white h3">134</p>
+                            <p className="text-center p-2 rounded-4 text-white box-reparados rounded-2 border-0 h3">134</p>
                         </li>
                     </ul>
                 </div>
@@ -69,7 +70,10 @@ function Profile(props){
                                 <td>asd456asd456</td>
                                 <td>En Reparación</td>
                                 <td>
-                                    <button className="btn btn-info text-white">Ver</button>                                    
+                                    <button href="#" className="text-white box-proceso rounded-4 border-0 m-2">
+                                        <img src={ imagenes.ver } alt="ver-card" className='m-1' />
+                                        <strong>Ver</strong>
+                                    </button>                                  
                                 </td>
                             </tr>
                             <tr>
@@ -78,7 +82,10 @@ function Profile(props){
                                 <td>abc123asd456</td>
                                 <td>Revisado</td>
                                 <td>
-                                    <button className="btn btn-info text-white">Ver</button>
+                                    <button href="#" className="text-white box-proceso rounded-4 border-0 m-2">
+                                        <img src={ imagenes.ver } alt="ver-card" className='m-1' />
+                                        <strong>Ver</strong>
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
@@ -87,7 +94,10 @@ function Profile(props){
                                 <td>asr456asd456</td>
                                 <td>Reparado</td>
                                 <td>
-                                    <button className="btn btn-info text-white">Ver</button>
+                                    <button href="#" className="text-white box-proceso rounded-4 border-0 m-2">
+                                        <img src={ imagenes.ver } alt="ver-card" className='m-1' />
+                                        <strong>Ver</strong>
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
