@@ -11,6 +11,11 @@ import sesion from '../assets/cerrar-sesion.svg';
 import ver from '../assets/ver.svg';
 import editar from '../assets/editar.svg';
 import borrar from '../assets/borrar.svg';
+import ver from '../assets/ver.png';
+import reparado from '../assets/reparados.png';
+import sinreparar from '../assets/sin-reparar.png';
+import proceso from '../assets/proceso.png';
+import recepcionados from '../assets/recepcionados.png';
 
 export default {
     "desk": desk,
@@ -26,4 +31,8 @@ export default {
     "ver": ver,
     "editar": editar,
     "borrar": borrar,
+    "reparado": reparado,
+    "sinreparar": sinreparar,
+    "proceso": proceso,
+    "recepcionado": recepcionados,
 }
