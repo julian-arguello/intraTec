@@ -5,9 +5,8 @@ function Profile(props){
         
         <div className="container pt-4">
             <h2>Perfil de Técnico</h2>
-            <div className="d-flex justify-content-end pb-4">
-                <button className="btn btn-success mx-2" to="#">Cargar nuevo servic</button>
-                <button className="btn btn-primary mx-2" to="#">Editar perfil</button>
+            <div className="pb-4 mt-4">
+                <button className="btn btn-primary" to="#">Editar perfil</button>
             </div>           
                            
             <div className="row">
@@ -18,36 +17,38 @@ function Profile(props){
                             <p className="text-dark badge p-0">Técnico a cargo</p>
                             <br />
                             <ul className="list-unstyled">
-                                <li>Nombre del tecnico</li>
-                                <li>role_name</li>
-                                <li>Email</li>
+                                <li>Alessandro Signorini</li>
+                                <li>Superadmin</li>
+                                <li>alessandro.signorini@davinci.edu.ar</li>
                             </ul>
                         </li>
 
                         <br className="p-1 d-md-none" />
 
-                        <li>
+                        {/* <li>
                             <p className=" text-dark badge p-0 ">Estado</p>
                             <br />
-                            <p>ACTIVE</p>
-                        </li>
+                            <p>Activo</p>
+                        </li> */}
 
                         <br className="p-1 d-md-none" />
-                        
-                        <li>
-                            <p className=" text-dark badge p-0">Cantidad de equipos recepcionados</p>
-                            <br />
-                            <p className="text-center p-2 text-white box-proceso rounded-4 border-0 h3">244</p>
-                        </li>
-                        <li>
-                            <p className=" text-dark badge p-0">Cantidad de equipos reparados</p>
-                            <br />
-                            <p className="text-center p-2 rounded-4 text-white box-reparados rounded-2 border-0 h3">134</p>
-                        </li>
+
+                        <div className="d-flex justify-content-end">
+                            <li className='me-4'>
+                                <p className=" text-dark badge p-0">Cantidad de equipos recepcionados</p>
+                                <br />
+                                <p className="text-center p-2 text-white box-proceso rounded-4 border-0 h3">244</p>
+                            </li>
+                            <li>
+                                <p className=" text-dark badge p-0">Cantidad de equipos reparados</p>
+                                <br />
+                                <p className="text-center p-2 rounded-4 text-white box-reparados rounded-2 border-0 h3">134</p>
+                            </li>
+                        </div>
                     </ul>
                 </div>
 
-                <hr />
+                {/* <hr />
 
                 <div className="table-responsive pt-4 pb-4">
                     <h4 className="pb-2">Historial</h4>
@@ -102,7 +103,7 @@ function Profile(props){
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> */}
             </div>
         </div>
     )

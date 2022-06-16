@@ -6,35 +6,34 @@ import imagenes from '../../assets/images';
 
 export function ServiceItem(){
     const { state } = useService()
-    let classState = "card-header alert m-0 "
   
     return(
           <div className="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-5 px-md-5">
           {state.services.map((service)=>(
 
             <div key={service._id}>
-              <div className="card h-100 bg-black text-white border-0">
-                <div className={classState + stateClass(service.state)}>
-                  <small className="text-muted"><strong>Estado: {service.state}</strong></small>
+              <div className="card text-white bg-dark m-2 p-4">
+                <div className={stateClass(service.state) + ' p-4 text-center'}>
+                  <small><strong>{service.state}</strong></small>
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title">Modelo: {service.model}</h5>
-                  <ul>
+                  <h5>Modelo: {service.model}</h5>
+                  <ul className="p-0">
                     <li>Marca: {service.brand}</li>
                     <li>Numero de serie: {service.serial_number}</li>
                     <li>Ingreso : {service.create_at}</li>
                   </ul>
                 </div>
-                <div className="card-footer btn-group py-4">
-                    <Link to={`/servicios/${service._id}`} className="btn btn-outline-primary text-white">
-                      <img src={ imagenes.ver } alt="ver detalle" className='btn-icon me-2'/> Detalle
+                <div className="py-4 d-sm-flex justify-content-between">
+                    <Link to={`/servicios/${service._id}`} className="box-proceso rounded-4 border-0 text-white d-flex align-items-center justify-content-center mb-2 p-2">
+                      <img src={ imagenes.ver } alt="ver detalle" className='btn-icon me-2'/> <span className='text-center'>Detalle</span> 
                     </Link>
-                    <button type="button" className="btn btn-outline-success text-white">
-                      <img src={ imagenes.editar } alt="ver detalle" className='btn-icon me-2'/>Editar
-                    </button>
-                    <button type="button" className="btn btn-outline-danger text-white">
-                      <img src={ imagenes.borrar } alt="ver detalle" className='btn-icon me-2'/>Borrar
-                    </button>
+                    <a className="box-reparados rounded-4 border-0 text-white d-flex align-items-center justify-content-center mb-2 p-2">
+                      <img src={ imagenes.editar } alt="editar" className='btn-icon me-2'/> <span>Editar</span> 
+                    </a>
+                    <a className="sinreparacion rounded-4 border-0 text-white d-flex align-items-center justify-content-center mb-2 p-2">
+                      <img src={ imagenes.borrar } alt="eliminar" className='btn-icon me-2'/>Borrar
+                    </a>
                 </div>
               </div>
             </div>

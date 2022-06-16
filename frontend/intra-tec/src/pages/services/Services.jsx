@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useService } from '../../context/Service.Context';
 import ServiceList from '../../components/service/ServiceList';
+import { Link } from 'react-router-dom';
+
 //import Loading from '../../components/Loading';
 
 
@@ -13,7 +15,10 @@ function Services(props){
 
     return(
         <div>
-            <h2 className='h4 mb-5 ms-md-5 mt-5'>Servicios</h2>
+            <div className="d-flex justify-content-between align-items-center">
+                <h2 className='h4 mb-5 mt-5'>Servicios</h2>
+                <Link to={'#'} className="btn btn-outline-primary">Añadir servicio</Link>
+            </div>
             <ServiceList />
         </div>
     )
