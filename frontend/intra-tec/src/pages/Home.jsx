@@ -1,3 +1,6 @@
+import { useService }  from '../context/Service.Context';
+import { Link } from 'react-router-dom';
+import stateClass from '../service/service.state';
 import imagenes from '../assets/images';
 import { Link } from 'react-router-dom';
 
@@ -32,7 +35,7 @@ function Home(props){
                     </div>
                     <p className="m-0"><strong>Reparados</strong></p>
                 </div>
-                <div className="sinreparacion p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
+                <div className="box-sinreparacion p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
                     <div className="d-flex align-items-center">
                         <p className="h3"><strong>10</strong></p>
                         <img src={ imagenes.sinreparar } alt="sinreparacion-logo" className="mx-auto h-100"/>
@@ -44,6 +47,38 @@ function Home(props){
             <hr />
 
 
+            <div className="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-5 px-md-5">
+
+                <div className="card h-100 bg-black text-white border-0">
+
+                    <div >
+                        <div className="w-50">
+                        <div className="pb-4 py-2">
+                                <small className="text-white-50 w-50"><strong>Ingresó</strong></small>
+                            </div>
+                        </div>
+                        <div className="w-50">
+                            <div className="pb-4 py-2">
+                                <small className="text-white-50 w-50"><strong>Ingresó</strong></small>
+                            </div>
+                            <div className="w-100 d-flex">                        
+                                <img src={ imagenes.recepcionado } alt="recepcion-logo" className="h-100 mx-3" />
+                                <h5 className="card-title">Nombre del tecnico </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='w-100 d-flex pt-4'>
+                        <img src={ imagenes.recepcionado } alt="recepcion-logo" className="h-100 mx-3" />
+                        <p><strong> nombre de equipoooooooooooooooo</strong></p>
+                    </div>
+                    <div className="card-footer pb-3 d-flex ">
+                        <p className="text-white fw-light small w-75">Fecha</p>
+                        <button className="box-proceso rounded-5 text-white p-2 px-3 me-2 m-auto">
+                            <img src={ imagenes.ver } alt="ver detalle" className='btn-icon mx-1'/> Ver
+                        </button>
+                    </div>
+                </div>
+            </div>
 
             <div className="pt-4 pb-4 d-flex flex-wrap">
                 <h3 className="col-12 text-center text-md-start">Servicios más recientes</h3>   
