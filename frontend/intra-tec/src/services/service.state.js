@@ -10,7 +10,7 @@ export function stateClass(state){
             return "box-reparados";
         
         case "Sin reparación":
-            return "sinreparacion";
+            return "box-sinreparacion";
 
         default:
             return "";

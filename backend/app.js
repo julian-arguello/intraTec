@@ -7,6 +7,7 @@ import usersRouter from './routers/users.router.js';
 import clientsRouter from './routers/clients.router.js';
 import servicesRouter from './routers/services.router.js';
 import authRouter from './routers/auth.router.js';
+import stateRouter from './routers/state.router.js';
 
 
 const app = express();
@@ -29,6 +30,8 @@ app.use('/api/clientes', clientsRouter);
 app.use('/api/servicios', servicesRouter);
 //Auth
 app.use('/api/iniciar-sesion', authRouter);
+//States
+app.use('/api/state', stateRouter);
 
 /*-----------------------------------------------------------------------*/
 //Indicamos el pueroto del servidor.

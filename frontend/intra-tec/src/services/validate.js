@@ -48,19 +48,41 @@ export const schemaClientUpdateService = yup.object().shape({
 | services
 |--------------------------------------------------------------------------
 */
+
+
 export const schemaServicesCreate = yup.object().shape({
-    model: yup.string().min(3).required('El modelo del equipo es obligatorio.'),
-    brand: yup.string().min(2).required('El nombre de la marca es obligatorio.'),
-    serial_number: yup.string().min(6).required('El numero de serie es obligatorio.'),
-    description: yup.string().min(10).required('La descripcion es obligatoria.'),
-    client_id: yup.string().min(24).required('El cliente es obligatorio.'),
+    /*------------------------------------------------------------*/
+    model: yup.string()
+        .required('El modelo del equipo es obligatorio.')
+        .min(3, 'Minimo 3 Caracteres.'),
+    /*------------------------------------------------------------*/
+    brand: yup.string()
+        .required('El nombre de la marca es obligatorio.')
+        .min(2),
+    /*------------------------------------------------------------*/
+    serial_number: yup.string()
+        .required('El numero de serie es obligatorio.')
+        .min(6, 'Minimo 6 Caracteres.'),
+    /*------------------------------------------------------------*/
+    description: yup.string()
+        .required('La descripcion es obligatoria.')
+        .min(10, 'La descripcion tiene minimo 10 caracteres,'),
+    /*------------------------------------------------------------*/
+    client_id: yup.string()
+    .required('El cliente es obligatorio.')
+    .min(24, 'Selecciona el cliente por favor.'),
+    /*------------------------------------------------------------*/
 }).noUnknown()
+
+
+
+
 /*-------------------------------------------------------------------------------------------*/
 export const schemaServicesUpdate = yup.object().shape({
     model: yup.string().min(3).required('El modelo del equipo es obligatorio.'),
     brand: yup.string().min(2).required('El nombre de la marca es obligatorio.'),
     serial_number: yup.string().min(6).required('El numero de serie es obligatorio.'),
-    description: yup.string().min(20).required('La descripcion es obligatoria.'),
+    description: yup.string().min(10).required('La descripcion es obligatoria.'),
     state: yup.string().min(3).required('El estado de reparacion es obligatorio.'),
     client_id: yup.string().min(24).required('El cliente es obligatorio.'),
 }).noUnknown()

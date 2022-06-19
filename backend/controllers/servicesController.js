@@ -54,6 +54,7 @@ function create(req, res) {
             entity.state = "Recepcionado";
             entity.create_at = new Date;
             entity.user_id = req.user._id.toString();
+            entity.softDelete = false;
             servicesDao.insert(entity)
                 .then((entityInsert) => {
                     clientsDao.addService(entity.client_id, entityInsert.insertedId.toString())

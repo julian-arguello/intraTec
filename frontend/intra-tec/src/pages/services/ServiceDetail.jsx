@@ -1,19 +1,19 @@
 import { useEffect } from 'react';
 import {useParams} from 'react-router-dom'
 import { useService } from "../../context/Service.Context"
-import stateClass from '../../service/service.state';
+import stateClass from '../../services/service.state';
 import imagenes from '../../assets/images';
+import { Link } from 'react-router-dom';
 
 export function ServiceDetail(){
 
     const { state, findServiceId } = useService()
     let classState = "card-header alert m-0 "
-    const {id} = useParams();
+    const {id} = useParams()
 
 
     useEffect(() => {
         findServiceId(id)
-        console.log("findServiceId state ->", state)
     }, [])
 
     return( 
@@ -35,9 +35,10 @@ export function ServiceDetail(){
                 </ul>
               </div>
               <div className="card-footer btn-group py-4">
-                  <button type="button" className="btn btn-outline-success text-white">
-                    <img src={ imagenes.editar } alt="ver detalle" className='btn-icon me-2'/>Editar
-                  </button>
+
+                  <Link to={`/servicios/editar/${state.service._id}`} className="box-proceso rounded-4 border-0 text-white d-flex align-items-center justify-content-center mb-2 p-2">
+                      <img src={ imagenes.editar } alt="editar" className='btn-icon me-2'/> <span className='text-center'>Editar</span> 
+                  </Link>
                   <button type="button" className="btn btn-outline-danger text-white">
                     <img src={ imagenes.borrar } alt="ver detalle" className='btn-icon me-2'/>Borrar
                   </button>
