@@ -1,5 +1,24 @@
 import config from "../config/config";
 
+//trae los estados de los servios.
+/*------------------------------------------------------------------------*/
+export async function viewAllsState(){
+    return fetch(`${config.api.url}/state`,{
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('auth-token')
+        },
+    })
+    .then(async (res) => {
+        const data = await res.json()
+        if(res.status === 200) {
+            return data;
+        }else{
+            throw new Error(data.msg)
+        }
+    })
+}
 /*------------------------------------------------------------------------*/
 //Alls.
 export async function viewAlls(){
@@ -29,7 +48,6 @@ export async function viewId(id){
             'Content-Type': 'application/json',
             'auth-token': localStorage.getItem('auth-token')
         },
-        
     })
     .then(async (res) => {
         const data = await res.json()
@@ -60,4 +78,24 @@ export async function add(service){
         }
     })
 }
-
+/*------------------------------------------------------------------------*/
+//Edita un servicio
+export async function edit(service){
+    return fetch(`${config.api.url}/servicios/${service._id}`,{
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('auth-token')
+        },
+        body: JSON.stringify(service)
+        
+    })
+    .then(async (res) => {
+        const data = await res.json()
+        if(res.status === 200) {
+            return data;
+        }else{
+            throw new Error(data.msg)
+        }
+    })
+}

@@ -33,3 +33,10 @@ export function ActionUpdate( service ){
         payload: service
     };
 }
+//STATE
+export function ActionStateService( states ){
+    return {
+        type: 'STATE',
+        payload: states
+    };
+}

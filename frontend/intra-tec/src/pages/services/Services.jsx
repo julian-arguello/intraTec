@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 function Services(props){
-    const { state, findService } = useService()
+    const { findService } = useService()
 
     useEffect(  () => {
              findService();

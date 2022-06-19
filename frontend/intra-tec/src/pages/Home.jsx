@@ -43,8 +43,6 @@ function Home(props){
 
             <hr />
 
-
-
             <div className="pt-4 pb-4 d-flex flex-wrap">
                 <h3 className="col-12 text-center text-md-start">Servicios más recientes</h3>   
 
