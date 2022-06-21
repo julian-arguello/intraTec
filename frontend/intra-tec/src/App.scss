@@ -1,3 +1,85 @@
+//FONTS
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../public/fonts/icomoon.eot?5h3mfb');
+    src:  url('../public/fonts/icomoon.eot?5h3mfb#iefix') format('embedded-opentype'),
+      url('../public/fonts/icomoon.ttf?5h3mfb') format('truetype'),
+      url('../public/fonts/icomoon.woff?5h3mfb') format('woff'),
+      url('../public/fonts/icomoon.svg?5h3mfb#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-dashboard:before {
+    content: "\e901";
+  }
+  .icon-editar:before {
+    content: "\e902";
+  }
+  .icon-en-proceso:before {
+    content: "\e903";
+  }
+  .icon-lupa:before {
+    content: "\e904";
+  }
+  .icon-reparados:before {
+    content: "\e905";
+  }
+  .icon-servicios:before {
+    content: "\e906";
+  }
+  .icon-sin-reparacion:before {
+    content: "\e907";
+  }
+  .icon-usuario_1:before {
+    content: "\e908";
+  }
+  .icon-ver:before {
+    content: "\e909";
+  }
+  .icon-clientes:before {
+    content: "\e90a";
+  }
+  .icon-cerrar-sesion:before {
+    content: "\e90b";
+  }
+  .icon-borrar:before {
+    content: "\e90c";
+  }
+  .icon-agregar:before {
+    content: "\e900";
+  }
+
+  .icon-agregar {
+    font-size: 30px;
+  }
+
+  .icon-perfil {
+      color: #006699;
+      font-size: 70px;
+  }
+
+  .fs-28 {
+      font-size: 28px!important;
+  }
+
 // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
 
 * {
@@ -37,6 +119,14 @@ a {
 .loginBox input,
 .loginBox button {
     background: white;
+}
+
+.btn-add {
+    border: 1px solid #006699;
+    border-radius: 30px;
+    color: #006699;
+    padding: 10px 20px;
+    font-weight: bold;
 }
 
 
@@ -95,7 +185,12 @@ h1 {
     color: white!important;
 }
 
-.sidebar a:hover {
+.sidebar a span {
+    font-size: 30px;
+    color: white;
+}
+
+.sidebar a:hover, .sidebar a span:hover {
     color: #006699!important; 
 }
 
@@ -121,11 +216,6 @@ h1 {
     width: 30px;
 }
 
-.nav-icon {
-    width: 30px;
-    min-width: 30px;
-}
-
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s; /* If you want a transition effect */
@@ -146,7 +236,7 @@ h1 {
     border-top: 3px solid;
 }
 
-/* SERVICIES */
+/* SERVICES */
 
 .btn-icon {
     width: 18px;
@@ -218,3 +308,5 @@ h1 {
 .validateErrors{
     color: #cc3333;
 } 
+
+
