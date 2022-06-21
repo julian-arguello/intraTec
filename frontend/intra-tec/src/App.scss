@@ -197,7 +197,20 @@ h1 {
 // HOME 
 
 .size-box-stadistics {
-    min-width: 10rem;    
+    min-width: 10rem;  
+}
+
+.stadistic {
+    margin-left: auto;
+}
+
+.ver-button {
+    display: flex;
+    align-items: center;
+    max-width: 6rem;
+    border-radius: 20px;
+    color: white;
+    margin-left: auto;
 }
 
 //colores cajas
@@ -214,7 +227,11 @@ h1 {
     background: #cc3333;
 }
 
+<<<<<<< HEAD
 //Validate Errors
 .validateErrors{
     color: #cc3333;
 } 
+=======
+
+>>>>>>> alpha
