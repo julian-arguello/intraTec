@@ -16,6 +16,8 @@ import reparado from '../assets/reparados.png';
 import sinreparar from '../assets/sin-reparar.png';
 import proceso from '../assets/proceso.png';
 import recepcionados from '../assets/recepcionados.png';
+import user from '../assets/user.png';
+import box from '../assets/boxx.png';
 
 export default {
     "desk": desk,
@@ -35,4 +37,6 @@ export default {
     "sinreparar": sinreparar,
     "proceso": proceso,
     "recepcionado": recepcionados,
+    "user": user,
+    "box": box,
 }
