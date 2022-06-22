@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Clients from './pages/clients/Clients';
 import Client from './pages/clients/Client';
 import Services from './pages/services/Services';
-import ServiceDetail from './pages/services/ServiceDetail';
+import ServiceDetailPage from './pages/services/ServiceDetailPage';
 import ServiceForm from './pages/services/ServiceForm';
 
 import Profile from './pages/Profile';
@@ -22,7 +22,7 @@ import Navbar from './components/Navbar';
 //Context
 import { useAuth }  from './context/Auth.Context';
 
-import { Link } from 'react-router-dom';
+
 
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
           <Route path='/cliente/:id' element={<AuthRoute><Client/></AuthRoute>}/>
 
           <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
-          <Route path='/servicios/:id' element={<AuthRoute><ServiceDetail/></AuthRoute>}/>
+          <Route path='/servicios/:id' element={<AuthRoute><ServiceDetailPage/></AuthRoute>}/>
           <Route path='/servicios/nuevo' element={<AuthRoute><ServiceForm/></AuthRoute>}/>
           <Route path='/servicios/editar/:id' element={<AuthRoute><ServiceForm edit={true}/></AuthRoute>}/>
           
