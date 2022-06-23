@@ -20,10 +20,10 @@ export function ActionAdd( service ){
     };
 }
 //REMOVE
-export function ActionRemove( service ){
+export function ActionRemove( id ){
     return {
         type: 'REMOVE',
-        payload: service
+        payload: id
     };
 }
 //UPDATE

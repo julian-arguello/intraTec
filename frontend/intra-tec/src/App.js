@@ -65,7 +65,7 @@ function App() {
 
           <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
           <Route path='/servicios/:id' element={<AuthRoute><ServiceDetailPage/></AuthRoute>}/>
-          <Route path='/servicios/nuevo' element={<AuthRoute><ServiceForm/></AuthRoute>}/>
+          <Route path='/servicios/nuevo' element={<AuthRoute><ServiceForm edit={false}/></AuthRoute>}/>
           <Route path='/servicios/editar/:id' element={<AuthRoute><ServiceForm edit={true}/></AuthRoute>}/>
           
 

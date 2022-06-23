@@ -30,7 +30,10 @@ export default function ServiceReducer(state, action){
             }
 
         case "REMOVE":
-            return state.filter(service => service.id !== action.payload);
+            return{
+                ...state,
+                services: state.services.filter(service => service.id !== action.payload)
+            }
 
 
         case "STATE":
