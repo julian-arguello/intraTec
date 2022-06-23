@@ -5,7 +5,7 @@ export function ServiceAdd(props){
     return(
         <div>
             
-            {!props.edit ? <h2>Agregar servicio</h2> : <h2>Editar servicio</h2>}
+            {!props.edit ? <h2 className="mb-5">Agregar servicio</h2> : <h2 className="mb-5">Editar servicio</h2>}
             {!props.edit ? <ServiceFormAdd /> : <ServiceFormEdit />}
         </div>
         )

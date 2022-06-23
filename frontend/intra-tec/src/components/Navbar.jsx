@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/Auth.Context';
-import imagenes from '../assets/images';
 
 function Navbar(){
     const { state, logout } = useAuth()
@@ -10,33 +9,38 @@ function Navbar(){
     
     return(
         <nav id='mySidebar' className={`${isMobile ? "sidebar closeSidebar" : "sidebar"}`}>
-            <a href="#" id='closebtn' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
+            <a href="javascript:;" id='closebtn' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
             </a>
             <ul className='p-0 d-flex flex-column justify-content-sm-between mb-0'>
                 <li>
                     <div className='d-flex align-items-center mb-4 user'>
                         <div className='me-2'>
-                            <img src={ imagenes.usuario} alt="usuario" className='logo-user'/>
+                            <span class="icon-usuario_1 icon-perfil"></span>
                         </div>
                         <div className='ms-2 text-white'>
-                            <h2 className='d-block mb-2 h6'>Alessandro Signorini</h2>
-                            <small><span className='d-block'>Superadmin</span></small>
+                            <h2 className='d-block mb-2 h6'> {state.user.email}</h2>
+                            <small><span className='d-block'>Falta poner el rol</span></small>
                         </div>
                     </div>
                     <hr className='hr mb-4' />
                     <h3 className='h5 text-white mb-4'>General</h3>
-                    <ul className='p-0'>
-                        <li className='mb-3 d-flex align-items-center'>
-                            <img src={ imagenes.tablero } alt="tablero" className='nav-icon me-3' />
-                            <Link to='/inicio' onClick={toggleMenu}>Tablero principal</Link>
+                    <ul className='p-0 nav-links'>
+                        <li className='mb-3'>
+                            <Link to='/inicio' onClick={toggleMenu} className="d-flex align-items-center">
+                                <span class="icon-dashboard me-3"></span>Tablero principal
+                            </Link>
                         </li>
-                        <li className='mb-3 d-flex align-items-center'>
-                            <img src={ imagenes.servicio } alt="servicio" className='nav-icon me-3' />
-                            <Link to='/servicios' onClick={toggleMenu}>Servicios</Link>
+                        <li className='mb-3'>
+                            <Link to='/servicios' onClick={toggleMenu} className="d-flex align-items-center">
+                                <span class="icon-servicios me-3"></span>
+                                Servicios
+                            </Link>
                         </li>
-                        <li className='mb-3 d-flex align-items-center'>
-                            <img src={ imagenes.cliente } alt="cliente" className='nav-icon me-3' />
-                            <Link to='/clientes' onClick={toggleMenu}>Clientes</Link>
+                        <li className='mb-3'>
+                            <Link to='/clientes' onClick={toggleMenu} className="d-flex align-items-center">
+                                <span class="icon-clientes me-3"></span>
+                                Clientes
+                            </Link>
                         </li>
                     </ul>
                 </li>
@@ -44,13 +48,16 @@ function Navbar(){
                     <hr className='hr mb-4' />      
                     <ul className='p-0'>
                         <li className='mb-3 d-flex align-items-center'>
-                            <img src={ imagenes.perfil } alt="ver perfil" className='nav-icon me-3' />
-                            <Link to='/perfil' onClick={toggleMenu}>Ver perfil</Link>
+                            <Link to='/perfil' onClick={toggleMenu} className="d-flex align-items-center">
+                                <span class="icon-usuario_1 me-3"></span>
+                                Ver perfil
+                            </Link>
                         </li>
                         <li className='mb-3 d-flex align-items-center'>
-                            <img src={ imagenes.sesion } alt="cerrar sesion" className='nav-icon me-3' />
-                         
-                            <Link to='/' onClick={() => logout()}>Cerrar sesión</Link>
+                            <Link to='/' onClick={() => logout()} className="d-flex align-items-center">
+                                <span class="icon-cerrar-sesion fs-28 me-3"></span>
+                                Cerrar sesión
+                            </Link>
                         </li>
                     </ul>
                 </li>
