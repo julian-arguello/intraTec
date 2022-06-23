@@ -17,7 +17,7 @@ function Services(props){
         <div>
             <div className="d-flex justify-content-between align-items-center">
                 <h2 className='h4 mb-5 mt-5'>Servicios</h2>
-                <Link to={'#'} className="btn btn-outline-primary">Añadir servicio</Link>
+                <Link to={'/servicios/nuevo'} className="btn btn-outline-primary">Añadir servicio</Link>
             </div>
             <ServiceList />
         </div>

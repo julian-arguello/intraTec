@@ -28,7 +28,7 @@ const findStateService = async () =>{
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
-//function viewAlls traemos todos los servicios
+//traemos todos los servicios
 const findService = async () =>{
     API.viewAlls()
     .then((data)=>{
@@ -41,7 +41,7 @@ const findService = async () =>{
 }
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
-//Tremos un servioco por id
+//Traemos un servioco por id
     const findServiceId = async (id) =>{
         API.viewId(id)
         .then((data)=>{
@@ -70,11 +70,20 @@ const editService = async (service) =>{
     }
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
-
+//Elimina un servicio
+const delService = async (id) =>{
+    API.del(id)
+.then((data)=>{
+    dispatch(ActionRemove(data))
+})
+.then(()=>{console.log("state",state)})
+}
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 
     //return
     return(
-        <ServiceContext.Provider value={{ state, dispatch, findService, findServiceId, addService, editService, findStateService}}>
+        <ServiceContext.Provider value={{ state, dispatch, findService, findServiceId, addService, editService, findStateService, delService}}>
             {children}
         </ServiceContext.Provider>
     );

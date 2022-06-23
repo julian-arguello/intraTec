@@ -40,11 +40,9 @@ export function ServiceDetail(){
                             <img src={ imagenes.editar } alt="editar" className='btn-icon me-2'/> <span className='text-center'>Editar</span> 
                         </Link>
 
-                        <button type="button" className="btn btn-outline-danger text-white">
-                        <img src={ imagenes.borrar } alt="ver detalle" className='btn-icon me-2'/>Borrar
-                        </button>
+                        
                         <ModalDeleteButton id={state.service._id} />
-
+                        
                     </div>
                 </div>
                 <ModalDelete id={state.service._id} />

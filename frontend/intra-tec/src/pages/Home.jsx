@@ -11,6 +11,8 @@ function Home(props){
         <div className="container">
             <h2 className="d-none">Home</h2>
 
+            <Link className='btn btn-primary' to='/servicios/nuevo' >nuevo servicio</Link>
+
             <div className="row text-white d-xs-inline d-sm-flex justify-content-between align-items-center text-center text-sm-start">
                 
                 <div className="box-recepcionados p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
