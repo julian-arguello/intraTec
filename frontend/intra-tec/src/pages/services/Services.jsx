@@ -15,12 +15,16 @@ function Services(props){
 
     return(
         <div>
-            <div className="d-flex justify-content-between align-items-center">
-                <h2 className='h4 mb-5 mt-5'>Servicios</h2>
-                <Link to='/servicios/nuevo' className="btn-add d-flex align-items-center">
-                    <span className="icon-agregar me-2"></span>
-                    <span>Añadir servicio</span> 
-                </Link>
+            <div className="row justify-content-between align-items-center">
+                <div className="col-12 col-sm-auto my-5">
+                    <h2 className='h4'>Servicios</h2>
+                </div>
+                <div className="col-12 col-sm-auto mb-5">
+                    <Link to='/servicios/nuevo' className="btn-add d-flex justify-content-center align-items-center">
+                        <span className="icon-agregar me-2"></span>
+                        Añadir servicio
+                    </Link>
+                </div>
             </div>
             <ServiceList />
         </div>

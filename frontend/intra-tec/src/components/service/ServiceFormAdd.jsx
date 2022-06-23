@@ -41,16 +41,16 @@ export function ServiceFormAdd(){
         /*--------------------*/
     >
         {( { errors } )=>(
-            <Form className="row g-3 needs- w-50">
+            <Form className="row row-cols-1 row-cols-lg-2">
                 
-                <div className="input-group mb-3">
+                <div className='col'>
                     <label className="form-label">Cliente
                         <Field 
-                            className="form-select form-select-lg mb-3"
+                            className="form-select mb-3"
                             name="client_id" 
                             as="select"
                         >
-                            <option value="">...</option>
+                            <option value="">Selecciona un cliente</option>
                                 {state.clients.map((client)=>( 
                                     <option 
                                         key={client._id} 
@@ -60,9 +60,6 @@ export function ServiceFormAdd(){
                         </Field>
                         <ErrorMessage name="client_id" component={() => (<span className='validateErrors'>{errors.client_id}</span>)}/>
                     </label>
-                </div>
-                
-                <div className="mb-1">
                     <label className="form-label">Modelo
                         <Field 
                             type="text" 
@@ -71,6 +68,9 @@ export function ServiceFormAdd(){
                         />
                         <ErrorMessage name="model" component={() => (<span className='validateErrors'>{errors.model}</span>)}/>
                     </label>
+                </div>
+                
+                <div className="mb-1">
                 </div>
                 
                 <div className="mb-1">

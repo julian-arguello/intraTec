@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/Auth.Context';
-import imagenes from '../assets/images';
 
 function Navbar(){
     const { state, logout } = useAuth()
@@ -10,7 +9,7 @@ function Navbar(){
     
     return(
         <nav id='mySidebar' className={`${isMobile ? "sidebar closeSidebar" : "sidebar"}`}>
-            <a href="#" id='closebtn' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
+            <a href="javascript:;" id='closebtn' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
             </a>
             <ul className='p-0 d-flex flex-column justify-content-sm-between mb-0'>
                 <li>
@@ -19,8 +18,8 @@ function Navbar(){
                             <span class="icon-usuario_1 icon-perfil"></span>
                         </div>
                         <div className='ms-2 text-white'>
-                            <h2 className='d-block mb-2 h6'>Alessandro Signorini</h2>
-                            <small><span className='d-block'>Superadmin</span></small>
+                            <h2 className='d-block mb-2 h6'> {state.user.email}</h2>
+                            <small><span className='d-block'>Falta poner el rol</span></small>
                         </div>
                     </div>
                     <hr className='hr mb-4' />
