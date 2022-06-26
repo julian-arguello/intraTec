@@ -11,7 +11,7 @@ const collectionDb = "clients";
  */
 export async function find() {
     return await conection(async function (db) {
-        return await db.collection(collectionDb).find().toArray();
+        return await db.collection(collectionDb).find().sort({ create_at: -1 }).toArray();
     })
 }
 /*-------------------------------------------------------------------------------------------*/
