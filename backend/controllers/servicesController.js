@@ -1,5 +1,6 @@
 import servicesDao from '../model/services.dao.js';
 import clientsDao from '../model/clients.dao.js';
+import UserDao from '../model/users.dao.js';
 import { schemaServicesCreate, schemaServicesUpdate } from '../services/validate.js';
 
 
@@ -11,10 +12,68 @@ import { schemaServicesCreate, schemaServicesUpdate } from '../services/validate
  * @param {*} res 
  */
 function viewAlls(req, res) {
-    console.log('[Users] Todos los Servicios.');
+    console.log('[Servicios -> viewAlls]');
     servicesDao.find()
-        .then(async (clients) => {
-            res.status(200).json(clients);
+        .then(async (services) => {
+            const Clients = await clientsDao.find()
+            services.map((service) =>{
+                Clients.map((client) => {
+                    if(client._id.toString() === service.client_id){
+                        service.client = client
+                    }
+                })
+            })
+            const Users = await UserDao.find()
+            services.map((service) =>{
+                Users.map((user) => {
+                    if(user._id.toString() === service.user_id){
+                        service.user = user
+                        service.user.password = null;
+                    }
+                })
+            })
+            res.status(200).json(services);
+        })
+        .catch((err) => {
+            console.log('[Error] ', err);
+            res.status(500).json({ err: 500, msg: err.msg })
+        })
+}
+/*-------------------------------------------------------------------------------------------*/
+/**
+ * Retorna un objeto de estadisticas.
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ */
+ function viewStatistics(req, res) {
+    console.log('[Servicios -> viewStatistics]');
+    servicesDao.find()
+        .then(async (services) => {
+
+            const  statistics = {
+                recepcionado: 0,
+                revisado: 0,
+                sin_reparacion: 0,
+                reparado: 0
+            }
+            services.map((service) => {
+                switch(service.state){
+                    case "Recepcionado":
+                        statistics.recepcionado += 1
+                        break;
+                    case "Revisado":
+                        statistics.revisado  += 1
+                        break;
+                    case "Sin reparación":
+                        statistics.sin_reparacion += 1
+                        break;
+                    case "Reparado":
+                        statistics.reparado += 1
+                        break;
+                    }
+            })
+            res.status(200).json(statistics);
         })
         .catch((err) => {
             console.log('[Error] ', err);
@@ -30,15 +89,50 @@ function viewAlls(req, res) {
  */
 function viewId(req, res) {
     servicesDao.findById(req.params.id)
-        .then(async (client) => {
-
-
-
-            res.status(200).json(client);
+        .then(async (service) => {
+            service.client = await clientsDao.findById(service.client_id);
+            service.user = await UserDao.findById(service.user_id);
+            res.status(200).json(service);
         })
         .catch((err) => {
             console.log('[Error] ', err);
             res.status(500).json({ error: 500, msg: err.msg })
+        })
+}
+/*-------------------------------------------------------------------------------------------*/
+/**
+ * Retorna ultimos servicios.
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ */
+ function viewRecent(req, res) {
+
+    console.log('[Service] Servicios recientes.');
+    servicesDao.findRecent(parseInt(req.params.cant))
+        .then(async (services) => {
+            const Clients = await clientsDao.find()
+            services.map((service) =>{
+                Clients.map((client) => {
+                    if(client._id.toString() === service.client_id){
+                        service.client = client
+                    }
+                })
+            })
+            const Users = await UserDao.find()
+            services.map((service) =>{
+                Users.map((user) => {
+                    if(user._id.toString() === service.user_id){
+                        service.user = user
+                        service.user.password = null;
+                    }
+                })
+            })
+            res.status(200).json(services);
+        })
+        .catch((err) => {
+            console.log('[Error] ', err);
+            res.status(500).json({ err: 500, msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -139,6 +233,8 @@ export function deleteEntity(req, res) {
 export default {
     viewAlls,
     viewId,
+    viewStatistics,
+    viewRecent,
     create,
     update,
     deleteEntity,

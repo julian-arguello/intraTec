@@ -1,6 +1,8 @@
 import mongodb from 'mongodb';
 import { conection } from './databaseConection.js';
 const collectionDb = "users";
+import rolesDao from './roles.dao.js';
+
 
 /*-------------------------------------------------------------------------------------------*/
 /**
@@ -28,6 +30,8 @@ export async function findById(id) {
             if (entity == null) {
                 throw "[Error] El usario que desea modificar no existe";
             } else {
+                entity.role = await rolesDao.findById(entity.role_id)
+                entity.password = null
                 return entity;
             }
         } catch (err) {

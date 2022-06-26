@@ -1,48 +1,74 @@
 export default function ServiceReducer(state, action){
     switch(action.type){
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/   
         case "GET":
+            console.log("service_reducer->GET")
             return {
                 ...state,
                 services:  action.payload   
             }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "GETID":
+            console.log("service_reducer->GETID")
             return {
                 ...state,
                 service:  action.payload   
             }
-
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
+        case "GETRECENT":
+            console.log("service_reducer->GETRECENT -> ", action.payload )
+            return {
+                ...state,
+                serviceRecent:  action.payload   
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
+        case "STATISTICS":
+            console.log("service_reducer->STATISTICS")
+            return {
+                ...state,
+                statistics:  action.payload   
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "ADD":
+            console.log("service_reducer->ADD")
             return {
                 ...state,
-                services: [ ...state.services, action.payload ]
+                services: []
             }
-
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "UPDATE":
-            
+            console.log("service_reducer->UPDATE")
             return {
                 ...state,
-                services: state.services.map(service => {
-                    if (service.id === action.payload.id) {
-                        return action.payload;
-                    }
-                    return service;
-                })
+                services: []
             }
-
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "REMOVE":
+            console.log("service_reducer->REMOVE")
             return{
                 ...state,
-                services: state.services.filter(service => service.id !== action.payload)
+                services: []
             }
-
-
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "STATE":
+            console.log("service_reducer->STATE")
             return {
                 ...state,
                 stateService:  action.payload   
             }
-
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/                
         default:
             return state;
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
     }
 }

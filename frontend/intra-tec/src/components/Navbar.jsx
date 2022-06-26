@@ -1,11 +1,25 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/Auth.Context';
+import authRole from '../services/auth.role';
 
 function Navbar(){
     const { state, logout } = useAuth()
     const isMobile = window.innerWidth < 576;
     const menu = document.getElementById("mySidebar");
     let button = isMobile ? "&#9776;" : "&times;";
+
+    function toggleMenu() {
+        let menu = document.getElementById("mySidebar");
+        let main = document.getElementById("main");
+        let actionBtn = document.getElementById("closebtn")
+        if(!menu.classList.contains("closeSidebar")) {
+            actionBtn.innerHTML = "&#9776;";
+        } else {
+            actionBtn.innerHTML = "&times;";
+        }
+        menu.classList.toggle("closeSidebar");
+        main.classList.toggle("main-margin-close");
+    }
     
     return(
         <nav id='mySidebar' className={`${isMobile ? "sidebar closeSidebar" : "sidebar"}`}>
@@ -15,11 +29,11 @@ function Navbar(){
                 <li>
                     <div className='d-flex align-items-center mb-4 user'>
                         <div className='me-2'>
-                            <span class="icon-usuario_1 icon-perfil"></span>
+                            <span className="icon-usuario_1 icon-perfil"></span>
                         </div>
                         <div className='ms-2 text-white'>
-                            <h2 className='d-block mb-2 h6'> {state.user.email}</h2>
-                            <small><span className='d-block'>Falta poner el rol</span></small>
+                            <h2 className='d-block mb-2 h6'>{state.user.name + " " + state.user.lastname}  </h2>
+                            <small><span className='d-block'>{authRole(state.user.role.role_name)}</span></small>
                         </div>
                     </div>
                     <hr className='hr mb-4' />
@@ -27,18 +41,18 @@ function Navbar(){
                     <ul className='p-0 nav-links'>
                         <li className='mb-3'>
                             <Link to='/inicio' onClick={toggleMenu} className="d-flex align-items-center">
-                                <span class="icon-dashboard me-3"></span>Tablero principal
+                                <span className="icon-dashboard me-3"></span>Tablero principal
                             </Link>
                         </li>
                         <li className='mb-3'>
                             <Link to='/servicios' onClick={toggleMenu} className="d-flex align-items-center">
-                                <span class="icon-servicios me-3"></span>
+                                <span className="icon-servicios me-3"></span>
                                 Servicios
                             </Link>
                         </li>
                         <li className='mb-3'>
                             <Link to='/clientes' onClick={toggleMenu} className="d-flex align-items-center">
-                                <span class="icon-clientes me-3"></span>
+                                <span className="icon-clientes me-3"></span>
                                 Clientes
                             </Link>
                         </li>
@@ -49,13 +63,13 @@ function Navbar(){
                     <ul className='p-0'>
                         <li className='mb-3 d-flex align-items-center'>
                             <Link to='/perfil' onClick={toggleMenu} className="d-flex align-items-center">
-                                <span class="icon-usuario_1 me-3"></span>
+                                <span className="icon-usuario_1 me-3"></span>
                                 Ver perfil
                             </Link>
                         </li>
                         <li className='mb-3 d-flex align-items-center'>
                             <Link to='/' onClick={() => logout()} className="d-flex align-items-center">
-                                <span class="icon-cerrar-sesion fs-28 me-3"></span>
+                                <span className="icon-cerrar-sesion fs-28 me-3"></span>
                                 Cerrar sesión
                             </Link>
                         </li>
@@ -66,17 +80,6 @@ function Navbar(){
     );
 }
 
-function toggleMenu() {
-    let menu = document.getElementById("mySidebar");
-    let main = document.getElementById("main");
-    let actionBtn = document.getElementById("closebtn")
-    if(!menu.classList.contains("closeSidebar")) {
-        actionBtn.innerHTML = "&#9776;";
-    } else {
-        actionBtn.innerHTML = "&times;";
-    }
-    menu.classList.toggle("closeSidebar");
-    main.classList.toggle("main-margin-close");
-}
+
 
 export default Navbar;

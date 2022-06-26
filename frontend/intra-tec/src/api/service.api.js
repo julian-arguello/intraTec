@@ -1,7 +1,8 @@
 import config from "../config/config";
 
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //trae los estados de los servios.
-/*------------------------------------------------------------------------*/
 export async function viewAllsState(){
     return fetch(`${config.api.url}/state`,{
         method: "GET",
@@ -19,7 +20,8 @@ export async function viewAllsState(){
         }
     })
 }
-/*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //Alls.
 export async function viewAlls(){
     return fetch(`${config.api.url}/servicios`,{
@@ -39,7 +41,8 @@ export async function viewAlls(){
         }
     })
 }
-/*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //trae un servico
 export async function viewId(id){
     return fetch(`${config.api.url}/servicios/${id}`,{
@@ -58,7 +61,48 @@ export async function viewId(id){
         }
     })
 }
-/*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
+//trae los ultimos servicios 
+export async function viewRecent(cant){
+    return fetch(`${config.api.url}/servicios/recent/${cant}`,{
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('auth-token')
+        },
+    })
+    .then(async (res) => {
+        const data = await res.json()
+        if(res.status === 200) {
+            return data;
+        }else{
+            throw new Error(data.msg)
+        }
+    })
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
+//trae las estadisticas 
+export async function viewStatistics(){
+    return fetch(`${config.api.url}/servicios/statistics`,{
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('auth-token')
+        },
+    })
+    .then(async (res) => {
+        const data = await res.json()
+        if(res.status === 200) {
+            return data;
+        }else{
+            throw new Error(data.msg)
+        }
+    })
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //Crea un servicio
 export async function add(service){
     return fetch(`${config.api.url}/servicios`,{
@@ -78,7 +122,8 @@ export async function add(service){
         }
     })
 }
-/*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //Edita un servicio
 export async function edit(service){
     return fetch(`${config.api.url}/servicios/${service._id}`,{
@@ -98,7 +143,8 @@ export async function edit(service){
         }
     })
 }
-/*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //Elimina un servicio
 export async function del(id){
     return fetch(`${config.api.url}/servicios/${id}`,{
@@ -117,3 +163,5 @@ export async function del(id){
         }
     })
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/

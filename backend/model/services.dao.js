@@ -10,7 +10,7 @@ const collectionDb = "services";
  */
 export async function find() {
     return await conection(async function (db) {
-        return await db.collection(collectionDb).find().toArray();
+        return await db.collection(collectionDb).find().sort({ create_at: -1 }).toArray();
     })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -33,6 +33,21 @@ export async function findById(id) {
         } catch (err) {
             throw { error: 1000, msg: "[Error] El servicio no existe." }
         }
+    })
+}
+/*-------------------------------------------------------------------------------------------*/
+/**
+ * Regrsa los ultimos servicios segun la cantidad indicada.
+ * 
+ * @param {int} cant 
+ * @returns 
+ */
+ export async function findRecent(cant = 3) {
+    console.log('findRecent.');
+    return await conection(async function (db) {
+        
+        return await db.collection(collectionDb).find().sort({ create_at: -1 }).limit(cant).toArray();
+
     })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -104,6 +119,7 @@ export async function deleteEntityclient(id) {
 export default {
     find,
     findById,
+    findRecent,
     insert,
     update,
     deleteEntity,

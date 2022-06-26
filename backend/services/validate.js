@@ -60,7 +60,7 @@ export const schemaServicesUpdate = yup.object().shape({
     model: yup.string().min(3).required('El modelo del equipo es obligatorio.'),
     brand: yup.string().min(2).required('El nombre de la marca es obligatorio.'),
     serial_number: yup.string().min(6).required('El numero de serie es obligatorio.'),
-    description: yup.string().min(20).required('La descripcion es obligatoria.'),
+    description: yup.string().min(10).required('La descripcion es obligatoria.'),
     state: yup.string().min(3).required('El estado de reparacion es obligatorio.'),
     client_id: yup.string().min(24).required('El cliente es obligatorio.'),
 }).noUnknown()

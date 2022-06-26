@@ -1,3 +1,5 @@
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //GET
 export function ActionGet( services ){
     return {
@@ -5,6 +7,8 @@ export function ActionGet( services ){
         payload: services
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //GETID
 export function ActionGetId( service ){
     return {
@@ -12,6 +16,26 @@ export function ActionGetId( service ){
         payload: service
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
+//GETRECENT
+export function ActionGetRecent( services ){
+    return {
+        type: 'GETRECENT',
+        payload: services
+    };
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
+//GETRECENT
+export function ActionGetStatistics( statistics ){
+    return {
+        type: 'STATISTICS',
+        payload: statistics
+    };
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //ADD
 export function ActionAdd( service ){
     return {
@@ -19,6 +43,8 @@ export function ActionAdd( service ){
         payload: service
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //REMOVE
 export function ActionRemove( id ){
     return {
@@ -26,6 +52,8 @@ export function ActionRemove( id ){
         payload: id
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //UPDATE
 export function ActionUpdate( service ){
     return {
@@ -33,6 +61,8 @@ export function ActionUpdate( service ){
         payload: service
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //STATE
 export function ActionStateService( states ){
     return {
@@ -40,3 +70,5 @@ export function ActionStateService( states ){
         payload: states
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/

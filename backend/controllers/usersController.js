@@ -40,6 +40,7 @@ function viewId(req, res) {
     usersDao.findById(req.params.id)
         .then(async (user) => {
             user.role = await rolesDao.findById(user.role_id)
+            console.log(user.role)
             res.status(200).json(user);
         })
         .catch((err) => {

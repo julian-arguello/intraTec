@@ -43,7 +43,6 @@ function viewId(req, res) {
                     }
                 }
             }
-            console.log(client.name, serviceClient)
             client.services = serviceClient;
             res.status(200).json(client);
         })

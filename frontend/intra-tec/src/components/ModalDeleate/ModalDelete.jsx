@@ -10,7 +10,7 @@ export function ModalDelete(props){
     function remove(){
         console.log("elimino service id *-> ", props.id);
         delService(props.id)
-        navigate('/servicios')
+        .then(()=>(navigate('/servicios')))
     }
 
 
