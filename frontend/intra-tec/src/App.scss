@@ -1,4 +1,4 @@
-//FONTS
+//FONTS ICONS
 
 @font-face {
     font-family: 'icomoon';
@@ -75,6 +75,10 @@
     font-size: 30px;
   }
 
+  .icon-home {
+      font-size: 30px;
+  }
+
   .icon-perfil {
       color: #006699;
       font-size: 70px;
@@ -133,6 +137,10 @@ a {
     color: #006699;
     padding: 10px 20px;
     font-weight: bold;
+    width: 200px;
+    position: absolute;
+    top: 60px;
+    right: 40px;
 }
 
 
@@ -233,7 +241,7 @@ h1 {
 }
 
 .main-margin-close {
-    margin-left: 50px;
+    margin-left: 66px;
 }
 
 .hr {
@@ -256,6 +264,21 @@ h1 {
 
 @media only screen and (max-width: 575px) {
 
+    h1 {
+        background-image: url('assets/nav-mobile.png');
+        margin-bottom: 0;
+        width: 50px;
+    }
+
+    .logo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        margin-bottom: 0;
+        margin-right: 30px;
+    }
+
     .sidebar {
         width: 100vw;
         height: 100vh;
@@ -273,13 +296,13 @@ h1 {
         margin-left: 30px!important;
     }
 
-    .logo {
-        margin-top: 50px;
-    }
-
     .main-margin-open {
         margin-left: 0!important;
         padding: 15px!important;
+    }
+
+    .main-margin-close h1 {
+        display: none;
     }
 
     .fondo {
@@ -290,14 +313,22 @@ h1 {
         background: #006699;
         color: white;
     }
+
+    .btn-add {
+        top: 100px;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
 } 
 
 
 
 // HOME 
 
-.size-box-stadistics {
-    min-width: 10rem;  
+.box-stadistics {
+    min-width: 250px;
+    min-height: 120px;
 }
 
 .stadistic {
