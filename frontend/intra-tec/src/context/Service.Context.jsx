@@ -95,6 +95,7 @@ const editService = async (serviceEdit) =>{
     try{
         await API.edit(serviceEdit)
         dispatch(ActionUpdate(serviceEdit))
+        
     }
     catch(err){
         console.log('Error',err.message)

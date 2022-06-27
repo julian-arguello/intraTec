@@ -1,16 +1,20 @@
 import { useNavigate  } from 'react-router-dom';
-import { useService } from '../../context/Service.Context';
-
+import { useService } from '../../../context/Service.Context';
+import { useNotify } from '../../../context/Notify.Context';
 
 export function ModalDelete(props){
 
     let navigate = useNavigate();
     const { delService } = useService()
+    const{ notify } = useNotify()
 
     function remove(){
         console.log("elimino service id *-> ", props.id);
         delService(props.id)
-        .then(()=>(navigate('/servicios')))
+        .then(()=>{
+            notify({msj: 'El servicio se borro correctamente.'})
+            navigate('/servicios')
+        })
     }
 
 

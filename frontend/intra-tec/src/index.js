@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 //Auth
 import { AuthProvider } from './context/Auth.Context';
+//Nofity
+import { NotifyProvider } from './context/Notify.Context';
 //Service
 import { ServiceProvider } from './context/Service.Context';
 //Client
@@ -22,11 +24,13 @@ root.render(
 
     <BrowserRouter>
       <AuthProvider>
-        <ClientProvider>
-          <ServiceProvider>
-            <App />
-          </ServiceProvider>
-        </ClientProvider>
+        <NotifyProvider>
+          <ClientProvider>
+            <ServiceProvider>
+              <App />
+            </ServiceProvider>
+          </ClientProvider>
+        </NotifyProvider>
       </AuthProvider>
     </BrowserRouter>
 

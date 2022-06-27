@@ -4,13 +4,14 @@ import { useService } from '../../context/Service.Context';
 import { useNavigate  } from 'react-router-dom';
 import { schemaServicesUpdate } from '../../services/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useNotify } from '../../context/Notify.Context';
 
 export function ServiceFormEdit(){
 
     let navigate = useNavigate();
     const { state, editService, findServiceId, findStateService } = useService()
-
     const {id} = useParams()
+    const{ notify } = useNotify()
     
     useEffect( () => {
         findServiceId(id)
@@ -34,7 +35,11 @@ export function ServiceFormEdit(){
         onSubmit={(service) => {
             service._id = state.service._id
             editService(service)
-            .then(()=>(navigate('/servicios')))
+            .then(()=>{
+                notify({msj: 'El servicio fue editado Correctamente.'})
+                navigate('/servicios')
+            })
+            
         }}
         /*--------------------*/
     >

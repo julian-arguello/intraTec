@@ -51,8 +51,12 @@ function App() {
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //Role
-  function roleAdmin(role){
-    return (role === "admin" || role === "super_admin") ?  true :  false
+  async function roleAdmin(){
+    if(auth.state.isAuth){
+      const role = await auth.state.user.role.role_name
+      return  ( role === "admin" || role === "super_admin") ?  true :  false
+    }
+    return false
   }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
@@ -65,25 +69,20 @@ function App() {
       </AuthComponent>
 
         <Routes>
-            <Route path='/' element={<Login/>} />
-        </Routes>
-
-      {auth.state.user != null &&
-        <Routes>
+          <Route path='/' element={<Login/>} />
           <Route path='/inicio' element={<AuthRoute><Home/></AuthRoute>}/>
           <Route path='/clientes' element={<AuthRoute><Clients/></AuthRoute>}/>
           <Route path='/cliente/:id' element={<AuthRoute><Client/></AuthRoute>}/>
 
           <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
           <Route path='/servicios/:id' element={<AuthRoute><ServiceDetailPage/></AuthRoute>}/>
-          <Route path='/servicios/nuevo' element={roleAdmin(auth.state.user.role.role_name) ? <AuthRoute><ServiceForm edit={false}/></AuthRoute> : <NotAcces />}/>
-          <Route path='/servicios/editar/:id' element={roleAdmin(auth.state.user.role.role_name) ? <AuthRoute><ServiceForm edit={true}/></AuthRoute> : <NotAcces />}/>
-          
+          <Route path='/servicios/nuevo' element={roleAdmin() ? <AuthRoute><ServiceForm edit={false}/></AuthRoute> : <NotAcces />}/>
+          <Route path='/servicios/editar/:id' element={roleAdmin() ? <AuthRoute><ServiceForm edit={true}/></AuthRoute> : <NotAcces />}/>
+     
           <Route path='/perfil' element={<AuthRoute><Profile /></AuthRoute>}/>
           <Route path='/404' element={<PageNotFound/>}/>
           <Route path='*' element={<Navigate to='/404'/>} />
         </Routes>
-      }
 
     </div>
   );

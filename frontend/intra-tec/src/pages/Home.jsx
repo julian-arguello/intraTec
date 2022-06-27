@@ -5,6 +5,8 @@ import HomeStatistics from '../components/home/HomeStatistics';
 import HomeListServiceRecent from '../components/home/HomeListServiceRecent';
 import Loading from '../components/Loading';
 import RoleAdmin from '../components/authRole/RoleAdmin';
+
+import { useNotify } from '../context/Notify.Context';
 // import imagenes from '../assets/images';
 
 
@@ -13,6 +15,8 @@ function Home(){
     const {findServiceRecent, findStatistics } = useService()
     const [loadingStatistics, setloadingStatistics] = useState(true)
     const [loadingServiceRecent, setLoadingServiceRecent] = useState(true)
+
+    const{ notify } = useNotify() 
 
     useEffect(  () => {
         findServiceRecent()
@@ -24,7 +28,7 @@ function Home(){
 
     return(
         <div className="container">
-
+            
             <h2 className="d-none">Home</h2> {/*????*/}
 
 
@@ -33,6 +37,14 @@ function Home(){
             </RoleAdmin>
             
             {loadingStatistics ? <Loading/> : <HomeStatistics />}
+
+            <hr />
+
+            <button onClick={()=>(notify({msj: 'hola'}))}>notificar</button>
+            <hr />
+            <button onClick={()=>(notify({}))}>Limpiar</button>
+            <hr />
+
 
             <hr />
 

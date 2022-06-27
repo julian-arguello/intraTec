@@ -5,6 +5,7 @@ import { useService } from '../../context/Service.Context';
 import { useAuth }  from '../../context/Auth.Context';
 import { schemaServicesCreate } from '../../services/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useNotify } from '../../context/Notify.Context';
 
 export function ServiceFormAdd(){
 
@@ -12,6 +13,7 @@ export function ServiceFormAdd(){
     const { state, findClient } = useClient()
     const { addService } = useService()
     const auth = useAuth()
+    const{ notify } = useNotify()
     
     useEffect(  () => {
         findClient();
@@ -36,7 +38,10 @@ export function ServiceFormAdd(){
             service.user_id = auth.state.user._id;
             service.softDelete = false
             addService(service)
-            .then(()=>(navigate('/servicios')))
+            .then(()=>{
+                notify({msj: 'El servicio fue creado correctamente.'})
+                navigate('/servicios')
+            })
         }}
         /*--------------------*/
     >

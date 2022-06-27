@@ -2,8 +2,8 @@
 import stateClass from '../../services/service.state';
 import imagenes from '../../assets/images';
 import { Link } from 'react-router-dom';
-import { ModalDeleteButton } from './../ModalDeleate/ModalDeleateButton';
-import { ModalDelete } from './../ModalDeleate/ModalDelete';
+import { ModalDeleteButton } from './ModalDeleate/ModalDeleateButton';
+import { ModalDelete } from './ModalDeleate/ModalDelete';
 import RoleAdmin from '../authRole/RoleAdmin';
 
 
