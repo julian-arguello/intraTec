@@ -23,21 +23,23 @@ function Home(){
    }, [] )
 
     return(
-        <div className="container">
+        <div className='d-flex flex-column mt-3 mt-sm-5'>
+            <div className='order-1 order-sm-3 mt-5 mt-sm-0 mb-5 mb-sm-0'>
+                <h2 className='my-5 text-center text-sm-start'>Servicios más recientes</h2>
 
-            <h2 className="d-none">Home</h2> {/*????*/}
+                {loadingServiceRecent ? <Loading/> : <HomeListServiceRecent />}
+            </div>
+            <hr className='hr order-2 mb-5 mb-sm-0'/>
+            <div className='order-3 order-sm-1'>
+                <RoleAdmin>
+                    <Link to='/servicios/nuevo' className="btn-add d-flex justify-content-center align-items-center">
+                                <span className="icon-agregar me-2"></span>
+                                Añadir servicio
+                    </Link>
+                </RoleAdmin>
 
-
-            <RoleAdmin>
-                <Link className='btn btn-primary' to='/servicios/nuevo' >nuevo servicio</Link>
-            </RoleAdmin>
-            
-            {loadingStatistics ? <Loading/> : <HomeStatistics />}
-
-            <hr />
-
-            {loadingServiceRecent ? <Loading/> : <HomeListServiceRecent />}
-
+                {loadingStatistics ? <Loading/> : <HomeStatistics />}
+            </div>
         </div>
     )
 }

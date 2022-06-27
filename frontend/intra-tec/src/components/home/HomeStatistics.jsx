@@ -5,34 +5,46 @@ export function HomeStatistics(){
     const { state } = useService()
 
     return(
-        
-        <div className="row text-white d-xs-inline d-sm-flex justify-content-between align-items-center text-center text-sm-start">
+    <div className="container-fluid mb-5">
 
-
-        <div className="box-recepcionados p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
-            <div  className="d-flex align-items-center">
-                <p className="h3"><strong>{state.statistics.recepcionado}</strong></p>
+    <div className="row gy-4 text-white">
+        <div className="col-12 col-md-6 col-xl-3 ps-xl-0">
+            <div className='box-recepcionados p-4 rounded-4'>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                    <p className="h3"><strong>{state.statistics.recepcionado}</strong></p>
+                    <span class="icon-servicios icon-home"></span>
+                </div>
+                <p className="m-0"><strong>Recepcionados</strong></p>
             </div>
-            <p className="m-0"><strong>Recepcionados</strong></p>
         </div>
-        <div className="box-proceso p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
-            <div  className="d-flex align-items-center">
-                <p className="h3"><strong>{state.statistics.revisado}</strong></p>
+        <div className="col-12 col-md-6 col-xl-3">
+            <div className='box-proceso p-4 rounded-4'>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                    <p className="h3"><strong>{state.statistics.revisado}</strong></p>
+                    <span class="icon-en-proceso icon-home"></span>
+                </div>
+                <p className="m-0"><strong>En Proceso</strong></p>
             </div>
-            <p className="m-0"><strong>En Proceso</strong></p>
         </div>
-        <div className="box-reparados p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
-            <div  className="d-flex align-items-center">
-                <p className="h3"><strong>{state.statistics.reparado}</strong></p>
+        <div className="col-12 col-md-6 col-xl-3">
+            <div className='box-reparados p-4 rounded-4'>
+                <div  className="d-flex justify-content-between align-items-center mb-3">
+                    <p className="h3"><strong>{state.statistics.reparado}</strong></p>
+                    <span class="icon-reparados icon-home"></span>
+                </div>
+                <p className="m-0"><strong>Reparados</strong></p>
             </div>
-            <p className="m-0"><strong>Reparados</strong></p>
         </div>
-        <div className="box-sinreparacion p-3 m-1 rounded-4 col-5 col-lg-2 size-box-stadistics">
-            <div className="d-flex align-items-center">
-                <p className="h3"><strong>{state.statistics.sin_reparacion}</strong></p>
+        <div className="col-12 col-md-6 col-xl-3 pe-xl-0">
+            <div className='box-sinreparacion p-4 rounded-4'>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                    <p className="h3"><strong>{state.statistics.sin_reparacion}</strong></p>
+                    <span class="icon-sin-reparacion icon-home"></span>
+                </div>
+                <p className="m-0"><strong>Sin Reparación </strong></p>
             </div>
-            <p className="m-0"><strong>Sin Reparación </strong></p>
         </div>
+    </div>
     </div>
 
 
