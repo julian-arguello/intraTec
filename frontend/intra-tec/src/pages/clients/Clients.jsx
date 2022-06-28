@@ -15,40 +15,49 @@ function Clients(props){
     return(
         <div>
             <div className="d-flex justify-content-between align-items-center">
-                <h2 className='h4 mb-5 ms-md-5 mt-5'>Clientes</h2>
-                <Link to={'#'} className="btn btn-outline-primary">Añadir cliente</Link>
+                <div className="col-12 col-sm-auto my-5">
+                    <h2>Clientes</h2>
+                </div>
+                <div className="col-12 col-sm-auto mb-5">
+                    <Link to={'#'} className="btn-add d-flex justify-content-center align-items-center">
+                        <span className="icon-agregar me-2"></span>
+                        Añadir cliente
+                    </Link>
+                </div>
             </div>
-                <div className="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-5 px-md-5">
-                    {state.clients.map((client)=>(
-
-                        <div key={client._id}>
-                            <div className="card text-white bg-dark m-2 p-4">
-                                <div className='text-center'>
-                                <small><strong> {client.name_busines}</strong></small>
-                                </div>
-                                <div className="card-body">
-                                <ul className='p-0 mb-2'>
-                                    <li>cuit_cuil: {client.brand}</li>
-                                    <li>Telefono: {client.phone}</li>
-                                    <li>Email : {client.email}</li>
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-5 gx-0 gx-sm-3">
+                {state.clients.map((client)=>(
+                    <div key={client._id} className="col client-card">
+                        <div className="text-white bg-dark p-sm-3">
+                            <div className="card-body">
+                                <h3 className='text-center h5 mb-5'>
+                                    <strong> {client.name_busines}</strong>
+                                </h3>
+                                <ul className='p-0 mb-5'>
+                                    <li className='d-flex justify-content-between mb-3'>
+                                        <span>CUIL</span>
+                                        <span>{client.cuit_cuil}</span> 
+                                    </li>
+                                    <li className='d-flex justify-content-between mb-3'>
+                                        <span>Telefono</span>
+                                        <span>{client.phone}</span>
+                                    </li>
+                                    <li className='d-flex justify-content-between'>
+                                        <span>Email</span>
+                                        <span>{client.email}</span>
+                                    </li>
                                 </ul>
-                                </div>
-                                <div className="py-4 d-sm-flex justify-content-between">
-                                    <a className="box-proceso rounded-4 border-0 text-white d-flex align-items-center justify-content-center mb-2 p-2">
-                                        <img src={ imagenes.ver } alt="ver detalle" className='btn-icon me-2'/> Detalle
-                                    </a>
-                                    <a className="box-reparados rounded-4 border-0 text-white d-flex align-items-center justify-content-center mb-2 p-2">
-                                        <img src={ imagenes.editar } alt="ver detalle" className='btn-icon me-2'/>Editar
-                                    </a>
-                                    <a className="sinreparacion rounded-4 border-0 text-white d-flex align-items-center justify-content-center mb-2 p-2">
-                                        <img src={ imagenes.borrar } alt="ver detalle" className='btn-icon me-2'/>Borrar
-                                    </a>
+                                <div className="d-flex justify-content-end">
+                                    <Link to={`#`} className="box-proceso rounded-4 text-white d-flex align-items-center justify-content-center px-3 py-2">
+                                        <span className="icon-ver me-2"></span>Ver
+                                    </Link>
                                 </div>
                             </div>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
+        </div>
     )
 }
 export default Clients;

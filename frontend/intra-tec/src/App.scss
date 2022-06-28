@@ -106,6 +106,10 @@ a {
     text-decoration: none!important;
 }
 
+.bg-dark {
+    background: black!important;
+}
+
 .fondo {
     background: blue;
     background: linear-gradient(87deg, rgba(255,255,255,1) 0%, rgba(0,102,153,1) 100%);
@@ -141,6 +145,19 @@ a {
     position: absolute;
     top: 60px;
     right: 40px;
+}
+
+.btn-delete {
+    border: 1px solid red;
+    border-radius: 30px;
+    color: red;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 200px;
+    position: absolute;
+    top: 60px;
+    right: 270px;
+    background-color: white;
 }
 
 
@@ -257,6 +274,13 @@ h1 {
 }
 
 /* ADD SERVICE */
+
+
+/* CLIENTS */
+
+.client-card > div {
+    border-radius: 20px;
+}
 
 
 

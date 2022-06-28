@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import stateClass from '../../services/service.state';
+import {stateClass} from '../../services/service.state';
 import { formatDistance } from 'date-fns'
 import { es } from 'date-fns/locale'
 

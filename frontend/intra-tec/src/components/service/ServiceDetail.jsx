@@ -1,69 +1,82 @@
-
-import stateClass from '../../services/service.state';
-import imagenes from '../../assets/images';
+import {stateClass, stateIcon} from '../../services/service.state';
 import { Link } from 'react-router-dom';
 import { ModalDeleteButton } from './ModalDeleate/ModalDeleateButton';
 import { ModalDelete } from './ModalDeleate/ModalDelete';
 import RoleAdmin from '../authRole/RoleAdmin';
-
+import { formatRelative, subDays } from 'date-fns'
+import { es } from 'date-fns/locale'
 
 export function ServiceDetail(props){
     
     let classState = "card-header alert m-0 "
         console.log("props.service -> ", props.service)
+
     return(
-        <div className="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-5 px-md-5">
-            <div>
-                <div className="card h-100 bg-black text-white border-0">
-                    <div className={classState + stateClass(props.service.state)}>
-                        <small className="text-muted"><strong>Estado: {props.service.state}</strong></small>
-                    </div>
-                    <div className="card-body">
-                        <h5 className="card-title">Modelo: {props.service.model}</h5>
-                        <ul>
-                            <li>Marca: {props.service.brand}</li>
-                            <li>Numero de serie: {props.service.serial_number}</li>
-                            <li>Ingreso : {props.service.create_at}</li>
-                            <li>Detalle : {props.service.description}</li>
-                        </ul>
-
-                      
-
-                       <p>Usuario</p>
-                        <ul>
-                            <li>nombre: {props.service.user.name}</li>
-                            <li>apellido: {props.service.user.lastname}</li>
-                            <li>email: {props.service.user.email}</li>
-                            <li>rol: {props.service.user.role.role_name}</li>
-                        </ul>
-
-                        <p>cliente</p>
-                        <ul>
-                            <li>cuit_cuil: {props.service.client.cuit_cuil}</li>
-                            <li>email: {props.service.client.email}</li>
-                            <li>name_busines: {props.service.client.name_busines}</li>
-                            <li>phone: {props.service.client.phone}</li>
-                            
-                        </ul>
-
-                    </div>
-                    <div className="card-footer btn-group py-4">
-
-                        <RoleAdmin>
-                            <Link to={`/servicios/editar/${props.service._id}`} className="box-proceso rounded-4 border-0 text-white d-flex align-items-center justify-content-center mb-2 p-2">
-                                <img src={ imagenes.editar } alt="editar" className='btn-icon me-2'/> <span className='text-center'>Editar</span> 
-                            </Link>
-                            
-                            <ModalDeleteButton id={props.service._id} />
-                        </RoleAdmin>
-                        
-                    </div>
+     <div>
+        <RoleAdmin>
+            <ModalDeleteButton id={props.service._id} />
+            <Link to={`/servicios/editar/${props.service._id}`} className="btn-add d-flex justify-content-center align-items-center">
+                <span class="icon-editar me-2"></span>Editar
+            </Link>
+        </RoleAdmin>
+         <h2 className='my-5'>Detalle de servicio</h2>
+         <ul className="row ps-0">
+            <li className="col col-md-3 d-flex flex-column justify-content-between">
+                <h3 className='h4 mb-3'>Técnico a cargo</h3>
+                <div className='d-flex align-items-center'>
+                    <span class="icon-usuario_1 icon-perfil"></span>
+                    <ul className='ps-2'>
+                        <li>
+                            <strong>{props.service.user.name}</strong>
+                        </li>
+                        <li>
+                            <strong>{props.service.user.lastname}</strong>
+                        </li>
+                    </ul>
                 </div>
-                <RoleAdmin>
-                    <ModalDelete id={props.service._id} />
-                </RoleAdmin>
+            </li>
+            <li className="col col-md-3 d-flex flex-column justify-content-between">
+                <h3 className='h4 mb-3'>Fecha recepción</h3>
+                <p className='col-8 mb-0 bg-black text-white px-3 py-4 rounded-4'>
+                    {formatRelative(new Date(props.service.create_at), new Date(), { locale: es })}
+                </p>
+            </li>
+            <li className="col col-md-3 d-flex flex-column justify-content-between">
+                <h3 className='h4 mb-3'>Estado</h3>
+                <p className={stateClass(props.service.state) + ' col-8 mb-0 text-center text-white px-3 py-4 rounded-4 d-flex justify-content-between'}>
+                    {stateIcon(props.service.state)}
+                </p>
+            </li>
+         </ul>
+         <hr className='hr my-5' />
+         <div className="row mb-5">
+            <li className="col col-md-3 d-flex flex-column justify-content-between">
+                <h3 className='h4 mb-3'>Cliente</h3>
+                <h4 className='mb-0'>{props.service.client.name_busines}</h4>
+            </li>
+            <li className="col col-md-3 d-flex flex-column justify-content-between">
+                <h3 className='h4 mb-3'>Marca</h3>
+                <p className='mb-0'>{props.service.brand}</p>
+            </li>
+            <li className="col col-md-3 d-flex flex-column justify-content-between">
+                <h3 className='h4 mb-3'>Modelo</h3>
+                <p className='mb-0'>{props.service.model}</p>
+            </li>
+            <li className="col col-md-3 d-flex flex-column justify-content-between">
+                <h3 className='h4 mb-3'>N° de serie</h3>
+                <p className='mb-0'>{props.service.serial_number}</p>
+            </li>
+         </div>
+         <div className="row">
+            <h3 className='h4 mb-4'>Descripción del inconveniente</h3>
+            <div className='bg-light rounded-4 p-4'>
+                <p className='mb-0'>"{props.service.description}"</p>
             </div>
-        </div>
+         </div>
+         <RoleAdmin>
+            <ModalDelete id={props.service._id} />
+         </RoleAdmin>
+     </div>
     )
 }
 export default ServiceDetail

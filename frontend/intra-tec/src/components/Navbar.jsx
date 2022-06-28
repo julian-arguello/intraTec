@@ -40,18 +40,18 @@ function Navbar(){
                     <h3 className='h5 text-white mb-4'>General</h3>
                     <ul className='p-0 nav-links'>
                         <li className='mb-3'>
-                            <Link to='/inicio' onClick={toggleMenu} className="d-flex align-items-center">
+                            <Link to='/inicio' onClick={ isMobile ? toggleMenu : ''} className="d-flex align-items-center">
                                 <span className="icon-dashboard me-3"></span>Tablero principal
                             </Link>
                         </li>
                         <li className='mb-3'>
-                            <Link to='/servicios' onClick={toggleMenu} className="d-flex align-items-center">
+                            <Link to='/servicios' onClick={ isMobile ? toggleMenu : ''} className="d-flex align-items-center">
                                 <span className="icon-servicios me-3"></span>
                                 Servicios
                             </Link>
                         </li>
                         <li className='mb-3'>
-                            <Link to='/clientes' onClick={toggleMenu} className="d-flex align-items-center">
+                            <Link to='/clientes' onClick={ isMobile ? toggleMenu : ''} className="d-flex align-items-center">
                                 <span className="icon-clientes me-3"></span>
                                 Clientes
                             </Link>
@@ -62,7 +62,7 @@ function Navbar(){
                     <hr className='hr mb-4' />      
                     <ul className='p-0'>
                         <li className='mb-3 d-flex align-items-center'>
-                            <Link to='/perfil' onClick={toggleMenu} className="d-flex align-items-center">
+                            <Link to='/perfil' onClick={ isMobile ? toggleMenu : ''} className="d-flex align-items-center">
                                 <span className="icon-usuario_1 me-3"></span>
                                 Ver perfil
                             </Link>

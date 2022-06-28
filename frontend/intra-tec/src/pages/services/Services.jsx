@@ -22,7 +22,7 @@ function Services(){
         <div>
             <div className="row justify-content-between align-items-center">
                 <div className="col-12 col-sm-auto my-5">
-                    <h2 className='h4'>Servicios</h2>
+                    <h2>Servicios</h2>
                 </div>
                 <div className="col-12 col-sm-auto mb-5">
                 <RoleAdmin>

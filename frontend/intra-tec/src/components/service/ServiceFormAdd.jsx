@@ -9,7 +9,7 @@ import { useNotify } from '../../context/Notify.Context';
 
 export function ServiceFormAdd(){
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const { state, findClient } = useClient()
     const { addService } = useService()
     const auth = useAuth()
@@ -46,72 +46,80 @@ export function ServiceFormAdd(){
         /*--------------------*/
     >
         {( { errors } )=>(
-            <Form className="row row-cols-1 row-cols-lg-2">
-                
-                <div className='col'>
-                    <label className="form-label">Cliente
-                        <Field 
-                            className="form-select mb-3"
-                            name="client_id" 
-                            as="select"
-                        >
-                            <option value="">Selecciona un cliente</option>
-                                {state.clients.map((client)=>( 
-                                    <option 
-                                        key={client._id} 
-                                        value={client._id}>{client.name_busines}
-                                    </option>
-                                ))}
-                        </Field>
-                        <ErrorMessage name="client_id" component={() => (<span className='validateErrors'>{errors.client_id}</span>)}/>
-                    </label>
-                    <label className="form-label">Modelo
-                        <Field 
-                            type="text" 
-                            className="form-control" 
-                            name="model"
-                        />
-                        <ErrorMessage name="model" component={() => (<span className='validateErrors'>{errors.model}</span>)}/>
-                    </label>
-                </div>
-                
-                <div className="mb-1">
-                </div>
-                
-                <div className="mb-1">
-                    <label  className="form-label">Marca
-                        <Field 
-                            type="text" 
-                            className="form-control"
-                            name="brand"
-                        />
-                        <ErrorMessage name="brand" component={() => (<span className='validateErrors'>{errors.brand}</span>)}/>
-                    </label>
-                </div>
-                
-                <div className="mb-1">
-                    <label className="form-label">Numero de serie
-                        <Field 
-                            type="text" 
-                            className="form-control" 
-                            name="serial_number"
+            <Form>
+                <div className='row mb-4'>
+                    <div className="col-4">
+                        <label className="form-label w-100">Cliente
+                            <Field 
+                                className="form-select"
+                                name="client_id" 
+                                as="select"
+                            >
+                                <option value="">Selecciona un cliente</option>
+                                    {state.clients.map((client)=>( 
+                                        <option 
+                                            key={client._id} 
+                                            value={client._id}>{client.name_busines}
+                                        </option>
+                                    ))}
+                            </Field>
+                            <ErrorMessage name="client_id" component={() => (<span className='validateErrors'>{errors.client_id}</span>)}/>
+                        </label>
+                    </div>
+                    <div className="col-4">
+                        <label className="form-label w-100">Modelo
+                            <Field 
+                                type="text" 
+                                className="form-control" 
+                                name="model"
                             />
-                        <ErrorMessage name="serial_number" component={() => (<span className='validateErrors'>{errors.serial_number}</span>)}/>
+                            <ErrorMessage name="model" component={() => (<span className='validateErrors'>{errors.model}</span>)}/>
+                        </label>
+                    </div>
+                </div>
 
-                    </label>
+                <div className='row mb-4'>
+                    <div className="col-4">
+                        <label  className="form-label w-100">Marca
+                            <Field 
+                                type="text" 
+                                className="form-control"
+                                name="brand"
+                            />
+                            <ErrorMessage name="brand" component={() => (<span className='validateErrors'>{errors.brand}</span>)}/>
+                        </label>
+                    </div>
+                    <div className="col-4">
+                        <label className="form-label w-100">Numero de serie
+                            <Field 
+                                type="text" 
+                                className="form-control" 
+                                name="serial_number"
+                            />
+                            <ErrorMessage name="serial_number" component={() => (<span className='validateErrors'>{errors.serial_number}</span>)}/>
+                        </label>
+                    </div>
+                </div>
+               
+                <div className="row mb-4">
+                    <div className="col-8">
+                        <label className='w-100'>Descripción
+                            <Field 
+                                className="form-select form-select-lg"
+                                name="description" 
+                                as="textarea"
+                            />
+                            <ErrorMessage name="description" component={() => (<span className='validateErrors'>{errors.description}</span>)}/>
+                        </label>
+                    </div>
                 </div>
                 
-                <div className="mb-1">
-                    <label>Descripción</label>
-                    <Field 
-                        className="form-select form-select-lg mb-3"
-                        name="description" 
-                        as="textarea"
-                    ></Field>
-                    <ErrorMessage name="description" component={() => (<span className='validateErrors'>{errors.description}</span>)}/>
+                <div className='row'>
+                    <div className="col-8">
+                        <button className='btn btn-danger me-3' onClick={() => navigate(-1)}>Atrás</button>
+                        <button type='submit' className='btn btn-primary'>Confirmar</button>
+                    </div>                    
                 </div>
-                
-                <button type='submit'>Enviar</button>
             </Form>
         )}
         </Formik>
