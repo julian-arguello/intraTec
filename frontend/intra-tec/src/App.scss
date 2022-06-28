@@ -141,10 +141,11 @@ a {
     color: #006699;
     padding: 10px 20px;
     font-weight: bold;
-    width: 200px;
+    width: 193px;
     position: absolute;
     top: 60px;
     right: 40px;
+    background: white;
 }
 
 .btn-delete {
@@ -153,11 +154,21 @@ a {
     color: red;
     padding: 10px 20px;
     font-weight: bold;
-    width: 200px;
+    width: 193px;
     position: absolute;
     top: 60px;
     right: 270px;
     background-color: white;
+}
+
+.btn-confirm {
+    border: 1px solid #006837;
+    border-radius: 30px;
+    color: #006837;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 193px;
+    background: white;
 }
 
 
@@ -343,6 +354,33 @@ h1 {
         right: 0;
         left: 0;
         margin: auto;
+    }
+
+    .btn-confirm {
+        width: 100%;
+    }
+
+    .btn-back {
+        width: 100px;
+    }
+
+    .btn-delete {
+        position: relative;
+        right: 0;
+        left: 0;
+        top: 0;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .btn-edit {
+        position: relative;
+        top: 0;
+    }
+
+    .notification {
+        top: 125px;
     }
 } 
 

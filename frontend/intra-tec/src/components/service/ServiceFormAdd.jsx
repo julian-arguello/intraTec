@@ -48,7 +48,7 @@ export function ServiceFormAdd(){
         {( { errors } )=>(
             <Form>
                 <div className='row mb-4'>
-                    <div className="col-4">
+                    <div className="col-sm-4 mb-4 mb-sm-0">
                         <label className="form-label w-100">Cliente
                             <Field 
                                 className="form-select"
@@ -66,7 +66,7 @@ export function ServiceFormAdd(){
                             <ErrorMessage name="client_id" component={() => (<span className='validateErrors'>{errors.client_id}</span>)}/>
                         </label>
                     </div>
-                    <div className="col-4">
+                    <div className="col-sm-4">
                         <label className="form-label w-100">Modelo
                             <Field 
                                 type="text" 
@@ -79,7 +79,7 @@ export function ServiceFormAdd(){
                 </div>
 
                 <div className='row mb-4'>
-                    <div className="col-4">
+                    <div className="col-sm-4 mb-4 mb-sm-0">
                         <label  className="form-label w-100">Marca
                             <Field 
                                 type="text" 
@@ -89,7 +89,7 @@ export function ServiceFormAdd(){
                             <ErrorMessage name="brand" component={() => (<span className='validateErrors'>{errors.brand}</span>)}/>
                         </label>
                     </div>
-                    <div className="col-4">
+                    <div className="col-sm-4">
                         <label className="form-label w-100">Numero de serie
                             <Field 
                                 type="text" 
@@ -102,10 +102,10 @@ export function ServiceFormAdd(){
                 </div>
                
                 <div className="row mb-4">
-                    <div className="col-8">
+                    <div className="col-sm-8">
                         <label className='w-100'>Descripción
                             <Field 
-                                className="form-select form-select-lg"
+                                className="form-select"
                                 name="description" 
                                 as="textarea"
                             />
@@ -115,9 +115,9 @@ export function ServiceFormAdd(){
                 </div>
                 
                 <div className='row'>
-                    <div className="col-8">
-                        <button className='btn btn-danger me-3' onClick={() => navigate(-1)}>Atrás</button>
-                        <button type='submit' className='btn btn-primary'>Confirmar</button>
+                    <div className="col-sm-8 d-flex flex-column align-items-sm-end">
+                        <button className='btn-add btn-back me-sm-3 order-2 order-sm-1' onClick={() => navigate(-1)}>Atrás</button>
+                        <button type='submit' className='btn-confirm order-1 order-sm-2 mb-4 mb-sm-0'>Confirmar</button>
                     </div>                    
                 </div>
             </Form>
