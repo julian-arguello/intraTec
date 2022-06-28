@@ -172,7 +172,11 @@ a {
 }
 
 .notification {
-    width: 50%;
+    width: 400px;
+    position: absolute!important;
+    left: 0;
+    right: 0;
+    top: 0;
 }
 
 /* NAVBAR */ 
@@ -385,6 +389,7 @@ h1 {
     .notification {
         top: 125px;
         width: 100%;
+        position: relative!important;
     }
 } 
 
