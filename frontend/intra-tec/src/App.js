@@ -6,10 +6,12 @@ import { Route, Routes, Navigate, useNavigate  } from 'react-router-dom';
 //pages
 import Login from './pages/Login';
 import Home from './pages/Home';
+
 import Clients from './pages/clients/Clients';
-import Client from './pages/clients/Client';
+import ClientDetail from './pages/clients/ClientDetailPage';
+
 import Services from './pages/services/Services';
-import ServiceDetailPage from './pages/services/ServiceDetailPage';
+import ServiceDetail from './pages/services/ServiceDetailPage';
 import ServiceForm from './pages/services/ServiceForm';
 import NotAcces from './pages/NotAcces';
 
@@ -71,11 +73,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Login/>} />
           <Route path='/inicio' element={<AuthRoute><Home/></AuthRoute>}/>
+
           <Route path='/clientes' element={<AuthRoute><Clients/></AuthRoute>}/>
-          <Route path='/cliente/:id' element={<AuthRoute><Client/></AuthRoute>}/>
+          <Route path='/clientes/:id' element={<AuthRoute><ClientDetail/></AuthRoute>}/>
 
           <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
-          <Route path='/servicios/:id' element={<AuthRoute><ServiceDetailPage/></AuthRoute>}/>
+          <Route path='/servicios/:id' element={<AuthRoute><ServiceDetail/></AuthRoute>}/>
           <Route path='/servicios/nuevo' element={roleAdmin() ? <AuthRoute><ServiceForm edit={false}/></AuthRoute> : <NotAcces />}/>
           <Route path='/servicios/editar/:id' element={roleAdmin() ? <AuthRoute><ServiceForm edit={true}/></AuthRoute> : <NotAcces />}/>
      

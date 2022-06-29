@@ -1,10 +1,6 @@
-
 import  ServiceItem from './ServiceItem';
 import { useService }  from '../../context/Service.Context';
 
-/**
- * Lista de servicios.
- */
 export function ServiceList(){
 
     const { state } = useService()

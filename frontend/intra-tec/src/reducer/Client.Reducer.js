@@ -1,27 +1,50 @@
 export default function ClientReducer(state, action){
     switch(action.type){
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/   
         case "GET":
+            console.log("ClientReducer->GET")
             return {
+                ...state,
                 clients:  action.payload   
             }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
+        case "GETID":
+            console.log("ClientReducer->GETID")
+            return {
+                ...state,
+                client:  action.payload   
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "ADD":
-            return{
-                clients: [...state, action.payload]
-            };
-        case "REMOVE":
-               return {
-                clients: state.clients.filter(client => client.id !== action.payload)
-               };
+            console.log("ClientReducer->ADD")
+            return {
+                ...state,
+                clients: []
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "UPDATE":
+            console.log("ClientReducer->UPDATE")
+            return {
+                ...state,
+                clients: []
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
+        case "REMOVE":
+            console.log("ClientReducer->REMOVE")
             return{
-                clients:  state.clients.map(client => {
-                                if (client.id === action.payload.id) {
-                                    return action.payload;
-                                }
-                                return client;
-                            })
-                };
+                ...state,
+                clients: []
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/                
         default:
             return state;
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
     }
 }

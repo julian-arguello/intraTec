@@ -13,19 +13,18 @@ export function ServiceProvider({ children }){
     //useReduce
     //useReducer recibe dos parametros (funcion reduce, {states por defectos})
     const [state, dispatch] = useReducer(ServiceReducer, { statistics: {}, serviceRecent: [], services:[], service: {}, stateService: []})
-    
-
 
 /*-----------------------------------------------------------------*/
 //Estado de los servicios
 const findStateService = async () =>{
-    await API.viewAllsState()
-    .then((data)=>{
-        dispatch(ActionStateService(data))
-    })
-    .catch(function(err){
-        console.log('Auth.Context->login()->Error',err.message)
-    })
+    try{
+       const services = await API.viewAllsState()
+       dispatch(ActionStateService(services))
+    }
+    catch(err){
+        console.log('Error',err.message)
+    }
+
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
@@ -58,7 +57,6 @@ const findServiceRecent = async (cant = 3) =>{
     try{
         await API.viewRecent(cant)
         .then((services) => dispatch(ActionGetRecent(services)))
-
     }
     catch(err){
         console.log('Error',err.message)
@@ -79,10 +77,10 @@ const findStatistics = async () =>{
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 //Nuevo servicio
-const addService = async (serviceNew) =>{
+const addService = async (service) =>{
     try{
-        await API.add(serviceNew)
-        dispatch(ActionAdd(serviceNew))
+        await API.add(service)
+        dispatch(ActionAdd(service))
     }
     catch(err){
         console.log('Error',err.message)
@@ -91,10 +89,10 @@ const addService = async (serviceNew) =>{
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 //Editar servicio
-const editService = async (serviceEdit) =>{
+const editService = async (service) =>{
     try{
-        await API.edit(serviceEdit)
-        dispatch(ActionUpdate(serviceEdit))
+        await API.edit(service)
+        dispatch(ActionUpdate(service))
         
     }
     catch(err){

@@ -3,7 +3,7 @@ export default function ServiceReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/   
         case "GET":
-            console.log("service_reducer->GET")
+            console.log("ServiceReducer->GET")
             return {
                 ...state,
                 services:  action.payload   
@@ -11,7 +11,7 @@ export default function ServiceReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "GETID":
-            console.log("service_reducer->GETID")
+            console.log("ServiceReducer->GETID")
             return {
                 ...state,
                 service:  action.payload   
@@ -19,7 +19,7 @@ export default function ServiceReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "GETRECENT":
-            console.log("service_reducer->GETRECENT -> ", action.payload )
+            console.log("ServiceReducer->GETRECENT -> ", action.payload )
             return {
                 ...state,
                 serviceRecent:  action.payload   
@@ -27,7 +27,7 @@ export default function ServiceReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "STATISTICS":
-            console.log("service_reducer->STATISTICS")
+            console.log("ServiceReducer->STATISTICS")
             return {
                 ...state,
                 statistics:  action.payload   
@@ -35,7 +35,7 @@ export default function ServiceReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "ADD":
-            console.log("service_reducer->ADD")
+            console.log("ServiceReducer->ADD")
             return {
                 ...state,
                 services: []
@@ -43,7 +43,7 @@ export default function ServiceReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "UPDATE":
-            console.log("service_reducer->UPDATE")
+            console.log("ServiceReducer->UPDATE")
             return {
                 ...state,
                 services: []
@@ -51,7 +51,7 @@ export default function ServiceReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "REMOVE":
-            console.log("service_reducer->REMOVE")
+            console.log("ServiceReducer->REMOVE")
             return{
                 ...state,
                 services: []

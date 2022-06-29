@@ -1,3 +1,5 @@
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //GET
 export function ActionGet( clients ){
     return {
@@ -5,6 +7,17 @@ export function ActionGet( clients ){
         payload: clients
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
+//GETID
+export function ActionGetId( client ){
+    return {
+        type: 'GETID',
+        payload: client
+    };
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //ADD
 export function ActionAdd( client ){
     return {
@@ -12,13 +25,17 @@ export function ActionAdd( client ){
         payload: client
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //REMOVE
-export function ActionRemove( client ){
+export function ActionRemove( id ){
     return {
         type: 'REMOVE',
-        payload: client
+        payload: id
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //UPDATE
 export function ActionUpdate( client ){
     return {
@@ -26,3 +43,5 @@ export function ActionUpdate( client ){
         payload: client
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/

@@ -1,5 +1,6 @@
 import clientsDao from '../model/clients.dao.js';
 import servicesDao from '../model/services.dao.js';
+import UserDao from '../model/users.dao.js';
 import { schemaClientRegister, schemaClientUpdate, schemaClientUpdateService } from '../services/validate.js';
 
 
@@ -32,6 +33,15 @@ function viewId(req, res) {
     clientsDao.findById(req.params.id)
         .then(async (client) => {
             const services = await servicesDao.find();
+            const Users = await UserDao.find()
+            services.map((service) =>{
+                Users.map((user) => {
+                    if(user._id.toString() === service.user_id){
+                        service.user = user
+                        service.user.password = null;
+                    }
+                })
+            })
             // Recorremos el listado de servicios dentro de cada cliente.
             let serviceClient = [];
             for (const serviceClientId in client.services) {

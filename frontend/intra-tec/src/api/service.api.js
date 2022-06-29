@@ -2,7 +2,7 @@ import config from "../config/config";
 
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
-//trae los estados de los servios.
+//Trae los estados de los servios.
 export async function viewAllsState(){
     return fetch(`${config.api.url}/state`,{
         method: "GET",
@@ -12,12 +12,10 @@ export async function viewAllsState(){
         },
     })
     .then(async (res) => {
-        const data = await res.json()
-        if(res.status === 200) {
-            return data;
-        }else{
-            throw new Error(data.msg)
-        }
+       return await res.json()
+    })
+    .catch(err => {
+        throw new Error(err.message)
     })
 }
 /*-----------------------------------------------------------------*/    
@@ -30,15 +28,17 @@ export async function viewAlls(){
             'Content-Type': 'application/json',
             'auth-token': localStorage.getItem('auth-token')
         },
-        
     })
     .then(async (res) => {
-        const data = await res.json()
-        if(res.status === 200) {
+       const data = await res.json()
+       if(res.status === 200) {
             return data;
         }else{
             throw new Error(data.msg)
         }
+    })
+    .catch(err => {
+        throw new Error(err.message)
     })
 }
 /*-----------------------------------------------------------------*/    
@@ -60,6 +60,9 @@ export async function viewId(id){
             throw new Error(data.msg)
         }
     })
+    .catch(err => {
+        throw new Error(err.message)
+    })
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
@@ -80,6 +83,9 @@ export async function viewRecent(cant){
             throw new Error(data.msg)
         }
     })
+    .catch(err => {
+        throw new Error(err.message)
+    })
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
@@ -99,6 +105,9 @@ export async function viewStatistics(){
         }else{
             throw new Error(data.msg)
         }
+    })
+    .catch(err => {
+        throw new Error(err.message)
     })
 }
 /*-----------------------------------------------------------------*/    
@@ -121,6 +130,9 @@ export async function add(service){
             throw new Error(data.msg)
         }
     })
+    .catch(err => {
+        throw new Error(err.message)
+    })
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
@@ -142,6 +154,9 @@ export async function edit(service){
             throw new Error(data.msg)
         }
     })
+    .catch(err => {
+        throw new Error(err.message)
+    })
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
@@ -161,6 +176,9 @@ export async function del(id){
         }else{
             throw new Error(data.msg)
         }
+    })
+    .catch(err => {
+        throw new Error(err.message)
     })
 }
 /*-----------------------------------------------------------------*/    

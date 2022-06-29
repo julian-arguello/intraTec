@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading';
 import RoleAdmin from '../../components/authRole/RoleAdmin';
 
-//import Loading from '../../components/Loading';
-
-
 function Services(){
 
     const {findService } = useService()
