@@ -26,7 +26,7 @@ export function ServiceItem(props){
               {props.service.brand + ' (' + props.service.model + ')'}
             </div>
             <div className="d-flex justify-content-between align-items-center mt-4">
-              <small>hace {formatDistance(new Date(props.service.create_at), new Date(), { locale: es })}</small>
+              <small>Hace {formatDistance(new Date(props.service.create_at), new Date(), { locale: es })}.</small>
               <Link to={`/servicios/${props.service._id}`} className="box-proceso rounded-4 text-white d-flex align-items-center justify-content-center px-3 py-2">
                 <span className="icon-ver me-2"></span>Ver
               </Link>

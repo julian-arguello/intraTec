@@ -49,63 +49,6 @@ function Profile(props){
                         </div>
                     </ul>
                 </div>
-
-                {/* <hr />
-
-                <div className="table-responsive pt-4 pb-4">
-                    <h4 className="pb-2">Historial</h4>
-
-                    <table className="table align-middle table-dark table-hover">
-                        <thead>
-                            <tr>                    
-                                <th scope="col">Fecha de recepción</th>
-                                <th scope="col">Cliente</th>                                
-                                <th scope="col">Numero de serie</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">#</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>2022-04-03</td>
-                                <td>Quilmes</td>                                
-                                <td>asd456asd456</td>
-                                <td>En Reparación</td>
-                                <td>
-                                    <button href="#" className="text-white box-proceso rounded-4 border-0 m-2">
-                                        <img src={ imagenes.ver } alt="ver-card" className='m-1' />
-                                        <strong>Ver</strong>
-                                    </button>                                  
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2022-03-01</td>
-                                <td>Pepsi Co</td>                                
-                                <td>abc123asd456</td>
-                                <td>Revisado</td>
-                                <td>
-                                    <button href="#" className="text-white box-proceso rounded-4 border-0 m-2">
-                                        <img src={ imagenes.ver } alt="ver-card" className='m-1' />
-                                        <strong>Ver</strong>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2022-01-27</td>
-                                <td>Brahma</td>                                
-                                <td>asr456asd456</td>
-                                <td>Reparado</td>
-                                <td>
-                                    <button href="#" className="text-white box-proceso rounded-4 border-0 m-2">
-                                        <img src={ imagenes.ver } alt="ver-card" className='m-1' />
-                                        <strong>Ver</strong>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div> */}
             </div>
 
 
