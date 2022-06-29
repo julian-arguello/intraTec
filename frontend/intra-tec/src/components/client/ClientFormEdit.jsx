@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams , useNavigate } from 'react-router-dom'
+import { useParams , useNavigate, Link } from 'react-router-dom'
 import { useClient } from '../../context/Client.Context';
 import { schemaClientUpdate } from '../../services/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -14,8 +14,6 @@ export function ClientFormEdit(){
     
     useEffect( () => {
         findClientId(id)
-        console.log("client id ", id)
-        
    }, [] )
 
    return(
@@ -93,7 +91,9 @@ export function ClientFormEdit(){
                             
                 <div className='row'>
                     <div className="col-sm-8 d-flex flex-column align-items-sm-end">
-                        <button className='btn-add btn-back me-sm-3 order-2 order-sm-1' onClick={() => navigate(-1)}>Atrás</button>
+                        <Link to={`/clientes/${id}`} className="btn-add btn-back me-sm-3 order-2 order-sm-1 text-center">
+                                    Atrás
+                        </Link>
                         <button type='submit' className='btn-confirm order-1 order-sm-2 mb-4 mb-sm-0'>Confirmar</button>
                     </div>                    
                 </div>
