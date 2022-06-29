@@ -90,7 +90,7 @@ export function ServiceFormAdd(){
                         </label>
                     </div>
                     <div className="col-sm-4">
-                        <label className="form-label w-100">Numero de serie
+                        <label className="form-label w-100">Número de serie
                             <Field 
                                 type="text" 
                                 className="form-control" 
