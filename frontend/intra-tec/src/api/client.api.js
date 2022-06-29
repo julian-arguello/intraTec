@@ -99,7 +99,7 @@ export async function edit(clientes){
 /*-----------------------------------------------------------------*/
 //Elimina un cliente.
 export async function del(id){
-    return fetch(`${config.api.url}/servicios/${id}`,{
+    return fetch(`${config.api.url}/clientes/${id}`,{
         method: "DELETE",
         headers: {
             'Content-Type': 'application/json',
