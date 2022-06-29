@@ -9,10 +9,12 @@ import Home from './pages/Home';
 
 import Clients from './pages/clients/Clients';
 import ClientDetail from './pages/clients/ClientDetailPage';
+import ClientForm from './pages/clients/ClientForm';
 
 import Services from './pages/services/Services';
 import ServiceDetail from './pages/services/ServiceDetailPage';
 import ServiceForm from './pages/services/ServiceForm';
+
 import NotAcces from './pages/NotAcces';
 
 
@@ -76,6 +78,8 @@ function App() {
 
           <Route path='/clientes' element={<AuthRoute><Clients/></AuthRoute>}/>
           <Route path='/clientes/:id' element={<AuthRoute><ClientDetail/></AuthRoute>}/>
+          <Route path='/clientes/nuevo' element={roleAdmin() ? <AuthRoute><ClientForm edit={false}/></AuthRoute> : <NotAcces />}/>
+          <Route path='/clientes/editar/:id' element={roleAdmin() ? <AuthRoute><ClientForm edit={true}/></AuthRoute> : <NotAcces />}/>
 
           <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
           <Route path='/servicios/:id' element={<AuthRoute><ServiceDetail/></AuthRoute>}/>

@@ -8,9 +8,6 @@ import { es } from 'date-fns/locale'
 
 export function ServiceDetail(props){
     
-    let classState = "card-header alert m-0 "
-        console.log("props.service -> ", props.service)
-
     return(
      <div>
         <RoleAdmin>

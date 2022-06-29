@@ -7,13 +7,11 @@ import RoleAdmin from '../authRole/RoleAdmin';
 
 export function ClientDetail(props){
     
-    let classState = "card-header alert m-0 "
-
     return(
      <div>
         <RoleAdmin>
             <ModalDeleteButton id={props.client._id} />
-            <Link to={`/clientes`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
+            <Link to={`/clientes/editar/${props.client._id}`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
                 <span class="icon-editar me-2"></span>Editar
             </Link>
         </RoleAdmin>
