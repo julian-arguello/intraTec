@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useParams , useNavigate, Link } from 'react-router-dom'
 import { useClient } from '../../context/Client.Context';
-import { schemaClientUpdate } from '../../services/validate';
+import { schemaClientRegister } from '../../services/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
 
@@ -26,7 +26,7 @@ export function ClientFormEdit(){
             "email": state.client.email
             }}
         /*--------------------*/
-        validationSchema={schemaClientUpdate}
+        validationSchema={schemaClientRegister}
         /*--------------------*/
         onSubmit={(client) => {
             client._id = state.client._id
@@ -57,7 +57,7 @@ export function ClientFormEdit(){
                     <div className="col-sm-4 mb-4 mb-sm-0">
                         <label  className="form-label w-100">cuit/cuil
                             <Field 
-                                type="text" 
+                                type="number" 
                                 className="form-control"
                                 name="cuit_cuil"
                             />

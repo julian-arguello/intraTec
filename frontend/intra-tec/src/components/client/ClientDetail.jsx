@@ -3,6 +3,7 @@ import { ModalDeleteButton } from './ModalDeleate/ModalDeleateButton';
 import { ModalDelete } from './ModalDeleate/ModalDelete';
 import ServiceItem from '../service/ServiceItem';
 import RoleAdmin from '../authRole/RoleAdmin';
+import RoleSuperAdmin from '../authRole/RoleSuperAdmin'
 
 
 export function ClientDetail(props){
@@ -10,7 +11,9 @@ export function ClientDetail(props){
     return(
      <div>
         <RoleAdmin>
+        <RoleSuperAdmin>
             <ModalDeleteButton id={props.client._id} />
+        </RoleSuperAdmin>
             <Link to={`/clientes/editar/${props.client._id}`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
                 <span class="icon-editar me-2"></span>Editar
             </Link>
