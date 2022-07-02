@@ -4,6 +4,8 @@ export function Notification(){
 
     const{ state, notify } = useNotify() 
 
+    setTimeout( () => notify({}), 3000)
+
     return(
         <>
         {state.notification.hasOwnProperty('msj') && 
