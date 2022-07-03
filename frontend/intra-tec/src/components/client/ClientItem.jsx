@@ -11,15 +11,11 @@ export function ClientItems(props){
                     </h3>
                     <ul className='p-0 mb-3'>
                         <li className='d-flex align-items-center mb-3'>
-                            <span className="icon-cuil icon-card me-3"></span>
-                            <span>{props.client.cuit_cuil}</span> 
-                        </li>
-                        <li className='d-flex align-items-center mb-3'>
-                            <span className="icon-phone icon-card me-3"></span>
+                            <span className="icon-phone f-27 me-3"></span>
                             <span>{props.client.phone}</span>
                         </li>
                         <li className='d-flex align-items-center'>
-                            <span className="icon-mail me-3"></span>
+                            <span className="icon-mail icon-client me-3"></span>
                             <span>{props.client.email}</span>
                         </li>
                     </ul>

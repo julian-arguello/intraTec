@@ -14,18 +14,27 @@ export function ClientDetail(props){
         <Link to={`/clientes`} className="btn-back position-details-back text-center">
             <span className="icon-back me-2"></span>Atrás
         </Link>
-        <ul className='mb-5'>
-            <li className='d-flex align-items-center mb-4'>
-                <span className='icon-cuil me-3 icon-card'></span>
-                <p className='mb-0'>{ props.client.cuit_cuil }</p>
+        <ul className='row ps-0 mb-5'>
+            <li className='col-12 col-sm-3 d-flex flex-column justify-content-between mb-5 mb-sm-0'>
+                <h3 className='h4 mb-3 text-center text-sm-start'>Cuil / Cuit</h3>
+                <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
+                    <span className='icon-cuil me-3 icon-card'></span>
+                    <p className='mb-0'>{ props.client.cuit_cuil }</p>
+                </div>
             </li>
-            <li className='d-flex align-items-center mb-4'>
-                <span className='icon-phone me-3 icon-card'></span>
-                <p className='mb-0'>{ props.client.phone }</p>
+            <li className="col-12 col-sm-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start mb-5 mb-sm-0">
+                <h3 className='h4 mb-3 text-center text-sm-start'>Teléfono</h3>
+                <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
+                    <span className='icon-phone me-3 icon-card'></span>
+                    <p className='mb-0'>{ props.client.phone }</p>
+                </div>
             </li>
-            <li className='d-flex align-items-center'>
-                <span className='me-3 icon-card icon-mail'></span>
-                <p className='mb-0'>{ props.client.email }</p>
+            <li className="col col-md-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start">
+                <h3 className='h4 mb-3 text-center text-sm-start'>Correo</h3>
+                <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
+                    <span className='me-3 icon-card icon-mail'></span>
+                    <p className='mb-0'>{ props.client.email }</p>
+                </div>
             </li>
         </ul>
 
@@ -34,7 +43,7 @@ export function ClientDetail(props){
         <h3 className='my-5'>Servicios asociados</h3>
 
         <div className="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 gy-5 gx-0 gx-sm-5 mb-5 mb-sm-0">
-            {(props.client.services.length == 0) && <p>Aún no tienes servicios asosciados</p>}
+            {(props.client.services.length == 0) && <p>Aún no tienes servicios asociados</p>}
             {props.client.services.map((service)=>(
                 <ServiceItem key={service._id} service={service} clientDetail={true}/>
             ))}

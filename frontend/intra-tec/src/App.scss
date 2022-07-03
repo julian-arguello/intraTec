@@ -76,15 +76,21 @@
     content: "\e90c";
   }
 
-  .icon-mail {
-      font-size: 30px!important;
-  }
   .icon-new-service:before {
     content: "\e90d";
   }
   .icon-phone:before {
     content: "\e90e";
   }
+
+  .f-27 {
+    font-size: 27px!important;
+  }
+
+  .f-35 {
+    font-size: 35px!important;  
+  }
+
   .icon-profile:before {
     content: "\e90f";
   }
@@ -117,6 +123,10 @@
 
   .icon-home {
       font-size: 30px;
+  }
+
+  .icon-client {
+      font-size: 20px;
   }
 
 // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
@@ -574,10 +584,4 @@ h1 {
     color: #cc3333;
 } 
 
-
-//PROFILE 
-
-.icon-size-profile {
-    font-size: 80px;
-}
 
