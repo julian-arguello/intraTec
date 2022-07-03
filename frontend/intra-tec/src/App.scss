@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('../public/fonts/icomoon.eot?t2mh4z');
-    src:  url('../public/fonts/icomoon.eot?t2mh4z#iefix') format('embedded-opentype'),
-      url('../public/fonts/icomoon.ttf?t2mh4z') format('truetype'),
-      url('../public/fonts/icomoon.woff?t2mh4z') format('woff'),
-      url('../public/fonts/icomoon.svg?t2mh4z#icomoon') format('svg');
+    src:  url('../public/fonts/icomoon.eot?y8ppmz');
+    src:  url('../public/fonts/icomoon.eot?y8ppmz#iefix') format('embedded-opentype'),
+      url('../public/fonts/icomoon.ttf?y8ppmz') format('truetype'),
+      url('../public/fonts/icomoon.woff?y8ppmz') format('woff'),
+      url('../public/fonts/icomoon.svg?y8ppmz#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -26,66 +26,97 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
-  .icon-equipo:before {
-    content: "\e90d";
-  }
   
-  .icon-dashboard:before {
-    content: "\e901";
-  }
-  .icon-editar:before {
-    content: "\e902";
-  }
-  .icon-en-proceso:before {
-    content: "\e903";
-  }
-  .icon-lupa:before {
-    content: "\e904";
-  }
-  .icon-reparados:before {
-    content: "\e905";
-  }
-  .icon-servicios:before {
-    content: "\e906";
-  }
-  .icon-sin-reparacion:before {
-    content: "\e907";
-  }
-  .icon-usuario_1:before {
-    content: "\e908";
-  }
-  .icon-ver:before {
-    content: "\e909";
-  }
-  .icon-clientes:before {
-    content: "\e90a";
-  }
-  .icon-cerrar-sesion:before {
-    content: "\e90b";
-  }
-  .icon-borrar:before {
-    content: "\e90c";
-  }
-  .icon-agregar:before {
+  .icon-back:before {
     content: "\e900";
   }
+  .icon-box:before {
+    content: "\e901";
+  }
+  .icon-cancel:before {
+    content: "\e902";
+  }
+  .icon-cancel {
+      font-size: 25px!important;
+  }
+  .icon-clients:before {
+    content: "\e903";
+  }
+  .icon-clients {
+      font-size: 24px!important;
+  }
+  .icon-clock:before {
+    content: "\e904";
+  }
+  .icon-confirm:before {
+    content: "\e905";
+  }
+  .icon-cuil:before {
+    content: "\e906";
+  }
+  .icon-dashboard:before {
+    content: "\e907";
+  }
+  .icon-delete:before {
+    content: "\e908";
+  }
+  .icon-edit:before {
+    content: "\e909";
+  }
+  .icon-eye:before {
+    content: "\e90a";
+  }
+  .icon-logout:before {
+    content: "\e90b";
+  }
+  .icon-logout {
+      font-size: 37px!important;
+  }
+  .icon-mail:before {
+    content: "\e90c";
+  }
 
-  .icon-agregar {
-    font-size: 30px;
+  .icon-mail {
+      font-size: 30px!important;
+  }
+  .icon-new-service:before {
+    content: "\e90d";
+  }
+  .icon-phone:before {
+    content: "\e90e";
+  }
+  .icon-profile:before {
+    content: "\e90f";
+  }
+  .icon-receptions:before {
+    content: "\e910";
+  }
+  .icon-repair:before {
+    content: "\e911";
+  }
+  .icon-repair {
+      font-size: 25px!important;
+  }
+  .icon-services:before {
+    content: "\e912";
+  }
+  .icon-sync:before {
+    content: "\e913";
+  }
+  .icon-user_add:before {
+    content: "\e914";
+  }
+  .icon-user-remove:before {
+    content: "\e915";
+  }
+
+  .icon-user-nav {
+      font-size: 60px;
+      color: #006699;
   }
 
   .icon-home {
       font-size: 30px;
-  }
-
-  .icon-perfil {
-      color: #006699;
-      font-size: 70px;
-  }
-
-  .fs-28 {
-      font-size: 28px!important;
   }
 
 // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
@@ -106,17 +137,12 @@ a {
     text-decoration: none!important;
 }
 
-.bg-dark {
-    background: black!important;
-}
-
 .fondo {
     background: blue;
     background: linear-gradient(87deg, rgba(255,255,255,1) 0%, rgba(0,102,153,1) 100%);
     height: 100vh;
     width: auto;
 }
-
 
 .loginBox {
     background: white;
@@ -139,7 +165,7 @@ a {
     border: 1px solid #006699;
     border-radius: 30px;
     color: #006699;
-    padding: 10px 20px;
+    padding: 10px 0;
     font-weight: bold;
     width: 193px;
     position: absolute;
@@ -148,16 +174,47 @@ a {
     background: white;
 }
 
+.btn-edit {
+    width: max-content;
+    padding: 10px 20px;
+}
+
+.btn-back {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    font-weight: bold;
+    width: 120px;
+    background: white;
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 100px;
+}
+
+.position-details-back {
+    right: 320px;
+}
+
+.position-edit-back {
+    right: 200px;
+}
+
+.btn-back:hover {
+    color: rgb(0, 0, 0);
+}
+
 .btn-delete {
     border: 1px solid red;
     border-radius: 30px;
     color: red;
     padding: 10px 20px;
     font-weight: bold;
-    width: 193px;
+    width: 120px;
     position: absolute;
     top: 60px;
-    right: 270px;
+    right: 175px;
     background-color: white;
 }
 
@@ -165,10 +222,13 @@ a {
     border: 1px solid #006837;
     border-radius: 30px;
     color: #006837;
-    padding: 10px 20px;
+    padding: 10px 0px;
     font-weight: bold;
-    width: 193px;
+    width: 150px;
     background: white;
+    position: absolute;
+    top: 60px;
+    right: 40px;
 }
 
 .notification {
@@ -176,7 +236,7 @@ a {
     position: absolute!important;
     left: 0;
     right: 0;
-    top: 0;
+    top: 10px;
 }
 
 /* NAVBAR */ 
@@ -232,6 +292,7 @@ h1 {
 
 .sidebar a{
     color: white!important;
+    font-weight: 500;
 }
 
 .sidebar a span {
@@ -269,6 +330,7 @@ h1 {
 #main {
     transition: margin-left .5s; /* If you want a transition effect */
     padding: 40px;
+    position: relative;
 }
 
 .main-margin-open {
@@ -423,6 +485,17 @@ h1 {
 .box-recepcionados.card {
     border: 6px solid #ff6633;
     border-radius: 20px;
+    background: black;
+}
+
+.box-recepcionados .estado {
+    background-color: #ff6633;
+    border-radius: 10px;
+    padding: 10px;
+    width: max-content;
+    margin: auto;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .box-proceso {
@@ -432,6 +505,17 @@ h1 {
 .box-proceso.card {
     border: 6px solid #006699;
     border-radius: 20px;
+    background: black;
+}
+
+.box-proceso .estado {
+    background-color: #006699;
+    border-radius: 10px;
+    padding: 10px;
+    width: max-content;
+    margin: auto;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .box-reparados {
@@ -441,6 +525,17 @@ h1 {
 .box-reparados.card {
     border: 6px solid #006837;
     border-radius: 20px;
+    background: black;
+}
+
+.box-reparados .estado {
+    background-color: #006837;
+    border-radius: 10px;
+    padding: 10px;
+    width: max-content;
+    margin: auto;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .box-sinreparacion {
@@ -450,6 +545,17 @@ h1 {
 .box-sinreparacion.card {
     border: 6px solid #cc3333;
     border-radius: 20px;
+    background: black;
+}
+
+.box-sinreparacion .estado {
+    background-color: #cc3333;
+    border-radius: 10px;
+    padding: 10px;
+    width: max-content;
+    margin: auto;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 //Validate Errors

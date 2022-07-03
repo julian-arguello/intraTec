@@ -37,8 +37,8 @@ function Home(){
             <div className='order-3 order-sm-1'>
                 <RoleAdmin>
                     <Link to='/servicios/nuevo' className="btn-add d-flex justify-content-center align-items-center">
-                                <span className="icon-agregar me-2"></span>
-                                Añadir servicio
+                                <span className="icon-new-service me-2"></span>
+                                Nuevo servicio
                     </Link>
                 </RoleAdmin>
 

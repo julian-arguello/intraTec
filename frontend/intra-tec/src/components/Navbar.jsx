@@ -29,7 +29,7 @@ function Navbar(){
                 <li>
                     <div className='d-flex align-items-center mb-4 user'>
                         <div className='me-2'>
-                            <span className="icon-usuario_1 icon-perfil"></span>
+                            <span className="icon-user-nav icon-profile"></span>
                         </div>
                         <div className='ms-2 text-white'>
                             <h2 className='d-block mb-2 h6'>{state.user.name + " " + state.user.lastname}  </h2>
@@ -46,13 +46,13 @@ function Navbar(){
                         </li>
                         <li className='mb-3'>
                             <Link to='/servicios' onClick={ isMobile ? toggleMenu : ''} className="d-flex align-items-center">
-                                <span className="icon-servicios me-3"></span>
+                                <span className="icon-services me-3"></span>
                                 Servicios
                             </Link>
                         </li>
                         <li className='mb-3'>
                             <Link to='/clientes' onClick={ isMobile ? toggleMenu : ''} className="d-flex align-items-center">
-                                <span className="icon-clientes me-3"></span>
+                                <span className="icon-clients me-3"></span>
                                 Clientes
                             </Link>
                         </li>
@@ -63,13 +63,13 @@ function Navbar(){
                     <ul className='p-0'>
                         <li className='mb-3 d-flex align-items-center'>
                             <Link to='/perfil' onClick={ isMobile ? toggleMenu : ''} className="d-flex align-items-center">
-                                <span className="icon-usuario_1 me-3"></span>
+                                <span className="icon-profile me-3"></span>
                                 Ver perfil
                             </Link>
                         </li>
                         <li className='mb-3 d-flex align-items-center'>
                             <Link to='/' onClick={() => logout()} className="d-flex align-items-center">
-                                <span className="icon-cerrar-sesion fs-28 me-3"></span>
+                                <span className="icon-logout me-3"></span>
                                 Cerrar sesión
                             </Link>
                         </li>

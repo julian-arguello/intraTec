@@ -48,7 +48,7 @@ export function ServiceFormEdit(){
             <Form>
                 <div className="row mb-4">
                     <div className="col-sm-4 mb-4 mb-sm-0">
-                        <label className="form-label w-100">Cliente
+                        <label className="form-label w-100">Estado
                             <Field 
                                 className="form-select"
                                 name="state" 
@@ -63,7 +63,7 @@ export function ServiceFormEdit(){
                             </Field>
                             <ErrorMessage name="state" component={() => (<span className='validateErrors'>{errors.state}</span>)}/>
                             {!(errors.client_id && touched.client_id) && <div className="form-text m-0">
-                                Seleccione el cliente al cual el servicio se encontrará asociado. 
+                                Seleccione el estado del servicio. 
                             </div>}
                         </label>
                     </div>
@@ -127,11 +127,13 @@ export function ServiceFormEdit(){
                 </div>
                 
                 <div className='row'>
-                    <div className="col-sm-8 d-flex flex-column align-items-sm-end">
-                        <Link to={`/servicios/${id}`} className="btn-add btn-back me-sm-3 order-2 order-sm-1 text-center">
-                                    Atrás
+                    <div className="col-sm-8 d-flex align-items-sm-center">
+                        <Link to={`/servicios/${id}`} className="btn-back position-edit-back text-center me-sm-3">
+                            <span className="icon-back me-2"></span>Atrás
                         </Link>
-                        <button type='submit' className='btn-confirm order-1 order-sm-2 mb-4 mb-sm-0'>Confirmar</button>
+                        <button type='submit' className='btn-confirm order-1 order-sm-2 mb-4 mb-sm-0'>
+                            <span className="icon-confirm me-2"></span>    Confirmar
+                        </button>
                     </div>                    
                 </div>
             </Form>

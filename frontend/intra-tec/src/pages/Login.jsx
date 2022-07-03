@@ -41,9 +41,9 @@ function Login(){
                             </div>
 
                             <div className="flex-grow-1 ms-md-5 col-xs-12">                    
-                                <h2 className="text-center text-md-start h2 pb-2 pb-md-0">Bienvenido</h2>
+                                <h2 className="text-center text-md-start pb-2 pb-md-0 mb-4">Bienvenido</h2>
                                 <div className="mb-3">
-                                    <label className="form-label text-start  w-100">Email
+                                    <label className="form-label text-start  w-100">Correo electrónico
                                         <Field 
                                             type="text" 
                                             className="form-control" 

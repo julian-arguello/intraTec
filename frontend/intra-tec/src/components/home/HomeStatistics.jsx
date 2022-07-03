@@ -12,7 +12,7 @@ export function HomeStatistics(){
             <div className='box-recepcionados p-4 rounded-4'>
                 <div className="d-flex justify-content-between align-items-center mb-3">
                     <p className="h3"><strong>{state.statistics.recepcionado}</strong></p>
-                    <span className="icon-servicios icon-home"></span>
+                    <span className="icon-receptions icon-home"></span>
                 </div>
                 <p className="m-0"><strong>Recepcionados</strong></p>
             </div>
@@ -21,16 +21,16 @@ export function HomeStatistics(){
             <div className='box-proceso p-4 rounded-4'>
                 <div className="d-flex justify-content-between align-items-center mb-3">
                     <p className="h3"><strong>{state.statistics.revisado}</strong></p>
-                    <span className="icon-en-proceso icon-home"></span>
+                    <span className="icon-sync icon-home"></span>
                 </div>
-                <p className="m-0"><strong>En Proceso</strong></p>
+                <p className="m-0"><strong>Revisados</strong></p>
             </div>
         </div>
         <div className="col-12 col-md-6 col-xl-3">
             <div className='box-reparados p-4 rounded-4'>
                 <div  className="d-flex justify-content-between align-items-center mb-3">
                     <p className="h3"><strong>{state.statistics.reparado}</strong></p>
-                    <span className="icon-reparados icon-home"></span>
+                    <span className="icon-repair icon-home"></span>
                 </div>
                 <p className="m-0"><strong>Reparados</strong></p>
             </div>
@@ -39,7 +39,7 @@ export function HomeStatistics(){
             <div className='box-sinreparacion p-4 rounded-4'>
                 <div className="d-flex justify-content-between align-items-center mb-3">
                     <p className="h3"><strong>{state.statistics.sin_reparacion}</strong></p>
-                    <span className="icon-sin-reparacion icon-home"></span>
+                    <span className="icon-cancel icon-home"></span>
                 </div>
                 <p className="m-0"><strong>Sin Reparación </strong></p>
             </div>

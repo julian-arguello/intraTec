@@ -3,20 +3,25 @@ import { Link } from 'react-router-dom';
 import { ModalDeleteButton } from './ModalDeleate/ModalDeleateButton';
 import { ModalDelete } from './ModalDeleate/ModalDelete';
 import RoleAdmin from '../authRole/RoleAdmin';
-import { formatRelative, subDays } from 'date-fns'
-import { es } from 'date-fns/locale'
+import { formatRelative, subDays } from 'date-fns';
+import { es } from 'date-fns/locale';
+
 
 export function ServiceDetail(props){
-    
     return(
      <div>
         <RoleAdmin>
             <ModalDeleteButton id={props.service._id} />
             <Link to={`/servicios/editar/${props.service._id}`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
-                <span className="icon-editar me-2"></span>Editar
+                <span className="icon-edit me-2"></span>Editar
             </Link>
         </RoleAdmin>
-         <h2 className='my-5 text-center text-sm-start'>Detalle de servicio</h2>
+        <div className="d-flex align-items-center justify-content-between">
+            <h2 className='my-5 text-center text-sm-start'>Detalle de servicio</h2>
+            <Link to={`/servicios`} className="btn-back position-details-back text-center">
+                <span className="icon-back me-2"></span>Atrás
+            </Link>
+        </div>
          <ul className="row ps-0">
             <li className="col-12 col-sm-3 d-flex flex-column justify-content-between mb-5 mb-sm-0">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Técnico a cargo</h3>
@@ -35,6 +40,7 @@ export function ServiceDetail(props){
             <li className="col-12 col-sm-4 d-flex flex-column justify-content-between mb-5 mb-sm-0">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Fecha recepción</h3>
                 <p className='col-10 m-auto col-sm-8 m-sm-0 bg-black text-white px-3 py-4 rounded-4 text-center text-sm-start'>
+                    <span className='icon-clock me-3'></span>
                     {formatRelative(new Date(props.service.create_at), new Date(), { locale: es })}
                 </p>
             </li>

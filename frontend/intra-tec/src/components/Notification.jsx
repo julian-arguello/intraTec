@@ -5,7 +5,7 @@ export function Notification(){
     const{ state, notify } = useNotify() 
 
     if(state.notification.hasOwnProperty('msj')){
-        setTimeout( () => notify({}), 3000);
+        setTimeout( () => notify({}), 10000);
     }
     
 
@@ -15,7 +15,7 @@ export function Notification(){
         
         <div className="alert alert-success m-auto d-flex justify-content-between align-items-center notification" role="alert">
             {state.notification.msj}
-            <span className="icon-sin-reparacion" role="button" onClick={()=>(notify({}))}></span>
+            <span className="icon-cancel" role="button" onClick={()=>(notify({}))}></span>
         </div>
         }
         </>
