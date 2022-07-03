@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 export function ClientItems(props){
 
     return(
-        <div key={props.client._id} className="col client-card">
-            <div className="text-white bg-dark p-sm-3">
+        <div key={props.client._id} className="col">
+            <div className="card text-white bg-black p-sm-3 rounded-4">
                 <div className="card-body">
-                    <h3 className='text-center h5 mb-5'>
+                    <h3 className='text-center h5 mb-4'>
                         <strong> {props.client.name_busines}</strong>
                     </h3>
-                    <ul className='p-0 mb-5'>
+                    <ul className='p-0 mb-3'>
                         <li className='d-flex align-items-center mb-3'>
                             <span className="icon-cuil icon-card me-3"></span>
                             <span>{props.client.cuit_cuil}</span> 

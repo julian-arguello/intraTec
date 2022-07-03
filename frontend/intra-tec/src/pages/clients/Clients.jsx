@@ -17,9 +17,9 @@ function Clients(props){
 
     return(
         <div>
-            <div className="d-flex justify-content-between align-items-center">
+            <div className="d-flex justify-content-between align-items-center mt-5 mt-sm-0">
                 <div className="col-12 col-sm-auto my-5">
-                    <h2>Clientes</h2>
+                    <h2 className='mt-5 mt-sm-0 text-center text-sm-start'>Clientes</h2>
                 </div>
                 <div className="col-12 col-sm-auto mb-5">
                 <RoleAdmin>

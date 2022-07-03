@@ -6,32 +6,26 @@ function Profile(){
 const { state } = useAuth();
 
     return(        
-        <div className="container">
-
-            <div className=" d-flex justify-content-between align-items-center">
- 
-                <h2>Perfil de {authRole(state.user.role.role_name)}</h2>
-                {/*<button className="btn btn-outline-primary" to="#">Editar perfil</button>*/}
-
-            </div>           
-                           
-            <div className="row">
-                <div className="pt-4 pb-4">
-                    
-                    <div className="list-unstyled d-xs-inline d-md-flex justify-content-between pt-2">
+        <div>
+            <h2 className='my-5 text-center text-sm-start'>Perfil de {authRole(state.user.role.role_name)}</h2>
+            {/*<button className="btn btn-outline-primary" to="#">Editar perfil</button>*/}
+            <ul className='p-4 card w-75 m-auto'>
+                <li className='d-flex align-items-center mb-4'>
+                    <span className='icon-profile icon-size-profile me-2'></span>
+                    <div className='d-flex flex-column'>
+                        <span>{state.user.name + " " + state.user.lastname}</span> 
+                        <span>{state.user.role.role_name}</span>
+                    </div>
+                </li>
+                <li className='d-flex align-items-center'>
+                    <span className='icon-mail icon-size-profile me-2'></span>
+                    {state.user.email}
+                </li>
+            </ul>
                         
-                            <ul className="list-unstyled">
-                                <li>Nombre: {state.user.name + " " + state.user.lastname}</li>
-                                <li>Rol: {state.user.role.role_name}</li>
-                                <li>Email: {state.user.email}</li>
-                            </ul>
-                        
+        </div>
 
-                        <br className="p-1 d-md-none" />
-
-                       
-                        <br className="p-1 d-md-none" />
-        {/*
+        /*{
                         <div className="d-md-flex justify-content-center justify-content-md-end">
                             <div className='me-4'>
                                 <p className=" text-dark badge p-0">Cantidad de equipos recepcionados</p>
@@ -44,15 +38,8 @@ const { state } = useAuth();
                                 <p className="text-center p-2 rounded-4 text-white box-reparados rounded-2 border-0 h3">134</p>
                             </div>
                         </div>
-        */}
-                    </div>
-                </div>
-            </div>
+        }*/
 
-
-
-
-        </div>
     )
 }
 export default Profile;

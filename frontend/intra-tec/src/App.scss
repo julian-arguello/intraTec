@@ -353,30 +353,23 @@ h1 {
     font-size: 40px;
 }
 
-/* ADD SERVICE */
-
-
-/* CLIENTS */
-
-.client-card > div {
-    border-radius: 20px;
-}
-
-
-
 /* MOBILE */
 
 @media only screen and (max-width: 575px) {
 
+    body {
+        font-size: 14px!important;
+    }
+
     h1 {
         background-image: url('assets/nav-mobile.png');
         margin-bottom: 0;
-        width: 50px;
+        width: 40px;
     }
 
     .logo {
         position: absolute;
-        top: 0;
+        top: -49px;
         right: 0;
         z-index: 1000;
         margin-bottom: 0;
@@ -385,7 +378,7 @@ h1 {
 
     .sidebar {
         width: 100vw;
-        height: 100vh;
+        height: max-content;
         padding: 20px 15px;
         position: relative;
     }
@@ -419,18 +412,23 @@ h1 {
     }
 
     .btn-add {
-        top: 100px;
+        top: 50px;
         right: 0;
         left: 0;
         margin: auto;
     }
 
     .btn-confirm {
+        position: relative;
+        right: 0;
+        left: 0;
+        top: 0;
         width: 100%;
     }
 
-    .btn-back {
-        width: 100px;
+    .position-edit-back, .position-details-back {
+        right: 15px;
+        top: 40px;
     }
 
     .btn-delete {
@@ -438,7 +436,7 @@ h1 {
         right: 0;
         left: 0;
         top: 0;
-        margin: auto;
+        width: 100%;
         margin-bottom: 20px;
         margin-top: 20px;
     }
@@ -446,6 +444,7 @@ h1 {
     .btn-edit {
         position: relative;
         top: 0;
+        width: 100%;
     }
 
     .notification {
@@ -490,12 +489,15 @@ h1 {
 
 .box-recepcionados .estado {
     background-color: #ff6633;
-    border-radius: 10px;
+    border-radius: 0 0 10px 0;
     padding: 10px;
     width: max-content;
     margin: auto;
     font-size: 14px;
     font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .box-proceso {
@@ -510,12 +512,15 @@ h1 {
 
 .box-proceso .estado {
     background-color: #006699;
-    border-radius: 10px;
+    border-radius: 0 0 10px 0;
     padding: 10px;
     width: max-content;
     margin: auto;
     font-size: 14px;
     font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .box-reparados {
@@ -530,12 +535,15 @@ h1 {
 
 .box-reparados .estado {
     background-color: #006837;
-    border-radius: 10px;
+    border-radius: 0 0 10px 0;
     padding: 10px;
     width: max-content;
     margin: auto;
     font-size: 14px;
     font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .box-sinreparacion {
@@ -550,12 +558,15 @@ h1 {
 
 .box-sinreparacion .estado {
     background-color: #cc3333;
-    border-radius: 10px;
+    border-radius: 0 0 10px 0;
     padding: 10px;
     width: max-content;
     margin: auto;
     font-size: 14px;
     font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 //Validate Errors
@@ -563,4 +574,10 @@ h1 {
     color: #cc3333;
 } 
 
+
+//PROFILE 
+
+.icon-size-profile {
+    font-size: 80px;
+}
 

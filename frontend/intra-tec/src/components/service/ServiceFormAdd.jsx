@@ -128,19 +128,14 @@ export function ServiceFormAdd(){
                         </label>
                     </div>
                 </div>
-                
-                <div className='row'>
-                    <div className="col-sm-8 d-flex align-items-sm-center">
-                        <button className='btn-back position-edit-back me-sm-3 order-2 order-sm-1' onClick={() => navigate(-1)}>
-                            <span className="icon-back me-2"></span>
-                            Atrás
-                        </button>
-                        <button type='submit' className='btn-confirm order-1 order-sm-2 mb-4 mb-sm-0'>
-                            <span className="icon-confirm me-2"></span>
-                            Confirmar
-                        </button>
-                    </div>                    
-                </div>
+                <button className='btn-back position-edit-back me-sm-3 order-2 order-sm-1' onClick={() => navigate(-1)}>
+                    <span className="icon-back me-2"></span>
+                    Atrás
+                </button>
+                <button type='submit' className='btn-confirm order-1 order-sm-2'>
+                    <span className="icon-confirm me-2"></span>
+                    Confirmar
+                </button>
             </Form>
         )}
         </Formik>

@@ -21,17 +21,17 @@ export function stateIcon(state) {
     switch(state) {
         case "Recepcionado":
             return (
-                <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
+                <div className="d-flex justify-content-center justify-content-sm-start align-items-center">
                     <span>Recepcionado</span>
-                    <span className="icon-servicios icon-home ms-3"></span>  
+                    <span className="icon-receptions icon-home ms-3"></span>  
                 </div>
             );
 
         case "Revisado":
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
-                    <span>En proceso</span>
-                    <span className="icon-en-proceso icon-home ms-3"></span>  
+                    <span>Revisado</span>
+                    <span className="icon-sync icon-home ms-3"></span>  
                 </div>
             );
         
@@ -39,7 +39,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
                     <span>Reparado</span>
-                    <span className="icon-reparados icon-home ms-3"></span>  
+                    <span className="icon-repair icon-home ms-3"></span>  
                 </div>
             );
         
@@ -47,7 +47,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
                     <span>Sin reparación</span>
-                    <span className="icon-sin-reparacion icon-home ms-3"></span>  
+                    <span className="icon-cancel icon-home ms-3"></span>  
                 </div>
             );
     }

@@ -9,24 +9,16 @@ import { es } from 'date-fns/locale';
 
 export function ServiceDetail(props){
     return(
-     <div>
-        <RoleAdmin>
-            <ModalDeleteButton id={props.service._id} />
-            <Link to={`/servicios/editar/${props.service._id}`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
-                <span className="icon-edit me-2"></span>Editar
-            </Link>
-        </RoleAdmin>
-        <div className="d-flex align-items-center justify-content-between">
-            <h2 className='my-5 text-center text-sm-start'>Detalle de servicio</h2>
-            <Link to={`/servicios`} className="btn-back position-details-back text-center">
-                <span className="icon-back me-2"></span>Atrás
-            </Link>
-        </div>
+     <div className='pt-5 pt-sm-0'>
+        <h2 className='my-5 text-center text-sm-start'>Detalle de servicio</h2>
+        <Link to={`/servicios`} className="btn-back position-details-back text-center">
+            <span className="icon-back me-2"></span>Atrás
+        </Link>
          <ul className="row ps-0">
             <li className="col-12 col-sm-3 d-flex flex-column justify-content-between mb-5 mb-sm-0">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Técnico a cargo</h3>
                 <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
-                    <span className="icon-usuario_1 icon-perfil"></span>
+                    <span className="icon-profile icon-card me-2"></span>
                     <ul className='ps-2'>
                         <li>
                             <strong>{props.service.user.name}</strong>
@@ -37,25 +29,25 @@ export function ServiceDetail(props){
                     </ul>
                 </div>
             </li>
-            <li className="col-12 col-sm-4 d-flex flex-column justify-content-between mb-5 mb-sm-0">
+            <li className="col-12 col-sm-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start mb-5 mb-sm-0">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Fecha recepción</h3>
-                <p className='col-10 m-auto col-sm-8 m-sm-0 bg-black text-white px-3 py-4 rounded-4 text-center text-sm-start'>
-                    <span className='icon-clock me-3'></span>
+                <div className='d-flex align-items-center'>
+                    <span className='icon-clock icon-card me-3'></span>
                     {formatRelative(new Date(props.service.create_at), new Date(), { locale: es })}
-                </p>
+                </div>
             </li>
-            <li className="col col-md-3 d-flex flex-column justify-content-between">
+            <li className="col col-md-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Estado</h3>
-                <p className={stateClass(props.service.state) + ' col-10 col-sm-8 m-auto m-sm-0 text-center text-white px-3 py-4 rounded-4'}>
+                <div className={stateClass(props.service.state) + ' mb-0 py-2 px-4 rounded-2 text-white'}>
                     {stateIcon(props.service.state)}
-                </p>
+                </div>
             </li>
          </ul>
          <hr className='hr my-5' />
          <div className="row mb-5 gy-4 gy-sm-0">
             <li className="col-6 col-md-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start">
                 <h3 className='h4 mb-3'>Cliente</h3>
-                <h4 className='mb-0'>{props.service.client.name_busines}</h4>
+                <p className='mb-0'>{props.service.client.name_busines}</p>
             </li>
             <li className="col-6 col-md-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start">
                 <h3 className='h4 mb-3'>Marca</h3>
@@ -79,6 +71,12 @@ export function ServiceDetail(props){
          <RoleAdmin>
             <ModalDelete id={props.service._id} />
          </RoleAdmin>
+         <RoleAdmin>
+            <ModalDeleteButton id={props.service._id} />
+            <Link to={`/servicios/editar/${props.service._id}`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
+                <span className="icon-edit me-2"></span>Editar
+            </Link>
+        </RoleAdmin>
      </div>
     )
 }
