@@ -34,13 +34,13 @@ export function ClientFormEdit(){
             client.softDelete = false
             editClient(client)
             .then(()=>{
-                notify({msj: 'El Cliente fue editado correctamente.'})
+                notify({msj: 'El cliente fue editado correctamente.'})
                 navigate('/clientes')
             })
         }}
         /*--------------------*/
     >
-        {( { errors } )=>(
+        {( { errors, touched } )=>(
             <Form>
                 <div className='row mb-4'>
 
@@ -52,6 +52,9 @@ export function ClientFormEdit(){
                                 name="name_busines"
                             />
                             <ErrorMessage name="name_busines" component={() => (<span className='validateErrors'>{errors.name_busines}</span>)}/>
+                            {!(errors.name_busines && touched.name_busines) && <div className="form-text m-0">
+                                Ingrese el nombre del cliente a ingresar, con al menos tres caracteres.
+                            </div>}
                         </label>
                     </div>
                     <div className="col-sm-4 mb-4 mb-sm-0">
@@ -62,6 +65,9 @@ export function ClientFormEdit(){
                                 name="cuit_cuil"
                             />
                             <ErrorMessage name="cuit_cuil" component={() => (<span className='validateErrors'>{errors.cuit_cuil}</span>)}/>
+                            {!(errors.cuit_cuil && touched.cuit_cuil) && <div className="form-text m-0">
+                                Ingrese el cuit / cuil del cliente a ingresar, con al menos once números.
+                            </div>}
                         </label>
                     </div>
                 </div>
@@ -75,6 +81,9 @@ export function ClientFormEdit(){
                                 name="phone"
                             />
                             <ErrorMessage name="phone" component={() => (<span className='validateErrors'>{errors.phone}</span>)}/>
+                            {!(errors.phone && touched.phone) && <div className="form-text m-0">
+                                Ingrese el número telefónico del cliente a ingresar, con al menos ocho números.
+                            </div>}
                         </label>
                     </div>
                     <div className="col-sm-4">
@@ -85,6 +94,9 @@ export function ClientFormEdit(){
                                 name="email"
                             />
                             <ErrorMessage name="email" component={() => (<span className='validateErrors'>{errors.email}</span>)}/>
+                            {!(errors.email && touched.email) && <div className="form-text m-0">
+                                Ingrese él corre electrónico del cliente a ingresar, con al menos ocho números.
+                            </div>}
                         </label>
                     </div>
                 </div>

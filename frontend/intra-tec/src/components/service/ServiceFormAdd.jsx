@@ -45,7 +45,7 @@ export function ServiceFormAdd(){
         }}
         /*--------------------*/
     >
-        {( { errors } )=>(
+        {( { errors, touched  } )=>(
             <Form>
                 <div className='row mb-4'>
                     <div className="col-sm-4 mb-4 mb-sm-0">
@@ -63,7 +63,10 @@ export function ServiceFormAdd(){
                                         </option>
                                     ))}
                             </Field>
-                            <ErrorMessage name="client_id" component={() => (<span className='validateErrors'>{errors.client_id}</span>)}/>
+                            <ErrorMessage name="client_id" component={() => (<div className='validateErrors'>*{errors.client_id}</div>)}/>
+                            {!(errors.client_id && touched.client_id) && <div className="form-text m-0">
+                                Seleccione el cliente al cual el servicio se encontrará asociado. 
+                            </div>}
                         </label>
                     </div>
                     <div className="col-sm-4">
@@ -73,7 +76,10 @@ export function ServiceFormAdd(){
                                 className="form-control" 
                                 name="model"
                             />
-                            <ErrorMessage name="model" component={() => (<span className='validateErrors'>{errors.model}</span>)}/>
+                            <ErrorMessage name="model" component={() => (<div className='validateErrors'>*{errors.model}</div>)}/>
+                            {!(errors.model && touched.model) && <div className="form-text m-0">
+                                Ingrese el modelo del equipo a reparar, con al menos tres caracteres.
+                            </div>}
                         </label>
                     </div>
                 </div>
@@ -86,7 +92,10 @@ export function ServiceFormAdd(){
                                 className="form-control"
                                 name="brand"
                             />
-                            <ErrorMessage name="brand" component={() => (<span className='validateErrors'>{errors.brand}</span>)}/>
+                            <ErrorMessage name="brand" component={() => (<div className='validateErrors'>*{errors.brand}</div>)}/>
+                            {!(errors.brand && touched.brand) && <div className="form-text m-0">
+                                Ingrese la marca del equipo a reparar, con al menos dos caracteres.
+                            </div>}
                         </label>
                     </div>
                     <div className="col-sm-4">
@@ -96,7 +105,10 @@ export function ServiceFormAdd(){
                                 className="form-control" 
                                 name="serial_number"
                             />
-                            <ErrorMessage name="serial_number" component={() => (<span className='validateErrors'>{errors.serial_number}</span>)}/>
+                            <ErrorMessage name="serial_number" component={() => (<div className='validateErrors'>*{errors.serial_number}</div>)}/>
+                            {!(errors.serial_number && touched.serial_number) && <div className="form-text m-0">
+                                Ingrese el número de serie del equipo a reparar, con al menos seis caracteres.
+                            </div>}
                         </label>
                     </div>
                 </div>
@@ -109,7 +121,10 @@ export function ServiceFormAdd(){
                                 name="description" 
                                 as="textarea"
                             />
-                            <ErrorMessage name="description" component={() => (<span className='validateErrors'>{errors.description}</span>)}/>
+                            <ErrorMessage name="description" component={() => (<div className='validateErrors'>*{errors.description}</div>)}/>
+                            {!(errors.description && touched.description) && <div className="form-text m-0">
+                                Ingrese una breve descripción del problema del equipo, con al menos diez caracteres.
+                            </div>}
                         </label>
                     </div>
                 </div>

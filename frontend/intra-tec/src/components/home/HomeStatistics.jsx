@@ -12,7 +12,7 @@ export function HomeStatistics(){
             <div className='box-recepcionados p-4 rounded-4'>
                 <div className="d-flex justify-content-between align-items-center mb-3">
                     <p className="h3"><strong>{state.statistics.recepcionado}</strong></p>
-                    <span class="icon-servicios icon-home"></span>
+                    <span className="icon-servicios icon-home"></span>
                 </div>
                 <p className="m-0"><strong>Recepcionados</strong></p>
             </div>
@@ -21,7 +21,7 @@ export function HomeStatistics(){
             <div className='box-proceso p-4 rounded-4'>
                 <div className="d-flex justify-content-between align-items-center mb-3">
                     <p className="h3"><strong>{state.statistics.revisado}</strong></p>
-                    <span class="icon-en-proceso icon-home"></span>
+                    <span className="icon-en-proceso icon-home"></span>
                 </div>
                 <p className="m-0"><strong>En Proceso</strong></p>
             </div>
@@ -30,7 +30,7 @@ export function HomeStatistics(){
             <div className='box-reparados p-4 rounded-4'>
                 <div  className="d-flex justify-content-between align-items-center mb-3">
                     <p className="h3"><strong>{state.statistics.reparado}</strong></p>
-                    <span class="icon-reparados icon-home"></span>
+                    <span className="icon-reparados icon-home"></span>
                 </div>
                 <p className="m-0"><strong>Reparados</strong></p>
             </div>
@@ -39,7 +39,7 @@ export function HomeStatistics(){
             <div className='box-sinreparacion p-4 rounded-4'>
                 <div className="d-flex justify-content-between align-items-center mb-3">
                     <p className="h3"><strong>{state.statistics.sin_reparacion}</strong></p>
-                    <span class="icon-sin-reparacion icon-home"></span>
+                    <span className="icon-sin-reparacion icon-home"></span>
                 </div>
                 <p className="m-0"><strong>Sin Reparación </strong></p>
             </div>

@@ -13,7 +13,7 @@ export function ServiceDetail(props){
         <RoleAdmin>
             <ModalDeleteButton id={props.service._id} />
             <Link to={`/servicios/editar/${props.service._id}`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
-                <span class="icon-editar me-2"></span>Editar
+                <span className="icon-editar me-2"></span>Editar
             </Link>
         </RoleAdmin>
          <h2 className='my-5 text-center text-sm-start'>Detalle de servicio</h2>
@@ -21,7 +21,7 @@ export function ServiceDetail(props){
             <li className="col-12 col-sm-3 d-flex flex-column justify-content-between mb-5 mb-sm-0">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Técnico a cargo</h3>
                 <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
-                    <span class="icon-usuario_1 icon-perfil"></span>
+                    <span className="icon-usuario_1 icon-perfil"></span>
                     <ul className='ps-2'>
                         <li>
                             <strong>{props.service.user.name}</strong>

@@ -10,7 +10,6 @@ function Login(){
     const { state, login } = useAuth()
 
     return (       
-
         <Formik 
                 /*--------------------*/
                 initialValues= {{
@@ -52,6 +51,9 @@ function Login(){
                                         />
                                         <ErrorMessage name="email" component={() => (<span className='validateErrors'>{errors.email}</span>)}/>
                                     </label>
+                                    <div className="form-text m-0">
+                                    Utiliza tu correo electrónico para ingresar.
+                                    </div>
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label text-start  w-100">Contraseña

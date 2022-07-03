@@ -1,40 +1,37 @@
-import imagenes from '../assets/images';
+import { useAuth } from '../context/Auth.Context';
+import authRole from '../services/auth.role';
 
-function Profile(props){
+function Profile(){
+
+const { state } = useAuth();
+
     return(        
         <div className="container">
 
             <div className=" d-flex justify-content-between align-items-center">
  
-                <h2>Perfil de Técnico</h2>
-                <button className="btn btn-outline-primary" to="#">Editar perfil</button>
+                <h2>Perfil de {authRole(state.user.role.role_name)}</h2>
+                {/*<button className="btn btn-outline-primary" to="#">Editar perfil</button>*/}
 
             </div>           
                            
             <div className="row">
                 <div className="pt-4 pb-4">
-                    <h3>Información del Técnico</h3>
-                    <ul className="list-unstyled d-xs-inline d-md-flex justify-content-between pt-2">
-                        <li>
-                            <p className="text-dark badge p-0">Técnico a cargo</p>
-                            <br />
+                    
+                    <div className="list-unstyled d-xs-inline d-md-flex justify-content-between pt-2">
+                        
                             <ul className="list-unstyled">
-                                <li>Alessandro Signorini</li>
-                                <li>Superadmin</li>
-                                <li>alessandro.signorini@davinci.edu.ar</li>
+                                <li>Nombre: {state.user.name + " " + state.user.lastname}</li>
+                                <li>Rol: {state.user.role.role_name}</li>
+                                <li>Email: {state.user.email}</li>
                             </ul>
-                        </li>
+                        
 
                         <br className="p-1 d-md-none" />
 
-                        {/* <li>
-                            <p className=" text-dark badge p-0 ">Estado</p>
-                            <br />
-                            <p>Activo</p>
-                        </li> */}
-
+                       
                         <br className="p-1 d-md-none" />
-
+        {/*
                         <div className="d-md-flex justify-content-center justify-content-md-end">
                             <div className='me-4'>
                                 <p className=" text-dark badge p-0">Cantidad de equipos recepcionados</p>
@@ -47,7 +44,8 @@ function Profile(props){
                                 <p className="text-center p-2 rounded-4 text-white box-reparados rounded-2 border-0 h3">134</p>
                             </div>
                         </div>
-                    </ul>
+        */}
+                    </div>
                 </div>
             </div>
 

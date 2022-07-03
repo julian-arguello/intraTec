@@ -9,14 +9,12 @@ export function ModalDelete(props){
     const{ notify } = useNotify()
 
     function remove(){
-        console.log("elimino service id *-> ", props.id);
         delService(props.id)
         .then(()=>{
-            notify({msj: 'El servicio se borro correctamente.'})
+            notify({msj: 'El servicio se borró correctamente.'})
             navigate('/servicios')
         })
     }
-
 
     return(
         <div className="modal fade" id={`modal${props.id}`}  aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -27,7 +25,7 @@ export function ModalDelete(props){
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-            Estás a punto de eliminar el servicio, estás seguro ?
+            ¿Estás a punto de eliminar el servicio, estás seguro?
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

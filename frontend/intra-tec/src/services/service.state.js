@@ -23,7 +23,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
                     <span>Recepcionado</span>
-                    <span class="icon-servicios icon-home ms-3"></span>  
+                    <span className="icon-servicios icon-home ms-3"></span>  
                 </div>
             );
 
@@ -31,7 +31,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
                     <span>En proceso</span>
-                    <span class="icon-en-proceso icon-home ms-3"></span>  
+                    <span className="icon-en-proceso icon-home ms-3"></span>  
                 </div>
             );
         
@@ -39,7 +39,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
                     <span>Reparado</span>
-                    <span class="icon-reparados icon-home ms-3"></span>  
+                    <span className="icon-reparados icon-home ms-3"></span>  
                 </div>
             );
         
@@ -47,7 +47,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
                     <span>Sin reparación</span>
-                    <span class="icon-sin-reparacion icon-home ms-3"></span>  
+                    <span className="icon-sin-reparacion icon-home ms-3"></span>  
                 </div>
             );
     }

@@ -15,7 +15,7 @@ export function ClientDetail(props){
             <ModalDeleteButton id={props.client._id} />
         </RoleSuperAdmin>
             <Link to={`/clientes/editar/${props.client._id}`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
-                <span class="icon-editar me-2"></span>Editar
+                <span className="icon-editar me-2"></span>Editar
             </Link>
         </RoleAdmin>
 
@@ -24,7 +24,6 @@ export function ClientDetail(props){
             <li><p>{ props.client.cuit_cuil }</p></li>
             <li><p>{ props.client.phone }</p></li>
             <li><p>{ props.client.email }</p></li>
-            
         </ul>
 
         <hr/>

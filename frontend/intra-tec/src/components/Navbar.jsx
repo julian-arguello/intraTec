@@ -5,7 +5,7 @@ import authRole from '../services/auth.role';
 function Navbar(){
     const { state, logout } = useAuth()
     const isMobile = window.innerWidth < 576;
-    const menu = document.getElementById("mySidebar");
+    //const menu = document.getElementById("mySidebar");
     let button = isMobile ? "&#9776;" : "&times;";
 
     function toggleMenu() {
@@ -23,7 +23,7 @@ function Navbar(){
     
     return(
         <nav id='mySidebar' className={`${isMobile ? "sidebar closeSidebar" : "sidebar"}`}>
-            <a href="javascript:;" id='closebtn' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
+            <a href="#" id='closebtn' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
             </a>
             <ul className='p-0 d-flex flex-column justify-content-sm-between mb-0'>
                 <li>

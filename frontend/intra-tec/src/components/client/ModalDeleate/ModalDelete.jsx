@@ -12,7 +12,7 @@ export function ModalDelete(props){
         console.log("elimino Cliente id *-> ", props.id);
         delClient(props.id)
         .then(()=>{
-            notify({msj: 'El cliente se borro correctamente.'})
+            notify({msj: 'El cliente se borró correctamente.'})
             navigate('/clientes')
         })
     }
@@ -27,7 +27,7 @@ export function ModalDelete(props){
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-            Estás a punto de eliminar el Cliente, estás seguro ?
+            ¿Estás a punto de eliminar el cliente, estás seguro?
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

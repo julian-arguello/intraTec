@@ -29,34 +29,41 @@ export function ClientFormAdd(){
             client.softDelete = false
             addClient(client)
             .then(()=>{
-                notify({msj: 'El Cliente fue creado correctamente.'})
+                notify({msj: 'El cliente fue creado correctamente.'})
                 navigate('/clientes')
             })
         }}
         /*--------------------*/
     >
-        {( { errors } )=>(
+        {( { errors, touched } )=>(
             <Form>
                 <div className='row mb-4'>
 
                     <div className="col-sm-4">
-                        <label className="form-label w-100">Nombre del Cliente
+                        <label className="form-label w-100">Nombre del cliente
                             <Field 
                                 type="text" 
                                 className="form-control" 
                                 name="name_busines"
                             />
                             <ErrorMessage name="name_busines" component={() => (<span className='validateErrors'>{errors.name_busines}</span>)}/>
+                            {!(errors.name_busines && touched.name_busines) && <div className="form-text m-0">
+                                Ingrese el nombre del cliente a ingresar, con al menos tres caracteres.
+                            </div>}
                         </label>
+                        
                     </div>
                     <div className="col-sm-4 mb-4 mb-sm-0">
-                        <label  className="form-label w-100">cuit/cuil
+                        <label  className="form-label w-100">Cuit / cuil
                             <Field 
-                                type="text" 
+                                type="number" 
                                 className="form-control"
                                 name="cuit_cuil"
                             />
                             <ErrorMessage name="cuit_cuil" component={() => (<span className='validateErrors'>{errors.cuit_cuil}</span>)}/>
+                            {!(errors.cuit_cuil && touched.cuit_cuil) && <div className="form-text m-0">
+                                Ingrese el cuit / cuil del cliente a ingresar, con al menos once números.
+                            </div>}
                         </label>
                     </div>
                 </div>
@@ -70,6 +77,9 @@ export function ClientFormAdd(){
                                 name="phone"
                             />
                             <ErrorMessage name="phone" component={() => (<span className='validateErrors'>{errors.phone}</span>)}/>
+                            {!(errors.phone && touched.phone) && <div className="form-text m-0">
+                                Ingrese el número telefónico del cliente a ingresar, con al menos ocho números.
+                            </div>}
                         </label>
                     </div>
                     <div className="col-sm-4">
@@ -80,6 +90,9 @@ export function ClientFormAdd(){
                                 name="email"
                             />
                             <ErrorMessage name="email" component={() => (<span className='validateErrors'>{errors.email}</span>)}/>
+                            {!(errors.email && touched.email) && <div className="form-text m-0">
+                                Ingrese él corre electrónico del cliente a ingresar, con al menos ocho números.
+                            </div>}
                         </label>
                     </div>
                 </div>
