@@ -3,15 +3,17 @@ import { ModalDeleteButton } from './ModalDeleate/ModalDeleateButton';
 import { ModalDelete } from './ModalDeleate/ModalDelete';
 import ServiceItem from '../service/ServiceItem';
 import RoleAdmin from '../authRole/RoleAdmin';
-import RoleSuperAdmin from '../authRole/RoleSuperAdmin'
-
+import RoleSuperAdmin from '../authRole/RoleSuperAdmin';
+import { useAuth } from '../../context/Auth.Context';
 
 export function ClientDetail(props){
+    const { state } = useAuth();
     
     return(
      <div className='pt-5 pt-sm-0'>
         <h2 className='my-5 text-center text-sm-start'>Detalle de { props.client.name_busines }</h2>
-        <Link to={`/clientes`} className="btn-back position-details-back text-center">
+        <Link to={`/clientes`} className={ state.user.role.role_name == 'super_admin' ? ''
+             + "btn-back position-details-back text-center" : "btn-back position-back-rol text-center"}>
             <span className="icon-back me-2"></span>Atrás
         </Link>
         <ul className='row ps-0 mb-5'>
@@ -56,9 +58,9 @@ export function ClientDetail(props){
                 <span className="icon-edit me-2"></span>Editar
             </Link>
         </RoleAdmin>
-         <RoleAdmin>
+        <RoleAdmin>
             <ModalDelete id={props.client._id} />
-         </RoleAdmin>
+        </RoleAdmin>
      </div>
     )
 }
