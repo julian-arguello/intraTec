@@ -471,6 +471,10 @@ h1 {
         width: 100%;
         border-radius: 0 !important;
     }
+
+    .box-proceso .estado, .box-recepcionados .estado, .box-reparados .estado, .box-sinreparacion .estado {
+        padding: 5px 16px!important;
+    }
 } 
 
 
@@ -508,11 +512,10 @@ h1 {
 
 .box-recepcionados .estado {
     background-color: #ff6633;
-    border-radius: 0 0 10px 0;
-    padding: 10px;
-    width: max-content;
+    padding: 5px 32px;
+    width: 100%;
     margin: auto;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     position: absolute;
     top: 0;
@@ -531,11 +534,10 @@ h1 {
 
 .box-proceso .estado {
     background-color: #006699;
-    border-radius: 0 0 10px 0;
-    padding: 10px;
-    width: max-content;
+    padding: 5px 32px;
+    width: 100%;
     margin: auto;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     position: absolute;
     top: 0;
@@ -554,11 +556,10 @@ h1 {
 
 .box-reparados .estado {
     background-color: #006837;
-    border-radius: 0 0 10px 0;
-    padding: 10px;
-    width: max-content;
+    padding: 5px 32px;
+    width: 100%;
     margin: auto;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     position: absolute;
     top: 0;
@@ -577,11 +578,10 @@ h1 {
 
 .box-sinreparacion .estado {
     background-color: #cc3333;
-    border-radius: 0 0 10px 0;
-    padding: 10px;
-    width: max-content;
+    padding: 5px 32px;
+    width: 100%;
     margin: auto;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     position: absolute;
     top: 0;

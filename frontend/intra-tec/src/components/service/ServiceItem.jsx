@@ -10,7 +10,7 @@ export function ServiceItem(props) {
     <div className="col">
       <div className={stateClass(props.service.state) + ' card text-white p-sm-3'}>
         <div className="card-body">
-          <div className='h6 mb-2 text-center estado'>{props.service.state}</div>
+          <div className='h6 mb-2 estado'>{props.service.state}</div>
           <div className="d-flex justify-content-between my-4">
             <span className='h4'>Ingresó</span>
             {!props.clientDetail ? <span className='h4'>Cliente</span> : ''}
