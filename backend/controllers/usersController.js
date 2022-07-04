@@ -78,7 +78,7 @@ function register(req, res) {
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "Error al validar", validateError: err.errors
+                error: 500, msg: "Error al validar.", validateError: err.errors
             })
         })
 }

@@ -35,6 +35,7 @@ export const schemaClientRegister = yup.object().shape({
 /*-------------------------------------------------------------------------------------------*/
 export const schemaClientUpdate = yup.object().shape({
     name_busines: yup.string().min(3).required('El nombre de la empresa es obligatorio.'),
+    cuit_cuil: yup.string().min(11).required('El Cuit/Cuil es obligatorio.'),
     phone: yup.string().min(8).required('El telefono es obligatorio.'),
     email: yup.string().min(6).required('El email es obligatorio.'),
 }).noUnknown()

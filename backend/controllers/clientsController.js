@@ -103,6 +103,7 @@ function register(req, res) {
 function update(req, res) {
     schemaClientUpdate.validate(req.body)
         .then(async (entity) => {
+            console.log("Cliente",entity)
             clientsDao.update(req.params.id, entity)
                 .then((user) => {
                     console.log('[entity]', user)

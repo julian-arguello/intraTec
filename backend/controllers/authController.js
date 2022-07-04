@@ -27,12 +27,12 @@ export function login(req, res) {
                     return res.status(401).json({ err: 401, msg: "El password no coincide." })
                 }
             } else {
-                return res.status(400).json({ err: 401, msg: "El email no existe" })
+                return res.status(400).json({ err: 401, msg: "El email no existe." })
             }
         })
         .catch((err) => {
             res.status(500).json({
-                err: 500, msg: "Error al validar", validateError: err.errors
+                err: 500, msg: "Error al validar.", validateError: err.errors
             })
         })
 }
