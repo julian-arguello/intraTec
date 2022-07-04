@@ -13,9 +13,9 @@ export function Notification(){
         <>
         {state.notification.hasOwnProperty('msj') && 
         
-        <div className="alert alert-success m-auto d-flex justify-content-between align-items-center notification" role="alert">
+        <div className="alert alert-success m-auto d-flex justify-content-between align-items-center notification p-2" role="alert">
             {state.notification.msj}
-            <span className="icon-cancel" role="button" onClick={()=>(notify({}))}></span>
+            <span className="icon-cancel icon-cancel-notification" role="button" onClick={()=>(notify({}))}></span>
         </div>
         }
         </>

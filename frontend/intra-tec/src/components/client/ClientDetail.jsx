@@ -20,21 +20,21 @@ export function ClientDetail(props){
             <li className='col-12 col-sm-3 d-flex flex-column justify-content-between mb-5 mb-sm-0'>
                 <h3 className='h4 mb-3 text-center text-sm-start'>Cuil / Cuit</h3>
                 <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
-                    <span className='icon-cuil me-3 icon-card'></span>
+                    <span className='icon-cuil me-3 icon-card f-35'></span>
                     <p className='mb-0'>{ props.client.cuit_cuil }</p>
                 </div>
             </li>
             <li className="col-12 col-sm-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start mb-5 mb-sm-0">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Teléfono</h3>
                 <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
-                    <span className='icon-phone me-3 icon-card'></span>
+                    <span className='icon-phone me-3 icon-card f-35'></span>
                     <p className='mb-0'>{ props.client.phone }</p>
                 </div>
             </li>
             <li className="col col-md-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Correo</h3>
                 <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
-                    <span className='me-3 icon-card icon-mail'></span>
+                    <span className='me-3 icon-card icon-mail f-30'></span>
                     <p className='mb-0'>{ props.client.email }</p>
                 </div>
             </li>

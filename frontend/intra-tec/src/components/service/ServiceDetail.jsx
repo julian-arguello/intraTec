@@ -30,10 +30,10 @@ export function ServiceDetail(props){
                 </div>
             </li>
             <li className="col-12 col-sm-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start mb-5 mb-sm-0">
-                <h3 className='h4 mb-3 text-center text-sm-start'>Fecha recepción</h3>
+                <h3 className='h4 mb-3 text-center text-sm-start'>Fecha de recepción</h3>
                 <div className='d-flex align-items-center'>
                     <span className='icon-clock icon-card me-3'></span>
-                    {formatRelative(new Date(props.service.create_at), new Date(), { locale: es })}
+                    <span className='spanTime d-block'>{formatRelative(new Date(props.service.create_at), new Date(), { locale: es })}</span>
                 </div>
             </li>
             <li className="col col-md-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start">

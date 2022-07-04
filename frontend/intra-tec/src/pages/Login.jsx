@@ -22,12 +22,12 @@ function Login(){
                 onSubmit={(data) => {
                     login(data.email, data.password)
                     .then(()=>{
-                        notify({msj: 'Bienvenido.'})
+                        notify({msj: 'Bienvenido!'})
                     })
                 }}
                 /*--------------------*/
         >
-            {( { errors } )=>(
+            {( { errors, touched } )=>(
                 <Form className="w-100 m-auto text-center">
                     <div className="fondo">
 
@@ -49,11 +49,11 @@ function Login(){
                                             className="form-control" 
                                             name="email"
                                         />
-                                        <ErrorMessage name="email" component={() => (<span className='validateErrors'>{errors.email}</span>)}/>
+                                        <ErrorMessage name="email" component={() => (<div className='validateErrors loginText'>{errors.email}</div>)}/>
+                                        {!(errors.email && touched.email) && <div className="form-text m-0 loginText">
+                                        Ejemplo: "tu_correo@mail.com".
+                                        </div>}
                                     </label>
-                                    <div className="form-text m-0">
-                                    Utiliza tu correo electrónico para ingresar.
-                                    </div>
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label text-start  w-100">Contraseña

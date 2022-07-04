@@ -38,7 +38,7 @@ export function ServiceFormEdit(){
             editService(service)
             .then(()=>{
                 notify({msj: 'El servicio fue editado correctamente.'})
-                navigate('/servicios')
+                navigate(`/servicios/${service._id}`)
             })
             
         }}
@@ -61,9 +61,9 @@ export function ServiceFormEdit(){
                                     </option>
                                 ))}
                             </Field>
-                            <ErrorMessage name="state" component={() => (<span className='validateErrors'>{errors.state}</span>)}/>
+                            <ErrorMessage name="state" component={() => (<span className='validateErrors'>*{errors.state}</span>)}/>
                             {!(errors.client_id && touched.client_id) && <div className="form-text m-0">
-                                Seleccione el estado del servicio. 
+                                Seleccione el estado actual del servicio.
                             </div>}
                         </label>
                     </div>
@@ -74,9 +74,9 @@ export function ServiceFormEdit(){
                                 className="form-control" 
                                 name="model"
                             />
-                            <ErrorMessage name="model" component={() => (<span className='validateErrors'>{errors.model}</span>)}/>
+                            <ErrorMessage name="model" component={() => (<span className='validateErrors'>*{errors.model}</span>)}/>
                             {!(errors.model && touched.model) && <div className="form-text m-0">
-                                Ingrese el modelo del equipo a reparar, con al menos tres caracteres.
+                                Ingrese al menos tres caracteres.
                             </div>}
                         </label>
                     </div>
@@ -90,9 +90,9 @@ export function ServiceFormEdit(){
                                 className="form-control"
                                 name="brand"
                             />
-                            <ErrorMessage name="brand" component={() => (<span className='validateErrors'>{errors.brand}</span>)}/>
+                            <ErrorMessage name="brand" component={() => (<span className='validateErrors'>*{errors.brand}</span>)}/>
                             {!(errors.brand && touched.brand) && <div className="form-text m-0">
-                                Ingrese la marca del equipo a reparar, con al menos dos caracteres.
+                                Ingrese al menos dos caracteres.
                             </div>}
                         </label>
                     </div>
@@ -103,9 +103,9 @@ export function ServiceFormEdit(){
                                 className="form-control" 
                                 name="serial_number"
                                 />
-                            <ErrorMessage name="serial_number" component={() => (<span className='validateErrors'>{errors.serial_number}</span>)}/>
+                            <ErrorMessage name="serial_number" component={() => (<span className='validateErrors'>*{errors.serial_number}</span>)}/>
                             {!(errors.serial_number && touched.serial_number) && <div className="form-text m-0">
-                                Ingrese el número de serie del equipo a reparar, con al menos seis caracteres.
+                                Ingrese al menos seis caracteres.
                             </div>}
                         </label>
                     </div>
@@ -113,15 +113,15 @@ export function ServiceFormEdit(){
 
                 <div className="row mb-4">
                     <div className="col-sm-8">
-                        <label className='w-100'>Descripción</label>
+                        <label className='w-100'>Descripción del problema</label>
                         <Field 
                             className="form-select"
                             name="description" 
                             as="textarea"
                         ></Field>
-                        <ErrorMessage name="description" component={() => (<span className='validateErrors'>{errors.description}</span>)}/>
+                        <ErrorMessage name="description" component={() => (<span className='validateErrors'>*{errors.description}</span>)}/>
                         {!(errors.description && touched.description) && <div className="form-text m-0">
-                                Ingrese una breve descripción del problema del equipo, con al menos diez caracteres.
+                            Ingrese al menos diez caracteres.
                         </div>}
                     </div>
                 </div>

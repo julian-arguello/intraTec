@@ -37,7 +37,10 @@
     content: "\e902";
   }
   .icon-cancel {
-      font-size: 25px!important;
+      font-size: 24px!important;
+  }
+   .icon-cancel-notification {
+      font-size: 15px!important;
   }
   .icon-clients:before {
     content: "\e903";
@@ -86,7 +89,9 @@
   .f-27 {
     font-size: 27px!important;
   }
-
+   .f-30 {
+    font-size: 30px!important;
+  }
   .f-35 {
     font-size: 35px!important;  
   }
@@ -250,7 +255,7 @@ a {
     position: absolute!important;
     left: 0;
     right: 0;
-    top: 10px;
+    top: 5px;
 }
 
 /* NAVBAR */ 
@@ -462,9 +467,9 @@ h1 {
     }
 
     .notification {
-        top: 125px;
+        top: 0;
         width: 100%;
-        position: relative!important;
+        border-radius: 0 !important;
     }
 } 
 
@@ -588,4 +593,10 @@ h1 {
     color: #cc3333;
 } 
 
+.loginText{
+    width: 16rem;
+}
 
+.spanTime{
+    max-width: 10rem;
+}

@@ -53,7 +53,7 @@ const findServiceId = async (id) =>{
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 // Traemos los ultimos servicios
-const findServiceRecent = async (cant = 3) =>{
+const findServiceRecent = async (cant = 2) =>{
     try{
         await API.viewRecent(cant)
         .then((services) => dispatch(ActionGetRecent(services)))

@@ -55,7 +55,7 @@ export function ServiceFormAdd(){
                                 name="client_id" 
                                 as="select"
                             >
-                                <option value="">Selecciona un cliente</option>
+                                <option value=""></option>
                                     {state.clients.map((client)=>( 
                                         <option 
                                             key={client._id} 
@@ -64,8 +64,8 @@ export function ServiceFormAdd(){
                                     ))}
                             </Field>
                             <ErrorMessage name="client_id" component={() => (<div className='validateErrors'>*{errors.client_id}</div>)}/>
-                            {!(errors.client_id && touched.client_id) && <div className="form-text m-0">
-                                Seleccione el cliente al cual el servicio se encontrará asociado. 
+                            {!(errors.client_id && touched.client_id) && <div className="form-text m-0 loginText">
+                                Seleccione el cliente para el nuevo servicio a ingresar. 
                             </div>}
                         </label>
                     </div>
@@ -78,7 +78,7 @@ export function ServiceFormAdd(){
                             />
                             <ErrorMessage name="model" component={() => (<div className='validateErrors'>*{errors.model}</div>)}/>
                             {!(errors.model && touched.model) && <div className="form-text m-0">
-                                Ingrese el modelo del equipo a reparar, con al menos tres caracteres.
+                                Ingrese al menos tres caracteres.
                             </div>}
                         </label>
                     </div>
@@ -94,7 +94,7 @@ export function ServiceFormAdd(){
                             />
                             <ErrorMessage name="brand" component={() => (<div className='validateErrors'>*{errors.brand}</div>)}/>
                             {!(errors.brand && touched.brand) && <div className="form-text m-0">
-                                Ingrese la marca del equipo a reparar, con al menos dos caracteres.
+                                Ingrese al menos dos caracteres.
                             </div>}
                         </label>
                     </div>
@@ -107,7 +107,7 @@ export function ServiceFormAdd(){
                             />
                             <ErrorMessage name="serial_number" component={() => (<div className='validateErrors'>*{errors.serial_number}</div>)}/>
                             {!(errors.serial_number && touched.serial_number) && <div className="form-text m-0">
-                                Ingrese el número de serie del equipo a reparar, con al menos seis caracteres.
+                                Ingrese al menos seis caracteres.
                             </div>}
                         </label>
                     </div>
@@ -115,7 +115,7 @@ export function ServiceFormAdd(){
                
                 <div className="row mb-4">
                     <div className="col-sm-8">
-                        <label className='w-100'>Descripción
+                        <label className='w-100'>Descripción del problema
                             <Field 
                                 className="form-select"
                                 name="description" 
@@ -123,7 +123,7 @@ export function ServiceFormAdd(){
                             />
                             <ErrorMessage name="description" component={() => (<div className='validateErrors'>*{errors.description}</div>)}/>
                             {!(errors.description && touched.description) && <div className="form-text m-0">
-                                Ingrese una breve descripción del problema del equipo, con al menos diez caracteres.
+                                Ingrese al menos diez caracteres.
                             </div>}
                         </label>
                     </div>

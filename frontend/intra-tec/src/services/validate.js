@@ -38,8 +38,9 @@ export const schemaClientRegister = yup.object().shape({
         .required('El nombre del cliente es obligatorio.'),
     /*------------------------------------------------------------*/
     cuit_cuil: yup.string()
-        .min(11, 'Este campo debe tener once caracteres.')
-        .required('El Cuit/Cuil es obligatorio.'),
+        .min(11, 'Este campo debe tener once caracteres numéricos.')
+        .max(11, 'Este campo debe tener once caracteres numéricos como máximo.')
+        .required('El Cuit / Cuil es obligatorio.'),
     /*------------------------------------------------------------*/
     phone: yup.string()
         .min(8, 'Este campo debe tener como mínimo ocho caracteres.')
@@ -55,6 +56,11 @@ export const schemaClientUpdate = yup.object().shape({
     name_busines: yup.string()
         .min(3, 'Este campo debe tener como mínimo tres caracteres')
         .required('El nombre del cliente es obligatorio.'),
+    /*------------------------------------------------------------*/
+    cuit_cuil: yup.string()
+        .min(11, 'Este campo debe tener once caracteres numéricos.')
+        .max(11, 'Este campo debe tener once caracteres numéricos como máximo.')
+        .required('El Cuit / Cuil es obligatorio.'),
     /*------------------------------------------------------------*/
     phone: yup.string()
         .min(8, 'Este campo debe tener como mínimo ocho caracteres')
@@ -144,7 +150,7 @@ export const schemaLogin = yup.object().shape({
     .required('El email es obligatorio.'),
     /*------------------------------------------------------------*/
     password: yup.string()
-    .min(6, "Verificar")
+    .min(6, "Verificar contraseña.")
     .required('La contraseña es obligatoria.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/

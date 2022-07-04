@@ -48,13 +48,13 @@ export function ClientFormAdd(){
                             />
                             <ErrorMessage name="name_busines" component={() => (<span className='validateErrors'>{errors.name_busines}</span>)}/>
                             {!(errors.name_busines && touched.name_busines) && <div className="form-text m-0">
-                                Ingrese el nombre del cliente a ingresar, con al menos tres caracteres.
+                                Ingrese al menos tres caracteres.
                             </div>}
                         </label>
                         
                     </div>
                     <div className="col-sm-4 mb-4 mb-sm-0">
-                        <label  className="form-label w-100">Cuit / cuil
+                        <label  className="form-label w-100">Cuit / Cuil
                             <Field 
                                 type="number" 
                                 className="form-control"
@@ -62,7 +62,7 @@ export function ClientFormAdd(){
                             />
                             <ErrorMessage name="cuit_cuil" component={() => (<span className='validateErrors'>{errors.cuit_cuil}</span>)}/>
                             {!(errors.cuit_cuil && touched.cuit_cuil) && <div className="form-text m-0">
-                                Ingrese el cuit / cuil del cliente a ingresar, con al menos once números.
+                                Ingrese los once caracteres numéricos.
                             </div>}
                         </label>
                     </div>
@@ -70,7 +70,7 @@ export function ClientFormAdd(){
 
                 <div className='row mb-4'>
                     <div className="col-sm-4">
-                        <label className="form-label w-100">Telefono
+                        <label className="form-label w-100">Teléfono
                             <Field 
                                 type="number" 
                                 className="form-control" 
@@ -78,12 +78,12 @@ export function ClientFormAdd(){
                             />
                             <ErrorMessage name="phone" component={() => (<span className='validateErrors'>{errors.phone}</span>)}/>
                             {!(errors.phone && touched.phone) && <div className="form-text m-0">
-                                Ingrese el número telefónico del cliente a ingresar, con al menos ocho números.
+                                Ingrese al menos ocho caracteres numéricos.
                             </div>}
                         </label>
                     </div>
                     <div className="col-sm-4">
-                        <label className="form-label w-100">Email
+                        <label className="form-label w-100">Correo electrónico
                             <Field 
                                 type="email" 
                                 className="form-control" 
@@ -91,7 +91,7 @@ export function ClientFormAdd(){
                             />
                             <ErrorMessage name="email" component={() => (<span className='validateErrors'>{errors.email}</span>)}/>
                             {!(errors.email && touched.email) && <div className="form-text m-0">
-                                Ingrese él corre electrónico del cliente a ingresar, con al menos ocho números.
+                                Ejemplo: "tu_correo@mail.com".
                             </div>}
                         </label>
                     </div>
