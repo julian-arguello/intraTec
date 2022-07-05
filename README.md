@@ -1,8 +1,3 @@
-╔╗╔╗╔═╗╔╗─╔╗─╔═╗
-║╚╝║║╦╝║║─║║─║║║
-║╔╗║║╩╗║╚╗║╚╗║║║
-╚╝╚╝╚═╝╚═╝╚═╝╚═╝
-
 //parados en el path a guardar.
 Backup db
 mongodump --db intratec
