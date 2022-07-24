@@ -1,19 +1,37 @@
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
-//LOGIN
-export function ActionLogin( user ){
+//GET
+export function ActionGet( users ){
     return {
-        type: 'LOGIN',
+        type: 'GET',
+        payload: users
+    };
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
+//GETID
+export function ActionGetId( user ){
+    return {
+        type: 'GETID',
         payload: user
     };
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
-//LOGOUT
-export function ActionLogout(){
+//ADD
+export function ActionAdd( user ){
     return {
-        type: 'LOGOUT',
-        payload: null
+        type: 'ADD',
+        payload: user
+    };
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
+//REMOVE
+export function ActionRemove( id ){
+    return {
+        type: 'REMOVE',
+        payload: id
     };
 }
 /*-----------------------------------------------------------------*/    
@@ -23,15 +41,6 @@ export function ActionUpdate( user ){
     return {
         type: 'UPDATE',
         payload: user
-    };
-}
-/*-----------------------------------------------------------------*/    
-/*-----------------------------------------------------------------*/
-//ERROR
-export function ActionError(error){
-    return {
-        type: 'ERROR',
-        payload: error
     };
 }
 /*-----------------------------------------------------------------*/    

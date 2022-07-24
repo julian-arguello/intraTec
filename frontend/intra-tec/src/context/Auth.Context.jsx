@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import AuthReducer from "../reducer/Auth.Reducer";
-import { ActionLogin, ActionLogout, ActionError } from "../action/Auth.Actions"
+import { ActionLogin, ActionLogout, ActionUpdate ,ActionError } from "../action/Auth.Actions"
 import * as API from '../api/auth.api';
 
 const AuthContext = createContext();
@@ -11,6 +11,8 @@ export function AuthProvider({ children }){
     //useReduce
     //useReducer recibe dos parametros (funcion reduce, {states por defectos})
     const [state, dispatch] = useReducer(AuthReducer, {isAuth:false, user:null, error:null})
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
     //function login
     const login = async (email, password) =>{
         API.login(email, password)
@@ -23,16 +25,29 @@ export function AuthProvider({ children }){
             dispatch(ActionError(err.message))
         })
     }
-
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+const updateUserAuth = (user) =>{
+    try{
+        dispatch(ActionUpdate(user))
+    }
+    catch(err){
+        console.log('Error',err.message)
+    }
+}
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
     const logout = () =>{
         localStorage.removeItem('auth-token');
         localStorage.removeItem('user');
         dispatch(ActionLogout())
     }
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 
     //return
     return(
-        <AuthContext.Provider value={{ state, dispatch, login, logout}}>
+        <AuthContext.Provider value={{ state, dispatch, login, logout, updateUserAuth}}>
             {children}
         </AuthContext.Provider>
     );

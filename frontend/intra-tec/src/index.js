@@ -16,6 +16,8 @@ import { NotifyProvider } from './context/Notify.Context';
 import { ServiceProvider } from './context/Service.Context';
 //Client
 import { ClientProvider } from './context/Client.Context';
+//user
+import { UserProvider } from './context/User.Context';
 
 console.log("index")
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,13 +26,15 @@ root.render(
 
     <BrowserRouter>
       <AuthProvider>
-        <NotifyProvider>
-          <ClientProvider>
-            <ServiceProvider>
-              <App />
-            </ServiceProvider>
-          </ClientProvider>
-        </NotifyProvider>
+        <UserProvider>
+          <NotifyProvider>
+            <ClientProvider>
+              <ServiceProvider>
+                <App />
+              </ServiceProvider>
+            </ClientProvider>
+          </NotifyProvider>
+        </UserProvider>
       </AuthProvider>
     </BrowserRouter>
 

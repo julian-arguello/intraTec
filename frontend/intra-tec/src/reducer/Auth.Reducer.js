@@ -3,6 +3,8 @@
 //action -> tiene dos parametros {type: (indicaremos la accion a realizar), payload: (valores a modificar)}.
 export default function AuthReducer(state, action){
     switch(action.type){
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "LOGIN":
             return{
                 ...state,
@@ -10,6 +12,8 @@ export default function AuthReducer(state, action){
                 user: action.payload,
                 error: null,
             };
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "LOGOUT":
             return{
                 ...state,
@@ -17,11 +21,33 @@ export default function AuthReducer(state, action){
                 user: null,
                 error: null,
             };
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
+        case "UPDATE":
+            localStorage.setItem('user', JSON.stringify (
+                {
+                    ...state.user,
+                    name: action.payload.name,
+                    lastname: action.payload.lastname
+                }
+            ))
+            return{
+                ...state,
+                user: {
+                    ...state.user,
+                    name: action.payload.name,
+                    lastname: action.payload.lastname
+                }
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         case "ERROR":
             return{
                 ...state,
                 error: action.payload,
             };
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
         default:
             return state;
     }

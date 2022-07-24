@@ -1,7 +1,7 @@
 import './App.scss';
 import { useEffect, useState } from 'react';
 //Routes
-import { Route, Routes, Navigate, useNavigate  } from 'react-router-dom';
+import { Route, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom';
 
 //pages
 import Login from './pages/Login';
@@ -32,17 +32,22 @@ function App() {
 
   //Autenticación--------------------------
   const auth = useAuth()
-  const [loading, setloading] = useState(true)
+  
   let navigate = useNavigate();
+  let location = useLocation();
+
   //consultamos si al montar el componente el estado de auth.isAuth.
   //esto se ejecuta cada ves que se modificque auth.state.
   useEffect(() => {
-    if(auth.state.isAuth){
-      navigate('/inicio')
+  if(auth.state.isAuth){
+      if(location.pathname != "/perfil"){
+        navigate('/inicio')
+      }
     }else{
       navigate('/')
     }
   }, [auth.state])
+  
   //Consultamos si tenemos datos en el localstorage para autenticar.
   //esto se ejecuta unicamente al montar el componente, una unica vez.
   useEffect( () => {
