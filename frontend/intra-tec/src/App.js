@@ -15,7 +15,7 @@ import Services from './pages/services/Services';
 import ServiceDetail from './pages/services/ServiceDetailPage';
 import ServiceForm from './pages/services/ServiceForm';
 
-import NotAcces from './pages/NotAcces';
+import NotAccess from './pages/NotAccess';
 
 
 import Profile from './pages/Profile';
@@ -84,13 +84,13 @@ function App() {
 
           <Route path='/clientes' element={<AuthRoute><Clients/></AuthRoute>}/>
           <Route path='/clientes/:id' element={<AuthRoute><ClientDetail/></AuthRoute>}/>
-          <Route path='/clientes/nuevo' element={roleAdmin() ? <AuthRoute><ClientForm edit={false}/></AuthRoute> : <NotAcces />}/>
-          <Route path='/clientes/editar/:id' element={roleAdmin() ? <AuthRoute><ClientForm edit={true}/></AuthRoute> : <NotAcces />}/>
+          <Route path='/clientes/nuevo' element={roleAdmin() ? <AuthRoute><ClientForm edit={false}/></AuthRoute> : <NotAccess />}/>
+          <Route path='/clientes/editar/:id' element={roleAdmin() ? <AuthRoute><ClientForm edit={true}/></AuthRoute> : <NotAccess />}/>
 
           <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
           <Route path='/servicios/:id' element={<AuthRoute><ServiceDetail/></AuthRoute>}/>
-          <Route path='/servicios/nuevo' element={roleAdmin() ? <AuthRoute><ServiceForm edit={false}/></AuthRoute> : <NotAcces />}/>
-          <Route path='/servicios/editar/:id' element={roleAdmin() ? <AuthRoute><ServiceForm edit={true}/></AuthRoute> : <NotAcces />}/>
+          <Route path='/servicios/nuevo' element={roleAdmin() ? <AuthRoute><ServiceForm edit={false}/></AuthRoute> : <NotAccess />}/>
+          <Route path='/servicios/editar/:id' element={roleAdmin() ? <AuthRoute><ServiceForm edit={true}/></AuthRoute> : <NotAccess />}/>
      
           <Route path='/perfil' element={<AuthRoute><Profile /></AuthRoute>}/>
           <Route path='/usuarios' element={<AuthRoute><UserManage /></AuthRoute>}/>

@@ -26,8 +26,8 @@ function ProfileEdit(){
                     data._id=state.user._id
                     updateUserAuth(data)
                     user.editUser(data)
-                    .then(()=>{
-                        notify({msj: 'Su perfil fue editado correctamente!'})
+                    .then((data)=>{
+                        notify(data)
                     })
                 }}
                 /*--------------------*/

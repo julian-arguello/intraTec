@@ -1,6 +1,6 @@
 import imagenes from '../assets/images';
 
-function NotAcces(props){
+function NotAccess(props){
     return(        
         <div className="container">
 
@@ -9,4 +9,4 @@ function NotAcces(props){
         </div>
     )
 }
-export default NotAcces;
+export default NotAccess;

@@ -26,7 +26,7 @@ function viewAlls(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ err: 500, msg: err.msg })
+            res.status(500).json({ err: 500, 'status':'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -45,7 +45,7 @@ function viewId(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ error: 500, msg: err.msg })
+            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -66,19 +66,19 @@ function register(req, res) {
                 entity.role_id = "61a195c07e76c0a87533f6b4"; //user
                 usersDao.insert(entity)
                     .then((user) => {
-                        res.status(200).json({ '[Succes]': 'El usuario fue registrado correctamente.' });
+                        res.status(200).json({ 'status':'success', msg: 'El usuario fue registrado correctamente.' });
                     })
                     .catch((err) => {
                         console.log('[Error] ', err);
-                        res.status(500).json({ error: 500, msg: err.msg })
+                        res.status(500).json({ error: 500, 'status':'error',  msg: err.msg })
                     })
             } else {
-                res.status(400).json({ error: 400, msg: "El usario ya existe" })
+                res.status(400).json({ error: 400, 'status':'error', msg: "El usario ya existe" })
             }
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "Error al validar.", validateError: err.errors
+                error: 500, msg: "Error al validar.", 'status':'error', validateError: err.errors
             })
         })
 }
@@ -95,16 +95,16 @@ function update(req, res) {
             usersDao.update(req.params.id, entity)
                 .then((user) => {
                     console.log('[entity]', user)
-                    res.status(200).json({ '[Succes]': 'El usuario fue modificado correctamente.' });
+                    res.status(200).json({ 'status':'success', msg: 'El usuario fue modificado correctamente.' });
                 })
                 .catch((err) => {
                     console.log('[Error] ', err);
-                    res.status(500).json({ error: 500, msg: err.msg })
+                    res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
                 })
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "[Error] ", validateError: err.errors
+                error: 500, msg: "[Error] ", 'status':'error', validateError: err.errors
             })
         })
 }
@@ -119,11 +119,11 @@ export function deleteEntity(req, res) {
     usersDao.deleteEntity(req.params.id)
         .then((user) => {
             console.log('[entity]', user)
-            res.status(200).json({ '[Succes]': 'El usuario fue eliminado correctamente.' });
+            res.status(200).json({'status':'success', msg: 'El usuario fue eliminado correctamente.' });
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ error: 500, msg: err.msg })
+            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/

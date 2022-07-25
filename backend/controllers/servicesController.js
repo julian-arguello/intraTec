@@ -36,7 +36,7 @@ function viewAlls(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ err: 500, msg: err.msg })
+            res.status(500).json({ err: 500, 'status':'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -96,7 +96,7 @@ function viewId(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ error: 500, msg: err.msg })
+            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -132,7 +132,7 @@ function viewId(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ err: 500, msg: err.msg })
+            res.status(500).json({ err: 500, 'status':'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -153,21 +153,21 @@ function create(req, res) {
                 .then((entityInsert) => {
                     clientsDao.addService(entity.client_id, entityInsert.insertedId.toString())
                         .then(() => {
-                            res.status(200).json({ '[Succes]': 'El servicio fue creado correctamente.' });
+                            res.status(200).json({'status':'success', msg: 'El servicio fue creado correctamente.' });
                         })
                         .catch((err) => {
                             console.log('[Error] ', err);
-                            res.status(500).json({ error: 500, msg: err.msg })
+                            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
                         })
                 })
                 .catch((err) => {
                     console.log('[Error] ', err);
-                    res.status(500).json({ error: 500, msg: err.msg })
+                    res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
                 })
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "Error al validar", validateError: err.errors
+                error: 500, msg: "Error al validar", 'status':'error', validateError: err.errors
             })
         })
 }
@@ -183,16 +183,16 @@ function update(req, res) {
         .then(async (entity) => {
             servicesDao.update(req.params.id, entity)
                 .then((data) => {
-                    res.status(200).json({ '[Succes]': 'El servicio fue modificado correctamente.' });
+                    res.status(200).json({ 'status':'success', msg:'El servicio fue modificado correctamente.' });
                 })
                 .catch((err) => {
                     console.log('[Error] ', err);
-                    res.status(500).json({ error: 500, msg: err.msg })
+                    res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
                 })
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "[Error] ", validateError: err.errors
+                error: 500, 'status':'error', msg: err.errors
             })
         })
 }
@@ -211,21 +211,21 @@ export function deleteEntity(req, res) {
                 .then(() => {
                     servicesDao.deleteEntity(req.params.id)
                         .then((service) => {
-                            res.status(200).json({ '[Succes]': 'El servicio fue eliminado correctamente.' });
+                            res.status(200).json({ 'status':'success', msg: 'El servicio fue eliminado correctamente.' });
                         })
                         .catch((err) => {
                             console.log('[Error] ', err);
-                            res.status(500).json({ error: 500, msg: err.msg })
+                            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
                         })
                 })
                 .catch((err) => {
                     console.log('[Error] ', err);
-                    res.status(500).json({ error: 500, msg: err.msg })
+                    res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
                 })
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ error: 500, msg: err.msg })
+            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/

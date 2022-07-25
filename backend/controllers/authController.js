@@ -24,15 +24,15 @@ export function login(req, res) {
                     const token = jwtService.generate(user)
                     res.header('auth-token', token).json({ user: user, token: token })
                 } else {
-                    return res.status(401).json({ err: 401, msg: "El password no coincide." })
+                    return res.status(401).json({ err: 401, 'status':'error', msg: "El password no coincide." })
                 }
             } else {
-                return res.status(400).json({ err: 401, msg: "El email no existe." })
+                return res.status(400).json({ err: 401, 'status':'error', msg: "El email no existe." })
             }
         })
         .catch((err) => {
             res.status(500).json({
-                err: 500, msg: "Error al validar.", validateError: err.errors
+                err: 500, msg: "Error al validar.", 'status':'error', validateError: err.errors
             })
         })
 }

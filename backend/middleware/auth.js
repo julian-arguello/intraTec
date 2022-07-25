@@ -13,6 +13,6 @@ export function isAuth(req, res, next){
                 res.status(500).json({ err: 500, msg: err.msg })
             })
     }else{
-        return res.status(400).json({error: 400, msg: "[Error] token no encontrado."})
+        return res.status(400).json({error: 400, 'status':'error', msg: "Token no encontrado."})
     }
 }

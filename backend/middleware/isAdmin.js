@@ -6,7 +6,7 @@ export function isAdmin(req, res, next) {
             next()
             break;
         default:
-            return res.status(400).json({error: 400, msg: "[Error] No tiene acceso administrador."})
+            return res.status(400).json({error: 400, 'status':'error', msg: "No tiene acceso administrador."})
     }
 
 
