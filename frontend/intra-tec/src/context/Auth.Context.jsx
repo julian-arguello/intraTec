@@ -32,7 +32,7 @@ const updateUserAuth = (user) =>{
         dispatch(ActionUpdate(user))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 }
 /*-----------------------------------------------------------------*/

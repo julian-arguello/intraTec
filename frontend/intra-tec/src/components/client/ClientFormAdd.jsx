@@ -28,8 +28,8 @@ export function ClientFormAdd(){
             client.create_at = new Date;
             client.softDelete = false
             addClient(client)
-            .then(()=>{
-                notify({msj: 'El cliente fue creado correctamente.'})
+            .then((res)=>{
+                notify(res)
                 navigate('/clientes')
             })
         }}

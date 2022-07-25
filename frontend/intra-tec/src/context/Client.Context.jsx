@@ -21,7 +21,7 @@ const findClient = async () =>{
         dispatch(ActionGet(services))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 }
 /*-----------------------------------------------------------------*/
@@ -33,7 +33,7 @@ const findClientId = async (id) =>{
         dispatch(ActionGetId(service))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 }
 /*-----------------------------------------------------------------*/
@@ -41,11 +41,12 @@ const findClientId = async (id) =>{
 //Nuevo Cliente.
 const addClient = async (client) =>{
     try{
-        await API.add(client)
+        const res = await API.add(client)
         dispatch(ActionAdd(client))
+        return res
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }   
 }
 /*-----------------------------------------------------------------*/
@@ -53,12 +54,12 @@ const addClient = async (client) =>{
 //Editar Cliente.
 const editClient = async (client) =>{
     try{
-        await API.edit(client)
+        const res = await API.edit(client)
         dispatch(ActionUpdate(client))
-        
+        return res
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     } 
 }
 /*-----------------------------------------------------------------*/
@@ -66,11 +67,12 @@ const editClient = async (client) =>{
 //Elimina un Cliente
 const delClient = async (id) =>{
     try{
-        await API.del(id)
+        const res = await API.del(id)
         dispatch(ActionRemove(id))
+        return res
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     } 
 }
 /*-----------------------------------------------------------------*/

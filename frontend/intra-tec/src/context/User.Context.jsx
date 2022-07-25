@@ -24,7 +24,7 @@ const findUser = async () =>{
         dispatch(ActionGet(users))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 }
 /*-----------------------------------------------------------------*/
@@ -36,7 +36,7 @@ const findUserId = async (id) =>{
         dispatch(ActionGetId(user))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 }
 /*-----------------------------------------------------------------*/
@@ -44,11 +44,12 @@ const findUserId = async (id) =>{
 //Nuevo User.
 const addUser = async (user) =>{
     try{
-        await API.add(user)
+        const res = await API.add(user)
         dispatch(ActionAdd(user))
+        return res
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }   
 }
 /*-----------------------------------------------------------------*/
@@ -56,12 +57,12 @@ const addUser = async (user) =>{
 //Editar User.
 const editUser = async (user) =>{
     try{
-        await API.edit(user)
+        const res = await API.edit(user)
         dispatch(ActionUpdate(user))
-        
+        return res
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     } 
 }
 /*-----------------------------------------------------------------*/
@@ -69,11 +70,12 @@ const editUser = async (user) =>{
 //Elimina un User
 const delUser = async (id) =>{
     try{
-        await API.del(id)
+        const res = await API.del(id)
         dispatch(ActionRemove(id))
+        return res
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     } 
 }
 /*-----------------------------------------------------------------*/

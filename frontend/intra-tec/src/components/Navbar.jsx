@@ -68,6 +68,12 @@ function Navbar(){
                             </Link>
                         </li>
                         <li className='mb-3 d-flex align-items-center'>
+                            <Link to='/usuarios' onClick={ isMobile ? toggleMenu : ''} className="d-flex align-items-center">
+                                <span className="icon-profile me-3"></span>
+                                Gestionar Usuarios
+                            </Link>
+                        </li>
+                        <li className='mb-3 d-flex align-items-center'>
                             <Link to='/' onClick={() => logout()} className="d-flex align-items-center">
                                 <span className="icon-logout me-3"></span>
                                 Cerrar sesión

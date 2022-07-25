@@ -38,8 +38,8 @@ export function ServiceFormAdd(){
             service.user_id = auth.state.user._id;
             service.softDelete = false
             addService(service)
-            .then(()=>{
-                notify({msj: 'El servicio fue creado correctamente.'})
+            .then((res)=>{
+                notify(res)
                 navigate('/servicios')
             })
         }}

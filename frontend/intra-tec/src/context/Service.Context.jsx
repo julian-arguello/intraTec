@@ -22,7 +22,7 @@ const findStateService = async () =>{
        dispatch(ActionStateService(services))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 
 }
@@ -35,7 +35,7 @@ const findService = async () =>{
         dispatch(ActionGet(services))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 }
 /*-----------------------------------------------------------------*/
@@ -47,7 +47,7 @@ const findServiceId = async (id) =>{
         dispatch(ActionGetId(service))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 }
 /*-----------------------------------------------------------------*/
@@ -59,7 +59,7 @@ const findServiceRecent = async (cant = 2) =>{
         .then((services) => dispatch(ActionGetRecent(services)))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 }
 /*-----------------------------------------------------------------*/
@@ -71,7 +71,7 @@ const findStatistics = async () =>{
         dispatch(ActionGetStatistics(statistics))
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }
 }
 /*-----------------------------------------------------------------*/
@@ -79,11 +79,12 @@ const findStatistics = async () =>{
 //Nuevo servicio
 const addService = async (service) =>{
     try{
-        await API.add(service)
+        const res = await API.add(service)
         dispatch(ActionAdd(service))
+        return res
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     }   
 }
 /*-----------------------------------------------------------------*/
@@ -91,12 +92,12 @@ const addService = async (service) =>{
 //Editar servicio
 const editService = async (service) =>{
     try{
-        await API.edit(service)
+        const res = await API.edit(service)
         dispatch(ActionUpdate(service))
-        
+        return res
     }
     catch(err){
-        console.log('Error',err.message)
+       return {status: "error", msg: err.message}  
     } 
 }
 /*-----------------------------------------------------------------*/
@@ -104,11 +105,12 @@ const editService = async (service) =>{
 //Elimina un servicio
 const delService = async (id) =>{
     try{
-        await API.del(id)
+        const res = await API.del(id)
         dispatch(ActionRemove(id))
+        return res
     }
     catch(err){
-        console.log('Error',err.message)
+        return {status: "error", msg: err.message} 
     } 
 }
 /*-----------------------------------------------------------------*/

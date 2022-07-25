@@ -36,8 +36,8 @@ export function ServiceFormEdit(){
         onSubmit={(service) => {
             service._id = state.service._id
             editService(service)
-            .then(()=>{
-                notify({msj: 'El servicio fue editado correctamente.'})
+            .then((res) =>{
+                notify(res)
                 navigate(`/servicios/${service._id}`)
             })
             

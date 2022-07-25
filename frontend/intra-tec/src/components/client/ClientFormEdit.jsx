@@ -33,8 +33,8 @@ export function ClientFormEdit(){
             client.create_at = new Date;
             client.softDelete = false
             editClient(client)
-            .then(()=>{
-                notify({msj: 'El cliente fue editado correctamente.'})
+            .then((res)=>{
+                notify(res)
                 navigate('/clientes')
             })
         }}

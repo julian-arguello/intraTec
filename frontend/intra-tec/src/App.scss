@@ -600,3 +600,13 @@ h1 {
 .spanTime{
     max-width: 10rem;
 }
+
+//notification status
+.noti-error{
+    background-color: #cc3333;
+    color: white;
+}
+.noti-success{
+    background-color: #006837;
+    color: white;
+}
