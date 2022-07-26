@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 //Routes
 import { Route, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom';
 
-//pages
+//Pages
 import Login from './pages/Login';
 import Home from './pages/Home';
 
@@ -17,11 +17,11 @@ import ServiceForm from './pages/services/ServiceForm';
 
 import NotAccess from './pages/NotAccess';
 
-
 import Profile from './pages/Profile';
 import UserManage from './pages/users/UsersCreate';
 import PageNotFound from './pages/PageNotFound';
-//components
+
+//Components
 import AuthRoute from './components/AuthRoute';
 import AuthComponent from './components/AuthComponent';
 import Navbar from './components/Navbar';
@@ -30,9 +30,8 @@ import Navbar from './components/Navbar';
 import { useAuth }  from './context/Auth.Context';
 
 function App() {
-
   //Autenticación--------------------------
-  const auth = useAuth()
+  const auth = useAuth();
   
   let navigate = useNavigate();
   let location = useLocation();
@@ -58,9 +57,9 @@ function App() {
     }
   }, [])
 
-/*-----------------------------------------------------------------*/    
-/*-----------------------------------------------------------------*/
-//Role
+  /*-----------------------------------------------------------------*/    
+  /*-----------------------------------------------------------------*/
+  //Role
   async function roleAdmin(){
     if(auth.state.isAuth){
       const role = await auth.state.user.role.role_name
@@ -68,9 +67,8 @@ function App() {
     }
     return false
   }
-/*-----------------------------------------------------------------*/    
-/*-----------------------------------------------------------------*/
-  
+  /*-----------------------------------------------------------------*/    
+  /*-----------------------------------------------------------------*/  
   return (
     <div className="App">
       
@@ -78,25 +76,25 @@ function App() {
         <Navbar />
       </AuthComponent>
 
-        <Routes>
-          <Route path='/' element={<Login/>} />
-          <Route path='/inicio' element={<AuthRoute><Home/></AuthRoute>}/>
+      <Routes>
+        <Route path='/' element={<Login/>} />
+        <Route path='/inicio' element={<AuthRoute><Home/></AuthRoute>}/>
 
-          <Route path='/clientes' element={<AuthRoute><Clients/></AuthRoute>}/>
-          <Route path='/clientes/:id' element={<AuthRoute><ClientDetail/></AuthRoute>}/>
-          <Route path='/clientes/nuevo' element={roleAdmin() ? <AuthRoute><ClientForm edit={false}/></AuthRoute> : <NotAccess />}/>
-          <Route path='/clientes/editar/:id' element={roleAdmin() ? <AuthRoute><ClientForm edit={true}/></AuthRoute> : <NotAccess />}/>
+        <Route path='/clientes' element={<AuthRoute><Clients/></AuthRoute>}/>
+        <Route path='/clientes/:id' element={<AuthRoute><ClientDetail/></AuthRoute>}/>
+        <Route path='/clientes/nuevo' element={roleAdmin() ? <AuthRoute><ClientForm edit={false}/></AuthRoute> : <NotAccess />}/>
+        <Route path='/clientes/editar/:id' element={roleAdmin() ? <AuthRoute><ClientForm edit={true}/></AuthRoute> : <NotAccess />}/>
 
-          <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
-          <Route path='/servicios/:id' element={<AuthRoute><ServiceDetail/></AuthRoute>}/>
-          <Route path='/servicios/nuevo' element={roleAdmin() ? <AuthRoute><ServiceForm edit={false}/></AuthRoute> : <NotAccess />}/>
-          <Route path='/servicios/editar/:id' element={roleAdmin() ? <AuthRoute><ServiceForm edit={true}/></AuthRoute> : <NotAccess />}/>
-     
-          <Route path='/perfil' element={<AuthRoute><Profile /></AuthRoute>}/>
-          <Route path='/usuarios' element={<AuthRoute><UserManage /></AuthRoute>}/>
-          <Route path='/404' element={<PageNotFound/>}/>
-          <Route path='*' element={<Navigate to='/404'/>} />
-        </Routes>
+        <Route path='/servicios' element={<AuthRoute><Services/></AuthRoute>}/>
+        <Route path='/servicios/:id' element={<AuthRoute><ServiceDetail/></AuthRoute>}/>
+        <Route path='/servicios/nuevo' element={roleAdmin() ? <AuthRoute><ServiceForm edit={false}/></AuthRoute> : <NotAccess />}/>
+        <Route path='/servicios/editar/:id' element={roleAdmin() ? <AuthRoute><ServiceForm edit={true}/></AuthRoute> : <NotAccess />}/>
+    
+        <Route path='/perfil' element={<AuthRoute><Profile /></AuthRoute>}/>
+        <Route path='/usuarios' element={<AuthRoute><UserManage /></AuthRoute>}/>
+        <Route path='/404' element={<PageNotFound/>}/>
+        <Route path='*' element={<Navigate to='/404'/>} />
+      </Routes>
 
     </div>
   );

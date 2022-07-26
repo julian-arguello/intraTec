@@ -5,9 +5,8 @@ import * as yup from 'yup';
 | Users
 |--------------------------------------------------------------------------
 */
-/**
- * Esquema para registro de usuario.
- */
+
+//* Esquema para registro de usuario.
 export const schemaUserRegister = yup.object().shape({
     /*------------------------------------------------------------*/
     email: yup.string().email().required('El email es obligatorio.'),
@@ -15,9 +14,8 @@ export const schemaUserRegister = yup.object().shape({
     password: yup.string().min(5).required('La contraseña es obligatoria.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
-/**
- * Esquema para acatualizar usuario.
- */
+
+//* Esquema para acatualizar usuario.
 export const schemaUserUpdate = yup.object().shape({
     /*------------------------------------------------------------*/
     name: yup.string().min(3).required('El nombre es obligatorio.'),
@@ -51,6 +49,7 @@ export const schemaClientRegister = yup.object().shape({
         .required('El email es obligatorio.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
+
 export const schemaClientUpdate = yup.object().shape({
     /*------------------------------------------------------------*/
     name_busines: yup.string()
@@ -71,6 +70,7 @@ export const schemaClientUpdate = yup.object().shape({
         .required('El email es obligatorio.'),
 }).noUnknown()
 /*--------------------------------------------------------------------------------------------*/
+
 export const schemaClientUpdateService = yup.object().shape({
     service_id: yup.string()
         .min(10, 'Este campo debe contener como mínimo 10 caracteres.')
@@ -81,7 +81,7 @@ export const schemaClientUpdateService = yup.object().shape({
 
 /*
 |--------------------------------------------------------------------------
-| services
+| Services
 |--------------------------------------------------------------------------
 */
 export const schemaServicesCreate = yup.object().shape({
@@ -107,9 +107,8 @@ export const schemaServicesCreate = yup.object().shape({
     .min(24, 'Selecciona el cliente por favor.'),
     /*------------------------------------------------------------*/
 }).noUnknown()
-
-
 /*-------------------------------------------------------------------------------------------*/
+
 export const schemaServicesUpdate = yup.object().shape({
     /*------------------------------------------------------------*/
     model: yup.string()
@@ -141,7 +140,7 @@ export const schemaServicesUpdate = yup.object().shape({
 
 /*
 |--------------------------------------------------------------------------
-| login
+| Login
 |--------------------------------------------------------------------------
 */
 export const schemaLogin = yup.object().shape({

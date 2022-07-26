@@ -6,7 +6,6 @@ import App from './App';
 
 //import 'semantic-ui-css/semantic.min.css';
 
-
 //Router
 import { BrowserRouter } from 'react-router-dom';
 //Auth
@@ -22,21 +21,19 @@ import { UserProvider } from './context/User.Context';
 
 console.log("index")
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  
-
-    <BrowserRouter>
-      <AuthProvider>
-        <UserProvider>
-          <NotifyProvider>
-            <ClientProvider>
-              <ServiceProvider>
-                <App />
-              </ServiceProvider>
-            </ClientProvider>
-          </NotifyProvider>
-        </UserProvider>
-      </AuthProvider>
-    </BrowserRouter>
-
+  <BrowserRouter>
+    <AuthProvider>
+      <UserProvider>
+        <NotifyProvider>
+          <ClientProvider>
+            <ServiceProvider>
+              <App />
+            </ServiceProvider>
+          </ClientProvider>
+        </NotifyProvider>
+      </UserProvider>
+    </AuthProvider>
+  </BrowserRouter>
 );
