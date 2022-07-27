@@ -1,6 +1,6 @@
 import usersDao from '../model/users.dao.js';
 import rolesDao from '../model/roles.dao.js';
-import { schemaUserRegister, schemaUserUpdate } from '../services/validate.js';
+import { schemaUserRegister, schemaUserUpdate, schemaUserUpdateSA } from '../services/validate.js';
 import bcrypt from 'bcrypt';
 
 /*-------------------------------------------------------------------------------------------*/
@@ -15,14 +15,19 @@ function viewAlls(req, res) {
     usersDao.find()
         .then(async (users) => {
             const roles = await rolesDao.find();
+            let userRes = []
             for (const user of users) {
+                delete user.password 
                 roles.forEach(function (role) {
                     if (role._id.toString() === user.role_id) {
                         user.role = role;
                     }
                 });
+                if(user.role.role_name != 'super_admin'){
+                    userRes.push(user) 
+                }
             }
-            res.status(200).json(users);
+            res.status(200).json(userRes);
         })
         .catch((err) => {
             console.log('[Error] ', err);
@@ -50,6 +55,25 @@ function viewId(req, res) {
 }
 /*-------------------------------------------------------------------------------------------*/
 /**
+ * Retorna el listado de usarios.
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ */
+ function viewRoles(req, res) {
+    console.log('[roles] Todos los roles.');
+    rolesDao.find()
+        .then(async (roles) => {
+            roles.splice(2, 1);
+            res.status(200).json(roles);
+        })
+        .catch((err) => {
+            console.log('[Error] ', err);
+            res.status(500).json({ err: 500, 'status':'error', msg: err.msg })
+        })
+}
+/*-------------------------------------------------------------------------------------------*/
+/**
  * Registra un nuevo usario.
  * 
  * @param {*} req 
@@ -63,7 +87,7 @@ function register(req, res) {
             if (!(existUser)) {
                 const salt = await bcrypt.genSalt(10);
                 entity.password = await bcrypt.hash(entity.password, salt);
-                entity.role_id = "61a195c07e76c0a87533f6b4"; //user
+                entity.softDelete = "false";
                 usersDao.insert(entity)
                     .then((user) => {
                         res.status(200).json({ 'status':'success', msg: 'El usuario fue registrado correctamente.' });
@@ -90,7 +114,9 @@ function register(req, res) {
  * @param {*} res 
  */
 function update(req, res) {
-    schemaUserUpdate.validate(req.body)
+    const SA = req.header('edit')
+    const schema = (SA == true ? schemaUserUpdateSA : schemaUserUpdate);
+    schema.validate(req.body)
         .then(async (entity) => {
             usersDao.update(req.params.id, entity)
                 .then((user) => {
@@ -131,6 +157,7 @@ export function deleteEntity(req, res) {
 export default {
     viewAlls,
     viewId,
+    viewRoles,
     register,
     update,
     deleteEntity,

@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 
 import UserReducer from "../reducer/User.Reducer";
 
-import { ActionAdd, ActionRemove, ActionGet, ActionGetId, ActionUpdate } from "../action/User.Actions"
+import { ActionAdd, ActionRemove, ActionGet, ActionGetId, ActionUpdate, ActionGetRole } from "../action/User.Actions"
 
 import * as API from '../api/user.api';
 
@@ -12,7 +12,7 @@ const UserContext = createContext();
 export function UserProvider({ children }){
     //useReduce
     //useReducer recibe dos parametros (funcion reduce, {states por defectos})
-    const [state, dispatch] = useReducer(UserReducer, { users:[], user: {} })
+    const [state, dispatch] = useReducer(UserReducer, { users:[], user: {}, roles:[] })
 
 
 /*-----------------------------------------------------------------*/    
@@ -40,6 +40,21 @@ const findUserId = async (id) =>{
     }
 }
 /*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+
+//traemos todos los roles.
+const findRole = async () =>{
+    try{
+        const roles = await API.viewRole()
+        dispatch(ActionGetRole(roles))
+        console.log("state" ,roles)
+        return roles
+    }
+    catch(err){
+        return {status: "error", msg: err.message} 
+    }
+}
+/*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //Nuevo User.
 const addUser = async (user) =>{
@@ -83,7 +98,7 @@ const delUser = async (id) =>{
 
     //return
     return(
-        <UserContext.Provider value={{ state, dispatch, findUser, findUserId, addUser, editUser, delUser }}>
+        <UserContext.Provider value={{ state, dispatch, findUser, findUserId, addUser, editUser, delUser, findRole }}>
             {children}
         </UserContext.Provider>
     );

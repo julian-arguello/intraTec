@@ -17,14 +17,18 @@ export function login(req, res) {
         .then(async (entity) => {
             const user = await usersDao.findByEmail(entity.email)
             if (user) {
-                user.role = await rolesDao.findById(user.role_id)
-                const validate = await bcrypt.compare(entity.password, user.password)
-                if (validate) {
-                    delete user.password;
-                    const token = jwtService.generate(user)
-                    res.header('auth-token', token).json({ user: user, token: token })
-                } else {
-                    return res.status(401).json({ err: 401, 'status':'error', msg: "El password no coincide." })
+                if(user.softDelete != 'true'){
+                    user.role = await rolesDao.findById(user.role_id)
+                    const validate = await bcrypt.compare(entity.password, user.password)
+                    if (validate) {
+                        delete user.password;
+                        const token = jwtService.generate(user)
+                        res.header('auth-token', token).json({ user: user, token: token })
+                    } else {
+                        return res.status(401).json({ err: 401, 'status':'error', msg: "El password no coincide." })
+                    }
+                }else{
+                    return res.status(400).json({error: 400, 'status':'error', msg: "EL usario esta desactivado"})
                 }
             } else {
                 return res.status(400).json({ err: 401, 'status':'error', msg: "El email no existe." })

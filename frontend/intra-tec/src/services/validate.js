@@ -10,19 +10,37 @@ import * as yup from 'yup';
  */
 export const schemaUserRegister = yup.object().shape({
     /*------------------------------------------------------------*/
-    email: yup.string().email().required('El email es obligatorio.'),
+    email: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').email().required('El email es obligatorio.'),
     /*------------------------------------------------------------*/
-    password: yup.string().min(5).required('La contraseña es obligatoria.'),
+    name: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El nombre es obligatorio.'),
+    /*------------------------------------------------------------*/
+    lastname: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El apellido es obligatorio.'),
+    /*------------------------------------------------------------*/
+    role_id: yup.string().min(1).required('El role es obligatorio.'),
+    /*------------------------------------------------------------*/
+    password: yup.string().min(5, 'Este campo debe tener como mínimo cinco caracteres.').required('La contraseña es obligatoria.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
 /**
  * Esquema para acatualizar usuario.
  */
 export const schemaUserUpdate = yup.object().shape({
+    name: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El nombre es obligatorio.'),
     /*------------------------------------------------------------*/
-    name: yup.string().min(3).required('El nombre es obligatorio.'),
+    lastname: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El apellido es obligatorio.'),
+}).noUnknown()
+/*-------------------------------------------------------------------------------------------*/
+/**
+ * Esquema para acatualizar usuario como super admin.
+ */
+ export const schemaUserUpdateSA = yup.object().shape({
+    name: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El nombre es obligatorio.'),
     /*------------------------------------------------------------*/
-    lastname: yup.string().min(3).required('El apellido es obligatorio.'),
+    lastname: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El apellido es obligatorio.'),
+    /*------------------------------------------------------------*/
+    role_id: yup.string().min(1).required('El role es obligatorio.'),
+    /*------------------------------------------------------------*/
+    softDelete: yup.string().min(1).required('El estado es obligatorio.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
 

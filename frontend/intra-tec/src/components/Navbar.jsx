@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/Auth.Context';
 import authRole from '../services/auth.role';
+import RoleSuperAdmin from './authRole/RoleSuperAdmin';
 
 function Navbar(){
     const { state, logout } = useAuth()
@@ -23,8 +24,8 @@ function Navbar(){
     
     return(
         <nav id='mySidebar' className={`${isMobile ? "sidebar closeSidebar" : "sidebar"}`}>
-            <a href="#" id='closebtn' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
-            </a>
+            <span id='closebtn' className='pe-auto' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
+            </span>
             <ul className='p-0 d-flex flex-column justify-content-sm-between mb-0'>
                 <li>
                     <div className='d-flex align-items-center mb-4 user'>
@@ -67,12 +68,14 @@ function Navbar(){
                                 Ver perfil
                             </Link>
                         </li>
+                    <RoleSuperAdmin>
                         <li className='mb-3 d-flex align-items-center'>
                             <Link to='/usuarios' onClick={ isMobile ? toggleMenu : ''} className="d-flex align-items-center">
                                 <span className="icon-profile me-3"></span>
                                 Gestionar Usuarios
                             </Link>
                         </li>
+                    </RoleSuperAdmin>
                         <li className='mb-3 d-flex align-items-center'>
                             <Link to='/' onClick={() => logout()} className="d-flex align-items-center">
                                 <span className="icon-logout me-3"></span>

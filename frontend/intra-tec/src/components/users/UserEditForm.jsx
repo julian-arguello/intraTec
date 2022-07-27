@@ -1,17 +1,17 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
 import { useUser } from '../../context/User.Context';
-import { schemaUserRegister } from '../../services/validate';
+import { schemaUserUpdateSA } from '../../services/validate';
 import { useEffect, useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import Loading from '../Loading';
 import authRole from '../../services/auth.role.js';
 
-export function UserCreateForm(){
+export function UserEditForm(props){
 
     const navigate = useNavigate();
     const { notify } = useNotify();
-    const { state, addUser, findRole } = useUser();
+    const { state, editUser, findRole, findUser } = useUser();
     const [loading, setloading] = useState(true)
 
     useEffect( () => {
@@ -22,49 +22,33 @@ export function UserCreateForm(){
         
    }, [] )
 
-   function passwordView(){
-    const input = document.getElementById('password')
-    input.type == 'password' ? input.type = 'text' : input.type = 'password'
-   }
-
     return(
         <Formik 
                 /*--------------------*/
                 initialValues= {{
-                    "email": "",
-                    "name": "",
-                    "lastname": "",
-                    "role_id": "",
-                    "password": "",
+                    "name": props.user.name,
+                    "lastname": props.user.lastname,
+                    "role_id": props.user.role_id,
+                    "_id": props.user._id,
+                    "softDelete": props.user.softDelete
                     }}
                 /*--------------------*/
-                validationSchema={schemaUserRegister}
+                validationSchema={schemaUserUpdateSA}
                 /*--------------------*/
-                onSubmit={(data, { resetForm }) => {
-                    addUser(data)
+                onSubmit={(data) => {
+                    editUser(data, true)
                     .then((res)=>{
                         notify(res)
-                        resetForm()
+                        findUser()
                     })
-              }}
+                
+                }}
                 /*--------------------*/
         >
             {( { errors, touched } )=>(
                 <Form className="w-100 m-auto">
                   
-                    <div className="form-label w-100">
-                        <label className="form-label w-100">Correo electrónico
-                            <Field 
-                                type="text" 
-                                className="form-control" 
-                                name="email"
-                            />
-                            <ErrorMessage name="email" component={() => (<div className='validateErrors'>{errors.email}</div>)}/>
-                            {!(errors.email && touched.email) && <div className="form-text m-0 ">
-                            Ejemplo: "tu_correo@mail.com".
-                            </div>}
-                        </label>
-                    </div>
+                    
 
                     {loading ?   
                         <Loading /> : (
@@ -76,7 +60,6 @@ export function UserCreateForm(){
                                         name="role_id" 
                                         as="select"
                                     >
-                                        <option value="">Seleccione un rol</option>
                                             {state.roles.map((role)=>( 
                                                 <option 
                                                     key={role._id} 
@@ -91,6 +74,29 @@ export function UserCreateForm(){
                                 </label>
                             </div>
                     )}
+
+                        <div className="mb-3">
+                                <label className="form-label w-100">Estado
+                                    <Field 
+                                        className="form-select"
+                                        name="softDelete" 
+                                        as="select"
+                                    >
+                                    <option 
+                                        key={props.user._id} 
+                                        value='false'>activo
+                                    </option>
+                                    <option 
+                                        key={props.user._id} 
+                                        value='true'>desactivado
+                                    </option>
+                                    </Field>
+                                    <ErrorMessage name="softDelete" component={() => (<div className='validateErrors'>*{errors.softDelete}</div>)}/>
+                                    {!(errors.softDelete && touched.softDelete) && <div className="form-text m-0">
+                                        estado del usario. 
+                                    </div>}
+                                </label>
+                            </div>
 
                     <div className="mb-3">
                         <label className="form-label w-100">Nombre
@@ -118,24 +124,12 @@ export function UserCreateForm(){
                             </div>}
                         </label>
                     </div>
-                    <div className="mb-3">
-                        <label className="form-label w-100">Contraseña
-                        <div className='input-group'>
-                            <Field 
-                                id="password"
-                                type="password" 
-                                className="form-control" 
-                                name="password"
-                            />
-                            <span className="input-group-text" onClick={()=>{passwordView()}}>ver</span>
-                        </div>
-                        <ErrorMessage name="password" component={() => (<span className='validateErrors'>{errors.password}</span>)}/>
-                        </label>
-                    </div>
-                    <button type="submit" className="btn btn-outline-primary w-100 ">Crear</button>  
+                    
+                   
+                    <button type="submit" className="btn btn-outline-primary w-100 ">Editar</button>  
                 </Form>
             )}
         </Formik>
     )
 }
-export default UserCreateForm
+export default UserEditForm

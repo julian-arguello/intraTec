@@ -10,6 +10,8 @@ const router = express.Router();
 router.route('/')
     .get([isAuth, isSuperAdmin], controller.viewAlls)
     .post([isAuth, isSuperAdmin], controller.register);
+router.route('/roles')
+    .get([isAuth, isSuperAdmin], controller.viewRoles);
 router.route('/:id')
     .get([isAuth, isSuperAdmin], controller.viewId)
     .patch([isAuth, authEdit], controller.update)

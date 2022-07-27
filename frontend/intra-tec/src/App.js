@@ -19,7 +19,7 @@ import NotAccess from './pages/NotAccess';
 
 
 import Profile from './pages/Profile';
-import UserManage from './pages/users/UsersCreate';
+import UserManage from './pages/users/Users';
 import PageNotFound from './pages/PageNotFound';
 //components
 import AuthRoute from './components/AuthRoute';
@@ -93,7 +93,7 @@ function App() {
           <Route path='/servicios/editar/:id' element={roleAdmin() ? <AuthRoute><ServiceForm edit={true}/></AuthRoute> : <NotAccess />}/>
      
           <Route path='/perfil' element={<AuthRoute><Profile /></AuthRoute>}/>
-          <Route path='/usuarios' element={<AuthRoute><UserManage /></AuthRoute>}/>
+          <Route path='/usuarios' element={<AuthRoute><UserManage/></AuthRoute>}/>
           <Route path='/404' element={<PageNotFound/>}/>
           <Route path='*' element={<Navigate to='/404'/>} />
         </Routes>

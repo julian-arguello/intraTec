@@ -18,6 +18,14 @@ export default function UserReducer(state, action){
             }
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
+        case "GETROLE":
+            console.log("UserReducer->GETROLE")
+            return {
+                ...state,
+                roles: action.payload  
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/
         case "ADD":
             console.log("UserReducer->ADD")
             return {

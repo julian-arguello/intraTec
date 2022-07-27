@@ -48,6 +48,29 @@ export async function viewId(id){
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
+//Trae los roles.
+export async function viewRole(){
+    return fetch(`${config.api.url}/usuarios/roles`,{
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('auth-token')
+        },
+    })
+    .then(async (res) => {
+        const data = await res.json()
+        if(res.status === 200) {
+            return data;
+        }else{
+            throw new Error(data.msg)
+        }
+    })
+    .catch(err => {
+        throw new Error(err.message)
+    })
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //Crea un cliente.
 export async function add(usuarios){
     return fetch(`${config.api.url}/usuarios`,{
@@ -73,12 +96,14 @@ export async function add(usuarios){
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //Edita un cliente.
-export async function edit(usuario){
+export async function edit(usuario, editSA = false){
+    console.log(`${config.api.url}/usuarios/${usuario._id}`)
     return fetch(`${config.api.url}/usuarios/${usuario._id}`,{
         method: "PATCH",
         headers: {
             'Content-Type': 'application/json',
-            'auth-token': localStorage.getItem('auth-token')
+            'auth-token': localStorage.getItem('auth-token'),
+            'edit': editSA
         },
         body: JSON.stringify(usuario)
     })
