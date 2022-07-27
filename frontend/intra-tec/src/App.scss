@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('../public/fonts/icomoon.eot?y8ppmz');
-    src:  url('../public/fonts/icomoon.eot?y8ppmz#iefix') format('embedded-opentype'),
-      url('../public/fonts/icomoon.ttf?y8ppmz') format('truetype'),
-      url('../public/fonts/icomoon.woff?y8ppmz') format('woff'),
-      url('../public/fonts/icomoon.svg?y8ppmz#icomoon') format('svg');
+    src:    url('../public/fonts/icomoon.eot?y8ppmz');
+    src:    url('../public/fonts/icomoon.eot?y8ppmz#iefix') format('embedded-opentype'),
+            url('../public/fonts/icomoon.ttf?y8ppmz') format('truetype'),
+            url('../public/fonts/icomoon.woff?y8ppmz') format('woff'),
+            url('../public/fonts/icomoon.svg?y8ppmz#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
-  }
-  
-  [class^="icon-"], [class*=" icon-"] {
+}
+
+[class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
     speak: never;
@@ -20,127 +20,118 @@
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
-    line-height: 1;
-  
+    line-height: 1;  
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .icon-back:before {
+}
+
+.icon-back:before {
     content: "\e900";
-  }
-  .icon-box:before {
+}
+.icon-box:before {
     content: "\e901";
-  }
-  .icon-cancel:before {
+}
+.icon-cancel:before {
     content: "\e902";
-  }
-  .icon-cancel {
-      font-size: 24px!important;
-  }
-   .icon-cancel-notification {
-      font-size: 15px!important;
-  }
-  .icon-clients:before {
+}
+.icon-cancel {
+    font-size: 24px!important;
+}
+.icon-cancel-notification {
+    font-size: 15px!important;
+}
+.icon-clients:before {
     content: "\e903";
-  }
-  .icon-clients {
-      font-size: 24px!important;
-  }
-  .icon-clock:before {
+}
+.icon-clients {
+    font-size: 24px!important;
+}
+.icon-clock:before {
     content: "\e904";
-  }
-  .icon-confirm:before {
+}
+.icon-confirm:before {
     content: "\e905";
-  }
-  .icon-cuil:before {
+}
+.icon-cuil:before {
     content: "\e906";
-  }
-  .icon-dashboard:before {
+}
+.icon-dashboard:before {
     content: "\e907";
-  }
-  .icon-delete:before {
+}
+.icon-delete:before {
     content: "\e908";
-  }
-  .icon-edit:before {
+}
+.icon-edit:before {
     content: "\e909";
-  }
-  .icon-eye:before {
+}
+.icon-eye:before {
     content: "\e90a";
-  }
-  .icon-logout:before {
+}
+.icon-logout:before {
     content: "\e90b";
-  }
-  .icon-logout {
-      font-size: 37px!important;
-  }
-  .icon-mail:before {
+}
+.icon-logout {
+    font-size: 37px!important;
+}
+.icon-mail:before {
     content: "\e90c";
-  }
-
-  .icon-new-service:before {
+}
+.icon-new-service:before {
     content: "\e90d";
-  }
-  .icon-phone:before {
+}
+.icon-phone:before {
     content: "\e90e";
-  }
-
-  .f-27 {
+}
+.f-27 {
     font-size: 27px!important;
-  }
-   .f-30 {
+}
+.f-30 {
     font-size: 30px!important;
-  }
-  .f-35 {
+}
+.f-35 {
     font-size: 35px!important;  
-  }
-
-  .icon-profile:before {
+}
+.icon-profile:before {
     content: "\e90f";
-  }
-  .icon-receptions:before {
+}
+.icon-receptions:before {
     content: "\e910";
-  }
-  .icon-repair:before {
+}
+.icon-repair:before {
     content: "\e911";
-  }
-  .icon-repair {
-      font-size: 25px!important;
-  }
-  .icon-services:before {
+}
+.icon-repair {
+    font-size: 25px!important;
+}
+.icon-services:before {
     content: "\e912";
-  }
-  .icon-sync:before {
+}
+.icon-sync:before {
     content: "\e913";
-  }
-  .icon-user_add:before {
+}
+.icon-user_add:before {
     content: "\e914";
-  }
-  .icon-user-remove:before {
+}
+.icon-user-remove:before {
     content: "\e915";
-  }
-
-  .icon-user-nav {
-      font-size: 60px;
-      color: #006699;
-  }
-
-  .icon-home {
-      font-size: 30px;
-  }
-
-  .icon-client {
-      font-size: 20px;
-  }
+}
+.icon-user-nav {
+    font-size: 60px;
+    color: #006699;
+}
+.icon-home {
+    font-size: 30px;
+}
+.icon-client {
+    font-size: 20px;
+}
 
 // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
 
 /*
-*{
-    outline: 1px solid red;
-
-    // para quitar stylos por className usar ' list-unstyled '
+* {
+    outline: 1px solid red;    // para quitar stylos por className usar ' list-unstyled '
 }
 */
 
@@ -258,7 +249,7 @@ a {
     top: 5px;
 }
 
-/* NAVBAR */ 
+// NAVBAR :::::::::::::::::::::::::::::::::::::::::::::::::
 
 .logo {
     display: inline-block;
@@ -345,7 +336,9 @@ h1 {
     width: 30px;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+/*  Style page content - use this if you want to push the page content 
+    to the right when you open the side navigation 
+*/
 #main {
     transition: margin-left .5s; /* If you want a transition effect */
     padding: 40px;
@@ -366,13 +359,13 @@ h1 {
     border-top: 3px solid;
 }
 
-/* SERVICES */
+// SERVICES :::::::::::::::::::::::::::::::::::::::::::::::::
 
 .icon-card {
     font-size: 40px;
 }
 
-/* MOBILE */
+// MOBILE :::::::::::::::::::::::::::::::::::::::::::::::::
 
 @media only screen and (max-width: 575px) {
 
@@ -477,9 +470,7 @@ h1 {
     }
 } 
 
-
-
-// HOME 
+// HOME :::::::::::::::::::::::::::::::::::::::::::::::::
 
 .box-stadistics {
     min-width: 250px;
@@ -588,7 +579,7 @@ h1 {
     left: 0;
 }
 
-//Validate Errors
+// validate Errors
 .validateErrors{
     color: #cc3333;
 } 
@@ -601,7 +592,7 @@ h1 {
     max-width: 10rem;
 }
 
-//notification status
+// notification status
 .noti-error{
     background-color: #cc3333;
     color: white;

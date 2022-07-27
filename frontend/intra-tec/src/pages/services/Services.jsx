@@ -11,9 +11,9 @@ function Services(){
     const [loading, setLoading] = useState(true)
     
     useEffect(  () => {
-             findService()
-             .then(() => setLoading(false))
-        }, [] )
+        findService()
+        .then(() => setLoading(false))
+    }, [] )
 
     return(
         <div>

@@ -6,7 +6,6 @@ import RoleAdmin from '../authRole/RoleAdmin';
 import { formatRelative, subDays } from 'date-fns';
 import { es } from 'date-fns/locale';
 
-
 export function ServiceDetail(props){
     return(
      <div className='pt-5 pt-sm-0'>

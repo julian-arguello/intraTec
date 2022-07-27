@@ -7,19 +7,15 @@ import Loading from "../../components/Loading";
 export function ServiceDetailPage(){
 
   const [loading, setLoading] = useState(true)
-    const { state, findServiceId } = useService()
-    const {id} = useParams()
+  const { state, findServiceId } = useService()
+  const {id} = useParams()
 
-    useEffect(() => {
-        findServiceId(id)
-          .then(() => setLoading(false))
-    }, [])
+  useEffect(() => {
+    findServiceId(id).then(() => setLoading(false))
+  }, [])
 
-
-    return( 
-        <div>
-          {loading ? <Loading /> : <ServiceDetail service={state.service}/>}
-        </div>
-    )    
+  return( 
+    <div>{loading ? <Loading /> : <ServiceDetail service={state.service}/>}</div>
+  )    
 }
 export default ServiceDetailPage

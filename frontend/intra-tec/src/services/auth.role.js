@@ -14,4 +14,3 @@ export function authRole(state){
     }
 }
 export default authRole;
-

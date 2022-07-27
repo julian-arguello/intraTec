@@ -14,7 +14,8 @@ export async function login(email, password){
         console.log('respuesta: ',res.status)
         if(res.status === 200) {
             return data;
-        }else{
+        }
+        else{
             throw new Error(data.msg)
         }
     })
