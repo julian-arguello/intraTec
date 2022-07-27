@@ -36,9 +36,7 @@ function ProfileDetail(){
                     </div>
                 </li>
             </ul>  
-            <div>
-                <ProfileEdit/>
-            </div> 
+            <div><ProfileEdit/></div> 
         </div>
     )
 } 

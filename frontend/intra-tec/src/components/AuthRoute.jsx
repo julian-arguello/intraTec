@@ -6,7 +6,7 @@ function Component(children){
     return(
         <div id='main' className='main-margin-open'>
             <Notification />
-             <Link to='/inicio' className='logo'><h1>Intratec</h1></Link>
+            <Link to='/inicio' className='logo'><h1>Intratec</h1></Link>
             {children}
         </div>
     )
@@ -14,8 +14,7 @@ function Component(children){
 
 function AuthRoute({ children }){
     const { state } = useAuth()
-    return(
-        
+    return(        
         state.isAuth ? Component(children) : <Navigate to="/" />
     );
 }

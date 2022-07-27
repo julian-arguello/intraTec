@@ -23,8 +23,7 @@ function Navbar(){
     
     return(
         <nav id='mySidebar' className={`${isMobile ? "sidebar closeSidebar" : "sidebar"}`}>
-            <a href="#" id='closebtn' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
-            </a>
+            <a href="#" id='closebtn' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}></a>
             <ul className='p-0 d-flex flex-column justify-content-sm-between mb-0'>
                 <li>
                     <div className='d-flex align-items-center mb-4 user'>
@@ -85,7 +84,5 @@ function Navbar(){
         </nav>
     );
 }
-
-
 
 export default Navbar;

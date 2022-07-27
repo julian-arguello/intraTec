@@ -15,7 +15,8 @@ export async function viewAlls(){
        const data = await res.json()
        if(res.status === 200) {
             return data;
-        }else{
+        }
+        else{
             throw new Error(data.msg)
         }
     })
@@ -38,7 +39,8 @@ export async function viewId(id){
         const data = await res.json()
         if(res.status === 200) {
             return data;
-        }else{
+        }
+        else{
             throw new Error(data.msg)
         }
     })
@@ -62,7 +64,8 @@ export async function add(usuarios){
         const data = await res.json()
         if(res.status === 200) {
             return data;
-        }else{
+        }
+        else{
             throw new Error(data.msg)
         }
     })
@@ -86,7 +89,8 @@ export async function edit(usuario){
         const data = await res.json()
         if(res.status === 200) {
             return data;
-        }else{
+        }
+        else{
             throw new Error(data.msg)
         }
     })
@@ -109,7 +113,8 @@ export async function del(id){
         const data = await res.json()
         if(res.status === 200) {
             return data;
-        }else{
+        }
+        else{
             throw new Error(data.msg)
         }
     })

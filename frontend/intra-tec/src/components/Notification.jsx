@@ -6,8 +6,7 @@ export function Notification(){
 
     if(state.notification.hasOwnProperty('msg')){
         setTimeout( () => notify({}), 8000);
-    }
-    
+    }    
 
     return(
         <>
@@ -17,9 +16,7 @@ export function Notification(){
             {state.notification.msg}
             <span className="icon-cancel icon-cancel-notification" role="button" onClick={()=>(notify({}))}></span>
         </div>
-        }
-
-        
+        }        
         </>
     )
 }
