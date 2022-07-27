@@ -5,27 +5,25 @@ import { schemaLogin } from '../services/validate';
 import imagenes from '../assets/images';
 
 function Login(){
-
     const { notify } = useNotify();
     const { state, login } = useAuth()
 
     return (       
         <Formik 
-                /*--------------------*/
-                initialValues= {{
-                    "email": "",
-                    "password": "",
-                    }}
-                /*--------------------*/
-                validationSchema={schemaLogin}
-                /*--------------------*/
-                onSubmit={(data) => {
-                    login(data.email, data.password)
-                    .then(()=>{
-                        notify({msj: 'Bienvenido!'})
-                    })
-                }}
-                /*--------------------*/
+            /*--------------------*/
+            initialValues= {{
+                "email": "",
+                "password": "",
+            }}
+            /*--------------------*/
+            validationSchema={schemaLogin}
+            /*--------------------*/
+            onSubmit={(data) => {
+                login(data.email, data.password)
+                .then(()=>{
+                    notify({msj: 'Bienvenido!'})
+                })
+            }}
         >
             {( { errors, touched } )=>(
                 <Form className="w-100 m-auto text-center">
@@ -50,9 +48,7 @@ function Login(){
                                             name="email"
                                         />
                                         <ErrorMessage name="email" component={() => (<div className='validateErrors loginText'>{errors.email}</div>)}/>
-                                        {!(errors.email && touched.email) && <div className="form-text m-0 loginText">
-                                        Ejemplo: "tu_correo@mail.com".
-                                        </div>}
+                                        {!(errors.email && touched.email) && <div className="form-text m-0 loginText">Ejemplo: "tu_correo@mail.com".</div>}
                                     </label>
                                 </div>
                                 <div className="mb-3">
@@ -72,9 +68,9 @@ function Login(){
                     </div>
                 </Form>
             )}
-                
+                            
         </Formik>
-        
-)}
+    )
+}
 
 export default Login

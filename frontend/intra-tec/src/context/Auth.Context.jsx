@@ -4,15 +4,15 @@ import { ActionLogin, ActionLogout, ActionUpdate ,ActionError } from "../action/
 import * as API from '../api/auth.api';
 
 const AuthContext = createContext();
-
 //------------------------------------------------------------------------------------------------------------------------------------------
 
 export function AuthProvider({ children }){
+
     //useReduce
     //useReducer recibe dos parametros (funcion reduce, {states por defectos})
     const [state, dispatch] = useReducer(AuthReducer, {isAuth:false, user:null, error:null})
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
+    /*-----------------------------------------------------------------*/
+
     //function login
     const login = async (email, password) =>{
         API.login(email, password)
@@ -25,25 +25,24 @@ export function AuthProvider({ children }){
             dispatch(ActionError(err.message))
         })
     }
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-const updateUserAuth = (user) =>{
-    try{
-        dispatch(ActionUpdate(user))
+    /*-----------------------------------------------------------------*/
+
+    const updateUserAuth = (user) =>{
+        try{
+            dispatch(ActionUpdate(user))
+        }
+        catch(err){
+            return {status: "error", msg: err.message} 
+        }
     }
-    catch(err){
-        return {status: "error", msg: err.message} 
-    }
-}
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
+    /*-----------------------------------------------------------------*/
+
     const logout = () =>{
         localStorage.removeItem('auth-token');
         localStorage.removeItem('user');
         dispatch(ActionLogout())
     }
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
+    /*-----------------------------------------------------------------*/
 
     //return
     return(

@@ -11,9 +11,8 @@ function Clients(props){
     const [loading, setLoading] = useState(true)
     
     useEffect(  () => {
-        findClient()
-        .then(() => setLoading(false))
-   }, [] )
+        findClient().then(() => setLoading(false))
+    }, [] )
 
     return(
         <div>

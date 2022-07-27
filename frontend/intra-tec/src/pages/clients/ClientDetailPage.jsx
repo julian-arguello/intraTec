@@ -7,19 +7,15 @@ import Loading from "../../components/Loading";
 export function ClientDetailPage(){
 
   const [loading, setLoading] = useState(true)
-    const { state, findClientId } = useClient()
-    const {id} = useParams()
+  const { state, findClientId } = useClient()
+  const {id} = useParams()
 
-    useEffect(() => {
-      findClientId(id)
-          .then(() => setLoading(false))
-    }, [])
+  useEffect(() => {
+    findClientId(id).then(() => setLoading(false))
+  }, [])
 
-
-    return( 
-        <div>
-          {loading ? <Loading /> : <ClientDetail client={state.client}/>}
-        </div>
-    )    
+  return( 
+    <div>{loading ? <Loading /> : <ClientDetail client={state.client}/>}</div>
+  )    
 }
 export default ClientDetailPage
