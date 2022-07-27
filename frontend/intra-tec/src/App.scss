@@ -92,6 +92,9 @@
 .f-35 {
     font-size: 35px!important;  
 }
+.f-18 {
+    font-size: 18px!important;
+}
 .icon-profile:before {
     content: "\e90f";
 }
@@ -239,6 +242,19 @@ a {
     position: absolute;
     top: 60px;
     right: 40px;
+}
+
+.btn-cancel {
+    border: 1px solid red;
+    border-radius: 30px;
+    color: red;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 120px;
+    position: absolute;
+    top: 60px;
+    right: 200px;
+    background-color: white;
 }
 
 .notification {
@@ -600,4 +616,10 @@ h1 {
 .noti-success{
     background-color: #006837;
     color: white;
+}
+
+// Edit user
+
+.closeEditForm {
+    display: none;
 }

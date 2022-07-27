@@ -24,7 +24,7 @@ function Navbar(){
     
     return(
         <nav id='mySidebar' className={`${isMobile ? "sidebar closeSidebar" : "sidebar"}`}>
-            <span id='closebtn' className='pe-auto' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}}>
+            <span id='closebtn' className='pe-auto' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}} role="button">
             </span>
             <ul className='p-0 d-flex flex-column justify-content-sm-between mb-0'>
                 <li>

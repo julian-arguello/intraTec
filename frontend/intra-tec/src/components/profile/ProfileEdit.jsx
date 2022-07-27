@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaUserUpdate } from '../../services/validate';
 import { useLocation } from "react-router-dom";
 
-function ProfileEdit(){
+function ProfileEdit(props){
 
     const { notify } = useNotify();
     const { state , updateUserAuth} = useAuth();
@@ -32,10 +32,9 @@ function ProfileEdit(){
             /*--------------------*/
         >
             {( { errors, touched } )=>(
-                <Form className="w-100 m-auto text-center">        
-            
-                    <div className="mb-3">
-                        <label className="form-label text-start  w-100">Nombre
+                <Form>        
+                    <div className="mt-5">
+                        <label className="form-label">Nombre
                             <Field 
                                 type="text" 
                                 className="form-control" 
@@ -48,7 +47,7 @@ function ProfileEdit(){
                         </label>
                     </div>
                     <div className="mb-3">
-                        <label className="form-label text-start  w-100">Apellido
+                        <label className="form-label">Apellido
                             <Field 
                                 type="text" 
                                 className="form-control" 
@@ -59,9 +58,14 @@ function ProfileEdit(){
                                 Ingrese al menos tres caracteres.
                             </div>}
                         </label>
-                    </div> 
-                    <button type="submit" className="btn btn-outline-primary w-100 ">Editar</button>
+                    </div>
+                    <button type="submit" className="btn-confirm" onClick={props.function}>
+                        <span className="icon-confirm me-2"></span>Confirmar
+                    </button>
                     {state.error !== '' ? <p className="text-center text-danger pt-2">{state.error}</p> : ''}
+                    <span className='btn-cancel d-flex justify-content-center align-items-center' onClick={props.function} role="button">
+                        <span className="icon-cancel f-18 me-2"></span>Cancelar
+                    </span> 
                     
                 </Form>
             )}                

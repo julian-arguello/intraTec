@@ -28,7 +28,7 @@ export function login(req, res) {
                         return res.status(401).json({ err: 401, 'status':'error', msg: "El password no coincide." })
                     }
                 }else{
-                    return res.status(400).json({error: 400, 'status':'error', msg: "EL usario esta desactivado"})
+                    return res.status(400).json({error: 400, 'status':'error', msg: "EL usuario esta desactivado"})
                 }
             } else {
                 return res.status(400).json({ err: 401, 'status':'error', msg: "El email no existe." })
