@@ -100,13 +100,12 @@ export async function add(usuarios){
 /*-----------------------------------------------------------------*/
 //Edita un cliente.
 export async function edit(usuario, editSA = false){
-    console.log(`${config.api.url}/usuarios/${usuario._id}`)
     return fetch(`${config.api.url}/usuarios/${usuario._id}`,{
         method: "PATCH",
         headers: {
             'Content-Type': 'application/json',
             'auth-token': localStorage.getItem('auth-token'),
-            'edit': editSA
+            'SA': editSA,
         },
         body: JSON.stringify(usuario)
     })

@@ -114,13 +114,12 @@ function register(req, res) {
  * @param {*} res 
  */
 function update(req, res) {
-    const SA = req.header('edit')
-    const schema = (SA == true ? schemaUserUpdateSA : schemaUserUpdate);
+    let SA = req.header('SA')
+    const schema = (SA == 'true') ? schemaUserUpdateSA : schemaUserUpdate
     schema.validate(req.body)
         .then(async (entity) => {
             usersDao.update(req.params.id, entity)
                 .then((user) => {
-                    console.log('[entity]', user)
                     res.status(200).json({ 'status':'success', msg: 'El usuario fue modificado correctamente.' });
                 })
                 .catch((err) => {

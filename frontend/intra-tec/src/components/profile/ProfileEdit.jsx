@@ -24,7 +24,7 @@ function ProfileEdit(props){
             onSubmit={async (data) => {
                 data._id=state.user._id
                 updateUserAuth(data)
-                user.editUser(data)
+                user.editUser(data, false)
                 .then((data)=>{
                     notify(data)
                 })

@@ -54,9 +54,9 @@ export function UserProvider({ children }){
     /*-----------------------------------------------------------------*/
 
     //Editar User.
-    const editUser = async (user) =>{
+    const editUser = async (user, SA) =>{
         try{
-            const res = await API.edit(user)
+            const res = await API.edit(user, SA)
             dispatch(ActionUpdate(user))
             return res
         }

@@ -6,7 +6,6 @@ export function isAuth(req, res, next){
         jwtService.validate(token)
             .then((userToken)=>{
                 req.user = userToken;
-                console.log(userToken)
                 if(userToken.softDelete == 'true'){
                     return res.status(400).json({error: 400, 'status':'error', msg: "EL usario esta desactivado"})
                 }else{
