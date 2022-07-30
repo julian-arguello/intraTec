@@ -30,6 +30,15 @@ export const schemaUserRegister = yup.object().shape({
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
 /**
+ * Esquema para acatualizar usuario.
+ */
+ export const schemaUserUpdatePassword = yup.object().shape({
+    password: yup.string()
+    .min(6, "Verificar contraseña.")
+    .required('La contraseña es obligatoria.'),
+}).noUnknown()
+/*-------------------------------------------------------------------------------------------*/
+/**
  * Esquema para acatualizar usuario como super admin.
  */
  export const schemaUserUpdateSA = yup.object().shape({
@@ -95,5 +104,29 @@ export const schemaServicesUpdate = yup.object().shape({
 export const schemaLogin = yup.object().shape({
     email: yup.string().email().required('El email es obligatorio.'),
     password: yup.string().min(6).required('La contraseña es obligatoria.'),
+}).noUnknown()
+/*-------------------------------------------------------------------------------------------*/
+/*
+|--------------------------------------------------------------------------
+| Recovery
+|--------------------------------------------------------------------------
+*/
+export const schemaRecovery = yup.object().shape({
+    email: yup.string()
+    .email('El correo electrónico no es válido.')
+    .required('El email es obligatorio.'),
+}).noUnknown()
+/*-------------------------------------------------------------------------------------------*/
+/*
+|--------------------------------------------------------------------------
+| New password
+|--------------------------------------------------------------------------
+*/
+export const schemaNewPassword = yup.object().shape({
+    password: yup.string()
+    .min(6, "Verificar contraseña.")
+    .required('La contraseña es obligatoria.'),
+    /*------------------------------------------------------------*/
+    token: yup.string().min(10, "link invalido").required("link invalido"),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/

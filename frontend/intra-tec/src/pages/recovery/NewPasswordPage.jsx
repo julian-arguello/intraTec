@@ -1,32 +1,45 @@
-import { useAuth } from '../context/Auth.Context';
+
+import { useAuth } from '../../context/Auth.Context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useNotify } from '../context/Notify.Context';
-import { schemaLogin } from '../services/validate';
-import imagenes from '../assets/images';
-import { Link } from 'react-router-dom';
-import { Notification } from '../components/Notification';
+import { useNotify } from '../../context/Notify.Context';
+import { schemaNewPassword } from '../../services/validate';
+import imagenes from '../../assets/images';
+import { Notification } from '../../components/Notification';
+import { useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
+export function NewPasswordPage(){
 
-function Login(){
+    let navigate = useNavigate();
     const { notify } = useNotify();
-    const { state, login } = useAuth()
+    const { newPass } = useAuth()
+    const {token} = useParams()
 
-    return (       
+    function passwordView(){
+        const input = document.getElementById('password')
+        input.type == 'password' ? input.type = 'text' : input.type = 'password'
+       }
+
+    return(
         <div>
             <Notification />
             <Formik 
                 /*--------------------*/
                 initialValues= {{
                     "email": "",
-                    "password": "",
+                    "token": token
                 }}
                 /*--------------------*/
-                validationSchema={schemaLogin}
+                validationSchema={schemaNewPassword}
                 /*--------------------*/
                 onSubmit={(data) => {
-                    login(data.email, data.password)
-                    .then((data)=>{
-                        //notify({'status':'success', msg: 'Bienvenido!' })
+                    newPass(data.password, data.token)
+                    .then((res)=>{
+                        notify(res)
+                        navigate('/');
+                    })
+                    .catch((err) => {
+                        notify(err)
                     })
                 }}
             >
@@ -44,33 +57,28 @@ function Login(){
                                 </div>
 
                                 <div className="flex-grow-1 ms-md-5 col-xs-12">                    
-                                    <h2 className="text-center text-md-start pb-2 pb-md-0 mb-4">Bienvenido</h2>
+                                    <h2 className="text-center text-md-start pb-2 pb-md-0 mb-4">Nueva contraseña</h2>
+
                                     <div className="mb-3">
-                                        <label className="form-label text-start  w-100">Correo electrónico
+                                        <label className="form-label text-start w-100">Contraseña
+                                        <div className='input-group'>
                                             <Field 
-                                                type="text" 
-                                                className="form-control" 
-                                                name="email"
-                                            />
-                                            <ErrorMessage name="email" component={() => (<div className='validateErrors loginText'>{errors.email}</div>)}/>
-                                            {!(errors.email && touched.email) && <div className="form-text m-0 loginText">Ejemplo: "tu_correo@mail.com".</div>}
-                                        </label>
-                                    </div>
-                                    <div className="mb-3">
-                                        <label className="form-label text-start  w-100">Contraseña
-                                            <Field 
+                                                id="password"
                                                 type="password" 
                                                 className="form-control" 
                                                 name="password"
                                             />
-                                            <ErrorMessage name="password" component={() => (<span className='validateErrors'>{errors.password}</span>)}/>
+                                            <span className="input-group-text" onClick={()=>{passwordView()}}>ver</span>
+                                        </div>
+                                        <ErrorMessage name="password" component={() => (<span className='validateErrors'>{errors.password}</span>)}/>
                                         </label>
                                     </div>
-                                    <button type="submit" className="btn btn-outline-primary w-100 ">Ingresar</button>
-                                    {state.error !== '' ? <p className="text-center text-danger pt-2">{state.error}</p> : ''}   
-                                    <Link to='/recuperar-usuario' className=" w-100">
-                                        Recuperar contraseña
+                            
+                                    <button type="submit" className="btn btn-outline-primary w-100 ">Guardar</button>
+                                    <Link to='/' className="btn btn-outline-primary w-100 mt-2">
+                                        Cancelar
                                     </Link>  
+                                        
                                 </div>
                             </div>
                         </div>
@@ -81,5 +89,4 @@ function Login(){
         </div>
     )
 }
-
-export default Login
+export default NewPasswordPage

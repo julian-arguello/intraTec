@@ -23,6 +23,7 @@ function Navbar(){
     }
     
     return(
+        
         <nav id='mySidebar' className={`${isMobile ? "sidebar closeSidebar" : "sidebar"}`}>
             <span id='closebtn' className='pe-auto' onClick={toggleMenu} dangerouslySetInnerHTML={{__html: button}} role="button">
             </span>

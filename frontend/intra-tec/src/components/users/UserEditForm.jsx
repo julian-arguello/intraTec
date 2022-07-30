@@ -48,8 +48,6 @@ export function UserEditForm(props){
             {( { errors, touched } )=>(
                 <Form className="w-100 m-auto">
                   
-                    
-
                     {loading ?   
                         <Loading /> : (
 
