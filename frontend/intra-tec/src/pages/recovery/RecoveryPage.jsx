@@ -1,32 +1,40 @@
-import { useAuth } from '../context/Auth.Context';
+import { useAuth } from '../../context/Auth.Context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useNotify } from '../context/Notify.Context';
-import { schemaLogin } from '../services/validate';
-import imagenes from '../assets/images';
+import { useNotify } from '../../context/Notify.Context';
+import { schemaRecovery } from '../../services/validate';
+import imagenes from '../../assets/images';
+import { Notification } from '../../components/Notification';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { Notification } from '../components/Notification';
 
 
-function Login(){
+export function RecoveryPage(){
+
+    let navigate = useNavigate();
     const { notify } = useNotify();
-    const { state, login } = useAuth()
-
-    return (       
+    const { recovery } = useAuth()
+    return(
         <div>
             <Notification />
             <Formik 
                 /*--------------------*/
                 initialValues= {{
                     "email": "",
-                    "password": "",
                 }}
                 /*--------------------*/
-                validationSchema={schemaLogin}
+                validationSchema={schemaRecovery}
                 /*--------------------*/
                 onSubmit={(data) => {
-                    login(data.email, data.password)
+                    recovery(data.email)
                     .then((data)=>{
-                        //notify({'status':'success', msg: 'Bienvenido!' })
+                        console.log("recovery", data)
+                        notify(data)
+                        if(data.status != 'error'){
+                            navigate('/')
+                        }
+                    })
+                    .catch((err) => {
+                        notify(err)
                     })
                 }}
             >
@@ -44,7 +52,7 @@ function Login(){
                                 </div>
 
                                 <div className="flex-grow-1 ms-md-5 col-xs-12">                    
-                                    <h2 className="text-center text-md-start pb-2 pb-md-0 mb-4">Bienvenido</h2>
+                                    <h2 className="text-center text-md-start pb-2 pb-md-0 mb-4">Recuperar contraseña</h2>
                                     <div className="mb-3">
                                         <label className="form-label text-start  w-100">Correo electrónico
                                             <Field 
@@ -56,21 +64,11 @@ function Login(){
                                             {!(errors.email && touched.email) && <div className="form-text m-0 loginText">Ejemplo: "tu_correo@mail.com".</div>}
                                         </label>
                                     </div>
-                                    <div className="mb-3">
-                                        <label className="form-label text-start  w-100">Contraseña
-                                            <Field 
-                                                type="password" 
-                                                className="form-control" 
-                                                name="password"
-                                            />
-                                            <ErrorMessage name="password" component={() => (<span className='validateErrors'>{errors.password}</span>)}/>
-                                        </label>
-                                    </div>
-                                    <button type="submit" className="btn btn-outline-primary w-100 ">Ingresar</button>
-                                    {state.error !== '' ? <p className="text-center text-danger pt-2">{state.error}</p> : ''}   
-                                    <Link to='/recuperar-usuario' className=" w-100">
-                                        Recuperar contraseña
-                                    </Link>  
+                            
+                                    <button type="submit" className="btn btn-outline-primary w-100 ">Solicitar</button>
+                                    <Link to='/' className="btn btn-outline-primary w-100 mt-2">
+                                        Cancelar
+                                    </Link> 
                                 </div>
                             </div>
                         </div>
@@ -81,5 +79,4 @@ function Login(){
         </div>
     )
 }
-
-export default Login
+export default RecoveryPage

@@ -171,3 +171,27 @@ export const schemaLogin = yup.object().shape({
     .required('La contraseña es obligatoria.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
+/*
+|--------------------------------------------------------------------------
+| Recovery
+|--------------------------------------------------------------------------
+*/
+export const schemaRecovery = yup.object().shape({
+    email: yup.string()
+    .email('El correo electrónico no es válido.')
+    .required('El email es obligatorio.'),
+}).noUnknown()
+/*-------------------------------------------------------------------------------------------*/
+/*
+|--------------------------------------------------------------------------
+| New password
+|--------------------------------------------------------------------------
+*/
+export const schemaNewPassword = yup.object().shape({
+    password: yup.string()
+    .min(6, "Verificar contraseña.")
+    .required('La contraseña es obligatoria.'),
+    /*------------------------------------------------------------*/
+    token: yup.string().min(10, "link invalido").required("link invalido"),
+}).noUnknown()
+/*-------------------------------------------------------------------------------------------*/

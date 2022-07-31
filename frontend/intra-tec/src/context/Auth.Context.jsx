@@ -15,11 +15,12 @@ export function AuthProvider({ children }){
 
     //function login
     const login = async (email, password) =>{
-        API.login(email, password)
+        const res = API.login(email, password)
         .then((data)=>{
             localStorage.setItem('auth-token', data.token)
             localStorage.setItem('user', JSON.stringify (data.user))
             dispatch(ActionLogin(data.user))
+            return res
         })
         .catch(function(err){
             dispatch(ActionError(err.message))
@@ -42,11 +43,31 @@ export function AuthProvider({ children }){
         localStorage.removeItem('user');
         dispatch(ActionLogout())
     }
+     /*-----------------------------------------------------------------*/
+    const recovery = async (email) =>{
+        try{
+            const res = await API.recovery(email)
+            return res
+        }
+        catch(err){
+            return {status: "error", msg: err.message} 
+        } 
+    }
+    /*-----------------------------------------------------------------*/
+    const newPass = async (password, token) =>{
+        try{
+            const res = await API.newPass(password, token)
+            return res
+        }
+        catch(err){
+            return {status: "error", msg: err.message} 
+        } 
+    }
     /*-----------------------------------------------------------------*/
 
     //return
     return(
-        <AuthContext.Provider value={{ state, dispatch, login, logout, updateUserAuth}}>
+        <AuthContext.Provider value={{ state, dispatch, login, logout, updateUserAuth, recovery, newPass}}>
             {children}
         </AuthContext.Provider>
     );

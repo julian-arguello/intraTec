@@ -29,9 +29,11 @@ app.use('/api/clientes', clientsRouter);
 //Services
 app.use('/api/servicios', servicesRouter);
 //Auth
-app.use('/api/iniciar-sesion', authRouter);
+app.use('/api/auth', authRouter);
 //States
 app.use('/api/state', stateRouter);
+//Recovery
+
 
 /*-----------------------------------------------------------------------*/
 //Indicamos el pueroto del servidor.

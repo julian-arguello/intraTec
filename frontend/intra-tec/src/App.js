@@ -5,6 +5,8 @@ import { Route, Routes, Navigate, useNavigate, useLocation } from 'react-router-
 
 //Pages
 import Login from './pages/Login';
+import Recovery from './pages/recovery/RecoveryPage';
+import NewPassword from './pages/recovery/NewPasswordPage';
 import Home from './pages/Home';
 
 import Clients from './pages/clients/Clients';
@@ -43,8 +45,6 @@ function App() {
       if(location.pathname != "/perfil"){
         navigate('/inicio')
       }
-    }else{
-      navigate('/')
     }
   }, [auth.state])
   
@@ -78,6 +78,8 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Login/>} />
+        <Route path='/recuperar-usuario' element={<Recovery/>} />
+        <Route path='/recuperar-usuario/:token' element={<NewPassword/>} />
         <Route path='/inicio' element={<AuthRoute><Home/></AuthRoute>}/>
 
         <Route path='/clientes' element={<AuthRoute><Clients/></AuthRoute>}/>
