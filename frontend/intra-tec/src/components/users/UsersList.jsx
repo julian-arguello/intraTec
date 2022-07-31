@@ -15,8 +15,7 @@ useEffect(  () => {
 }, [] )
 
     return(
-        <div>
-            <h3>Listado de usarios</h3>
+        <div className="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 gy-5 gx-0 gx-sm-5">
             {loading ? <Loading /> : (
                 state.users.map((u)=>(
                     <UserItem key={u._id} user={u} />

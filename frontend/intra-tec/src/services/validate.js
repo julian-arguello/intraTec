@@ -15,7 +15,7 @@ export const schemaUserRegister = yup.object().shape({
     /*------------------------------------------------------------*/
     lastname: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El apellido es obligatorio.'),
     /*------------------------------------------------------------*/
-    role_id: yup.string().min(1).required('El role es obligatorio.'),
+    role_id: yup.string().min(1).required('El rol es obligatorio.'),
     /*------------------------------------------------------------*/
     password: yup.string().min(5, 'Este campo debe tener como mínimo cinco caracteres.').required('La contraseña es obligatoria.'),
 }).noUnknown()
@@ -36,7 +36,7 @@ export const schemaUserUpdate = yup.object().shape({
     /*------------------------------------------------------------*/
     lastname: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El apellido es obligatorio.'),
     /*------------------------------------------------------------*/
-    role_id: yup.string().min(1).required('El role es obligatorio.'),
+    role_id: yup.string().min(1).required('El rol es obligatorio.'),
     /*------------------------------------------------------------*/
     softDelete: yup.string().min(1).required('El estado es obligatorio.'),
 }).noUnknown()

@@ -11,13 +11,13 @@ export function ServiceDetail(props){
      <div className='pt-5 pt-sm-0'>
         <h2 className='my-5 text-center text-sm-start'>Detalle de servicio</h2>
         <Link to={`/servicios`} className="btn-back position-details-back text-center">
-            <span className="icon-back me-2"></span>Atrás
+            <span className="icon-atras f-20 me-2"></span>Atrás
         </Link>
          <ul className="row ps-0">
             <li className="col-12 col-sm-3 d-flex flex-column justify-content-between mb-5 mb-sm-0">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Técnico a cargo</h3>
                 <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
-                    <span className="icon-profile icon-card me-2"></span>
+                    <span className="icon-perfil me-2 f-30"></span>
                     <ul className='ps-2'>
                         <li>
                             <strong>{props.service.user.name}</strong>
@@ -31,7 +31,7 @@ export function ServiceDetail(props){
             <li className="col-12 col-sm-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start mb-5 mb-sm-0">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Fecha de recepción</h3>
                 <div className='d-flex align-items-center'>
-                    <span className='icon-clock icon-card me-3'></span>
+                    <span className='icon-fecha f-30 me-3'></span>
                     <span className='spanTime d-block'>{formatRelative(new Date(props.service.create_at), new Date(), { locale: es })}</span>
                 </div>
             </li>
@@ -73,7 +73,7 @@ export function ServiceDetail(props){
          <RoleAdmin>
             <ModalDeleteButton id={props.service._id} />
             <Link to={`/servicios/editar/${props.service._id}`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
-                <span className="icon-edit me-2"></span>Editar
+                <span className="icon-editar f-20 me-2"></span>Editar
             </Link>
         </RoleAdmin>
      </div>

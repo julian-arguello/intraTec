@@ -126,10 +126,10 @@ export function ServiceFormEdit(){
                     <div className='row'>
                         <div className="col-sm-8 d-flex align-items-sm-center">
                             <Link to={`/servicios/${id}`} className="btn-back position-edit-back text-center me-sm-3">
-                                <span className="icon-back me-2"></span>Atrás
+                                <span className="icon-atras f-20 me-2"></span>Atrás
                             </Link>
                             <button type='submit' className='btn-confirm order-1 order-sm-2 mb-4 mb-sm-0'>
-                                <span className="icon-confirm me-2"></span>    Confirmar
+                                <span className="icon-confirmar me-2 f-20"></span>    Confirmar
                             </button>
                         </div>                    
                     </div>

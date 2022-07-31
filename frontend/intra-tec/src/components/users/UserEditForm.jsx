@@ -46,7 +46,7 @@ export function UserEditForm(props){
                 /*--------------------*/
         >
             {( { errors, touched } )=>(
-                <Form className="w-100 m-auto">
+                <Form className="w-100 m-auto mt-3">
                   
                     
 
@@ -68,9 +68,9 @@ export function UserEditForm(props){
                                             ))}
                                     </Field>
                                     <ErrorMessage name="role_id" component={() => (<div className='validateErrors'>*{errors.role_id}</div>)}/>
-                                    {!(errors.role_id && touched.role_id) && <div className="form-text m-0">
-                                        Seleccione el rol del usario. 
-                                    </div>}
+                                    {!(errors.role_id && touched.role_id) && <small>
+                                        Seleccione el rol del usuario. 
+                                    </small>}
                                 </label>
                             </div>
                     )}
@@ -84,17 +84,17 @@ export function UserEditForm(props){
                                     >
                                     <option 
                                         key={props.user._id} 
-                                        value='false'>activo
+                                        value='false'>Activo
                                     </option>
                                     <option 
                                         key={props.user._id} 
-                                        value='true'>desactivado
+                                        value='true'>Inactivo
                                     </option>
                                     </Field>
                                     <ErrorMessage name="softDelete" component={() => (<div className='validateErrors'>*{errors.softDelete}</div>)}/>
-                                    {!(errors.softDelete && touched.softDelete) && <div className="form-text m-0">
-                                        estado del usario. 
-                                    </div>}
+                                    {!(errors.softDelete && touched.softDelete) && <small>
+                                        Seleccione el estado del usuario. 
+                                    </small>}
                                 </label>
                             </div>
 
@@ -106,9 +106,9 @@ export function UserEditForm(props){
                                 name="name"
                             />
                             <ErrorMessage name="name" component={() => (<div className='validateErrors'>{errors.name}</div>)}/>
-                            {!(errors.name && touched.name) && <div className="form-text m-0">
+                            {!(errors.name && touched.name) && <small>
                             Ingrese al menos tres caracteres.
-                            </div>}
+                            </small>}
                         </label>
                     </div>
                     <div className="mb-3">
@@ -119,14 +119,15 @@ export function UserEditForm(props){
                                 name="lastname"
                             />
                             <ErrorMessage name="lastname" component={() => (<div className='validateErrors '>{errors.lastname}</div>)}/>
-                            {!(errors.lastname && touched.lastname) && <div className="form-text m-0">
+                            {!(errors.lastname && touched.lastname) && <small>
                             Ingrese al menos tres caracteres.
-                            </div>}
+                            </small>}
                         </label>
                     </div>
-                    
                    
-                    <button type="submit" className="btn btn-outline-primary w-100 ">Editar</button>  
+                    <button type="submit" className="box-proceso text-white rounded-4 d-flex align-items-center px-3 py-2 float-end position-absolute top-0 end-0">
+                        <span className='icon-confirmar f-20'></span>
+                    </button>  
                 </Form>
             )}
         </Formik>

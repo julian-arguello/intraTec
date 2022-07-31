@@ -23,7 +23,7 @@ function Clients(props){
                 <div className="col-12 col-sm-auto mb-5">
                 <RoleAdmin>
                     <Link to={'/clientes/nuevo'} className="btn-add d-flex justify-content-center align-items-center">
-                        <span className="icon-user_add me-2"></span>
+                        <span className="icon-agregar me-2 f-20"></span>
                         Nuevo cliente
                     </Link>
                 </RoleAdmin>

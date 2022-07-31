@@ -50,89 +50,96 @@ export function UserCreateForm(){
                 /*--------------------*/
         >
             {( { errors, touched } )=>(
-                <Form className="w-100 m-auto">
-                  
-                    <div className="form-label w-100">
-                        <label className="form-label w-100">Correo electrónico
-                            <Field 
-                                type="text" 
-                                className="form-control" 
-                                name="email"
-                            />
-                            <ErrorMessage name="email" component={() => (<div className='validateErrors'>{errors.email}</div>)}/>
-                            {!(errors.email && touched.email) && <div className="form-text m-0 ">
-                            Ejemplo: "tu_correo@mail.com".
-                            </div>}
-                        </label>
-                    </div>
-
-                    {loading ?   
-                        <Loading /> : (
-
-                            <div className="mb-3">
-                                <label className="form-label w-100">Rol
-                                    <Field 
-                                        className="form-select"
-                                        name="role_id" 
-                                        as="select"
-                                    >
-                                        <option value="">Seleccione un rol</option>
-                                            {state.roles.map((role)=>( 
-                                                <option 
-                                                    key={role._id} 
-                                                    value={role._id}>{authRole(role.role_name)}
-                                                </option>
-                                            ))}
-                                    </Field>
-                                    <ErrorMessage name="role_id" component={() => (<div className='validateErrors'>*{errors.role_id}</div>)}/>
-                                    {!(errors.role_id && touched.role_id) && <div className="form-text m-0">
-                                        Seleccione el rol del usario. 
-                                    </div>}
-                                </label>
-                            </div>
-                    )}
-
-                    <div className="mb-3">
-                        <label className="form-label w-100">Nombre
-                            <Field 
-                                type="text" 
-                                className="form-control" 
-                                name="name"
-                            />
-                            <ErrorMessage name="name" component={() => (<div className='validateErrors'>{errors.name}</div>)}/>
-                            {!(errors.name && touched.name) && <div className="form-text m-0">
-                            Ingrese al menos tres caracteres.
-                            </div>}
-                        </label>
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label w-100">Apellido
-                            <Field 
-                                type="text" 
-                                className="form-control" 
-                                name="lastname"
-                            />
-                            <ErrorMessage name="lastname" component={() => (<div className='validateErrors '>{errors.lastname}</div>)}/>
-                            {!(errors.lastname && touched.lastname) && <div className="form-text m-0">
-                            Ingrese al menos tres caracteres.
-                            </div>}
-                        </label>
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label w-100">Contraseña
-                        <div className='input-group'>
-                            <Field 
-                                id="password"
-                                type="password" 
-                                className="form-control" 
-                                name="password"
-                            />
-                            <span className="input-group-text" onClick={()=>{passwordView()}}>ver</span>
+                <Form>
+                    <div className='row mb-4'>
+                        <div className="col-sm-4">
+                            <label className="form-label w-100">Correo electrónico
+                                <Field 
+                                    type="text" 
+                                    className="form-control" 
+                                    name="email"
+                                />
+                                <ErrorMessage name="email" component={() => (<div className='validateErrors'>{errors.email}</div>)}/>
+                                {!(errors.email && touched.email) && <div className="form-text m-0 ">
+                                Ejemplo: "tu_correo@mail.com".
+                                </div>}
+                            </label>
                         </div>
-                        <ErrorMessage name="password" component={() => (<span className='validateErrors'>{errors.password}</span>)}/>
-                        </label>
+
+                        {loading ?      
+                        <Loading /> : (
+                        <div className="col-sm-4 mb-4 mb-sm-0">
+                            <label className="form-label w-100">Rol
+                                <Field 
+                                    className="form-select"
+                                    name="role_id" 
+                                    as="select"
+                                >
+                                    <option value="">Seleccione un rol</option>
+                                        {state.roles.map((role)=>( 
+                                            <option 
+                                                key={role._id} 
+                                                value={role._id}>{authRole(role.role_name)}
+                                            </option>
+                                        ))}
+                                </Field>
+                                <ErrorMessage name="role_id" component={() => (<div className='validateErrors'>*{errors.role_id}</div>)}/>
+                                {!(errors.role_id && touched.role_id) && <div className="form-text m-0">
+                                    Seleccione el rol del usuario. 
+                                </div>}
+                            </label>
+                        </div>
+                        )}
                     </div>
-                    <button type="submit" className="btn btn-outline-primary w-100 ">Crear</button>  
+                    <div className='row mb-4'>
+                        <div className="col-sm-4">
+                            <label className="form-label w-100">Nombre
+                                <Field 
+                                    type="text" 
+                                    className="form-control" 
+                                    name="name"
+                                />
+                                <ErrorMessage name="name" component={() => (<div className='validateErrors'>{errors.name}</div>)}/>
+                                {!(errors.name && touched.name) && <div className="form-text m-0">
+                                Ingrese al menos tres caracteres.
+                                </div>}
+                            </label>
+                        </div>
+
+                        <div className="col-sm-4">
+                            <label className="form-label w-100">Apellido
+                                <Field 
+                                    type="text" 
+                                    className="form-control" 
+                                    name="lastname"
+                                />
+                                <ErrorMessage name="lastname" component={() => (<div className='validateErrors '>{errors.lastname}</div>)}/>
+                                {!(errors.lastname && touched.lastname) && <div className="form-text m-0">
+                                Ingrese al menos tres caracteres.
+                                </div>}
+                            </label>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-8">
+                            <label className="form-label w-100">Contraseña
+                            <div className='input-group'>
+                                <Field 
+                                    id="password"
+                                    type="password" 
+                                    className="form-control" 
+                                    name="password"
+                                />
+                                <span className="input-group-text icon-revisado" role="button" onClick={()=>{passwordView()}}></span>
+                            </div>
+                            <ErrorMessage name="password" component={() => (<span className='validateErrors'>{errors.password}</span>)}/>
+                            </label>
+                        </div>
+                    </div>
+                    <button type='submit' className='btn-confirm order-1 order-sm-2'>
+                        <span className="icon-confirmar me-2 f-20"></span>
+                        Confirmar
+                    </button>  
                 </Form>
             )}
         </Formik>

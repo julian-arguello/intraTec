@@ -17,13 +17,13 @@ export function ServiceItem(props) {
           </div>
           <div className="d-flex justify-content-between align-items-center mb-4">
             <div className='d-flex align-items-center'>
-              <span className="icon-profile me-3 icon-card"></span>
+              <span className="icon-perfil me-3 f-30"></span>
               <span>{props.service.user.name + ' ' + props.service.user.lastname}</span>
             </div>
             {!props.clientDetail && <span>{props.service.client.name_busines}</span>}
           </div>
           <div className='d-flex align-items-center mb-2'>
-            <span className="icon-box me-3 icon-card"></span>
+            <span className="icon-equipo me-3 f-30"></span>
             {props.service.brand + ' (' + props.service.model + ')'}
           </div>
           <div className="d-flex justify-content-between align-items-center mt-4">
@@ -31,7 +31,7 @@ export function ServiceItem(props) {
               <small>Hace {formatDistance(new Date(props.service.create_at), new Date(), { locale: es })}</small>
             </div>
             <Link to={`/servicios/${props.service._id}`} className="box-proceso rounded-4 text-white d-flex align-items-center justify-content-center px-3 py-2">
-              <span className="icon-eye me-2"></span>Ver
+              <span className="icon-ver me-2"></span>Ver
             </Link>
           </div>
         </div>

@@ -24,7 +24,7 @@ function Services(){
                 <div className="col-12 col-sm-auto">
                 <RoleAdmin>
                     <Link to='/servicios/nuevo' className="btn-add d-flex justify-content-center align-items-center">
-                        <span className="icon-new-service me-2"></span>
+                        <span className="icon-agregar me-2 f-20"></span>
                         Nuevo servicio
                     </Link>
                 </RoleAdmin>

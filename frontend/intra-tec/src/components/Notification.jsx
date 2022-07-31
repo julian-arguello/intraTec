@@ -14,7 +14,7 @@ export function Notification(){
         
         <div className={`alert ${ state.notification.status == "error" ? "noti-error" :"noti-success"} m-auto d-flex justify-content-between align-items-center notification p-2`} role="alert">
             {state.notification.msg}
-            <span className="icon-cancel icon-cancel-notification" role="button" onClick={()=>(notify({}))}></span>
+            <span className="icon-cancelar" role="button" onClick={()=>(notify({}))}></span>
         </div>
         }        
         </>

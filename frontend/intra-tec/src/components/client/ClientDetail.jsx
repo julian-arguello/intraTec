@@ -14,27 +14,27 @@ export function ClientDetail(props){
         <h2 className='my-5 text-center text-sm-start'>Detalle de { props.client.name_busines }</h2>
         <Link to={`/clientes`} className={ state.user.role.role_name == 'super_admin' ? ''
              + "btn-back position-details-back text-center" : "btn-back position-back-rol text-center"}>
-            <span className="icon-back me-2"></span>Atrás
+            <span className="icon-atras f-20 me-2"></span>Atrás
         </Link>
         <ul className='row ps-0 mb-5'>
             <li className='col-12 col-sm-3 d-flex flex-column justify-content-between mb-5 mb-sm-0'>
                 <h3 className='h4 mb-3 text-center text-sm-start'>Cuil / Cuit</h3>
                 <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
-                    <span className='icon-cuil me-3 icon-card f-35'></span>
+                    <span className='icon-cuil me-3 f-30'></span>
                     <p className='mb-0'>{ props.client.cuit_cuil }</p>
                 </div>
             </li>
             <li className="col-12 col-sm-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start mb-5 mb-sm-0">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Teléfono</h3>
                 <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
-                    <span className='icon-phone me-3 icon-card f-35'></span>
+                    <span className='icon-telefono me-3 f-30'></span>
                     <p className='mb-0'>{ props.client.phone }</p>
                 </div>
             </li>
             <li className="col col-md-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Correo</h3>
                 <div className='d-flex align-items-center justify-content-center justify-content-sm-start'>
-                    <span className='me-3 icon-card icon-mail f-30'></span>
+                    <span className='me-3 icon-mail f-30'></span>
                     <p className='mb-0'>{ props.client.email }</p>
                 </div>
             </li>
@@ -52,7 +52,7 @@ export function ClientDetail(props){
                 <ModalDeleteButton id={props.client._id} />
             </RoleSuperAdmin>
             <Link to={`/clientes/editar/${props.client._id}`} className="btn-add btn-edit d-flex justify-content-center align-items-center">
-                <span className="icon-edit me-2"></span>Editar
+                <span className="icon-editar f-20 me-2"></span>Editar
             </Link>
         </RoleAdmin>
         <RoleAdmin>

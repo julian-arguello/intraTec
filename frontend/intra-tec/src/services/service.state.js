@@ -23,7 +23,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-start align-items-center">
                     <span>Recepcionado</span>
-                    <span className="icon-receptions icon-home ms-3"></span>  
+                    <span className="icon-recepcionado ms-3"></span>  
                 </div>
             );
 
@@ -31,7 +31,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
                     <span>Revisado</span>
-                    <span className="icon-sync icon-home ms-3"></span>  
+                    <span className="icon-revisado ms-3"></span>  
                 </div>
             );
         
@@ -39,7 +39,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
                     <span>Reparado</span>
-                    <span className="icon-repair icon-home ms-3"></span>  
+                    <span className="icon-reparado ms-3"></span>  
                 </div>
             );
         
@@ -47,7 +47,7 @@ export function stateIcon(state) {
             return (
                 <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
                     <span>Sin reparación</span>
-                    <span className="icon-cancel icon-home ms-3"></span>  
+                    <span className="icon-irreparable ms-3"></span>  
                 </div>
             );
     }

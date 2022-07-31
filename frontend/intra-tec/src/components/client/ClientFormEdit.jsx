@@ -103,9 +103,9 @@ export function ClientFormEdit(){
                     <div className='row'>
                         <div className="col-sm-8 d-flex flex-column align-items-sm-end">
                             <Link to={`/clientes/${id}`} className="btn-back position-edit-back me-sm-3 order-2 order-sm-1 text-center">
-                                <span className="icon-back me-2"></span>Atrás
+                                <span className="icon-atras me-2 f-20"></span>Atrás
                             </Link>
-                            <button type='submit' className='btn-confirm order-1 order-sm-2 mb-4 mb-sm-0'><span className="icon-confirm me-2"></span>    Confirmar</button>
+                            <button type='submit' className='btn-confirm order-1 order-sm-2 mb-4 mb-sm-0'><span className="icon-confirmar f-20 me-2"></span>    Confirmar</button>
                         </div>                    
                     </div>
                 </Form>

@@ -129,11 +129,11 @@ export function ServiceFormAdd(){
                         </div>
                     </div>
                     <button className='btn-back position-edit-back me-sm-3 order-2 order-sm-1' onClick={() => navigate(-1)}>
-                        <span className="icon-back me-2"></span>
+                        <span className="icon-atras f-20 me-2"></span>
                         Atrás
                     </button>
                     <button type='submit' className='btn-confirm order-1 order-sm-2'>
-                        <span className="icon-confirm me-2"></span>
+                        <span className="icon-confirmar f-20 me-2"></span>
                         Confirmar
                     </button>
                 </Form>

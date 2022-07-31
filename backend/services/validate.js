@@ -15,7 +15,7 @@ export const schemaUserRegister = yup.object().shape({
     /*------------------------------------------------------------*/
     lastname: yup.string().min(3).required('El apellido es obligatorio.'),
     /*------------------------------------------------------------*/
-    role_id: yup.string().min(3).required('El role es obligatorio.'),
+    role_id: yup.string().min(3).required('El rol es obligatorio.'),
     /*------------------------------------------------------------*/
     password: yup.string().min(5).required('La contraseña es obligatoria.'),
 }).noUnknown()

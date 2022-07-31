@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'icomoon';
-    src:    url('../public/fonts/icomoon.eot?y8ppmz');
-    src:    url('../public/fonts/icomoon.eot?y8ppmz#iefix') format('embedded-opentype'),
-            url('../public/fonts/icomoon.ttf?y8ppmz') format('truetype'),
-            url('../public/fonts/icomoon.woff?y8ppmz') format('woff'),
-            url('../public/fonts/icomoon.svg?y8ppmz#icomoon') format('svg');
+    src:    url('../public/fonts/icomoon.eot?mxycc0');
+    src:    url('../public/fonts/icomoon.eot?mxycc0#iefix') format('embedded-opentype'),
+            url('../public/fonts/icomoon.ttf?mxycc0') format('truetype'),
+            url('../public/fonts/icomoon.woff?mxycc0') format('woff'),
+            url('../public/fonts/icomoon.svg?mxycc0#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -26,109 +26,91 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-back:before {
+.icon-recepcionado:before {
     content: "\e900";
-}
-.icon-box:before {
-    content: "\e901";
-}
-.icon-cancel:before {
-    content: "\e902";
-}
-.icon-cancel {
-    font-size: 24px!important;
-}
-.icon-cancel-notification {
-    font-size: 15px!important;
-}
-.icon-clients:before {
-    content: "\e903";
-}
-.icon-clients {
-    font-size: 24px!important;
-}
-.icon-clock:before {
-    content: "\e904";
-}
-.icon-confirm:before {
-    content: "\e905";
-}
-.icon-cuil:before {
-    content: "\e906";
-}
-.icon-dashboard:before {
-    content: "\e907";
-}
-.icon-delete:before {
-    content: "\e908";
-}
-.icon-edit:before {
-    content: "\e909";
-}
-.icon-eye:before {
-    content: "\e90a";
-}
-.icon-logout:before {
-    content: "\e90b";
-}
-.icon-logout {
-    font-size: 37px!important;
-}
-.icon-mail:before {
+  }
+  .icon-atras:before {
     content: "\e90c";
-}
-.icon-new-service:before {
+  }
+  .icon-reparado:before {
+    content: "\e902";
+  }
+  .icon-confirmar:before {
     content: "\e90d";
-}
-.icon-phone:before {
-    content: "\e90e";
-}
-.f-27 {
-    font-size: 27px!important;
-}
-.f-30 {
-    font-size: 30px!important;
-}
-.f-35 {
-    font-size: 35px!important;  
-}
-.f-18 {
-    font-size: 18px!important;
-}
-.icon-profile:before {
-    content: "\e90f";
-}
-.icon-receptions:before {
+  }
+  .icon-fecha:before {
     content: "\e910";
-}
-.icon-repair:before {
-    content: "\e911";
-}
-.icon-repair {
-    font-size: 25px!important;
-}
-.icon-services:before {
+  }
+  .icon-equipo:before {
+    content: "\e90e";
+  }
+  .icon-ver:before {
+    content: "\e90f";
+  }
+  .icon-irreparable:before {
+    content: "\e903";
+  }
+  .icon-editar:before {
     content: "\e912";
-}
-.icon-sync:before {
-    content: "\e913";
-}
-.icon-user_add:before {
-    content: "\e914";
-}
-.icon-user-remove:before {
+  }
+  .icon-revisado:before {
+    content: "\e901";
+  }
+  .icon-usuario:before {
+    content: "\e904";
+  }
+  .icon-cuil:before {
     content: "\e915";
-}
-.icon-user-nav {
-    font-size: 60px;
-    color: #006699;
-}
-.icon-home {
-    font-size: 30px;
-}
-.icon-client {
-    font-size: 20px;
-}
+  }
+  .icon-logout:before {
+    content: "\e90a";
+  }
+  .icon-mail:before {
+    content: "\e914";
+  }
+  .icon-telefono:before {
+    content: "\e913";
+  }
+  .icon-agregar:before {
+    content: "\e90b";
+  }
+  .icon-estado:before {
+    content: "\e916";
+  }
+  .icon-servicios:before {
+    content: "\e906";
+  }
+  .icon-borrar:before {
+    content: "\e917";
+  }
+  .icon-tablero:before {
+    content: "\e905";
+  }
+  .icon-perfil:before {
+    content: "\e908";
+  }
+  .icon-usuarios:before {
+    content: "\e909";
+  }
+  .icon-clientes:before {
+    content: "\e907";
+  }
+  .icon-cancelar:before {
+    content: "\e911";
+  }
+
+  .f-20 {
+      font-size: 20px;
+  }
+
+  .f-30 {
+      font-size: 30px;
+  }
+
+  .f-60 {
+      font-size: 60px;
+  }
+  
 
 // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -137,6 +119,10 @@
     outline: 1px solid red;    // para quitar stylos por className usar ' list-unstyled '
 }
 */
+
+.primario {
+    color: #006699;
+}
 
 li {
     list-style: none;
@@ -623,3 +609,5 @@ h1 {
 .closeEditForm {
     display: none;
 }
+
+// Users

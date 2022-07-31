@@ -10,7 +10,7 @@ export function HomeStatistics(){
                     <div className='box-recepcionados p-4 rounded-4'>
                         <div className="d-flex justify-content-between align-items-center mb-3">
                             <p className="h3"><strong>{state.statistics.recepcionado}</strong></p>
-                            <span className="icon-receptions icon-home"></span>
+                            <span className="icon-recepcionado f-30"></span>
                         </div>
                         <p className="m-0"><strong>Recepcionados</strong></p>
                     </div>
@@ -19,7 +19,7 @@ export function HomeStatistics(){
                     <div className='box-proceso p-4 rounded-4'>
                         <div className="d-flex justify-content-between align-items-center mb-3">
                             <p className="h3"><strong>{state.statistics.revisado}</strong></p>
-                            <span className="icon-sync icon-home"></span>
+                            <span className="icon-revisado f-30"></span>
                         </div>
                         <p className="m-0"><strong>Revisados</strong></p>
                     </div>
@@ -28,7 +28,7 @@ export function HomeStatistics(){
                     <div className='box-reparados p-4 rounded-4'>
                         <div  className="d-flex justify-content-between align-items-center mb-3">
                             <p className="h3"><strong>{state.statistics.reparado}</strong></p>
-                            <span className="icon-repair icon-home"></span>
+                            <span className="icon-reparado f-30"></span>
                         </div>
                         <p className="m-0"><strong>Reparados</strong></p>
                     </div>
@@ -37,7 +37,7 @@ export function HomeStatistics(){
                     <div className='box-sinreparacion p-4 rounded-4'>
                         <div className="d-flex justify-content-between align-items-center mb-3">
                             <p className="h3"><strong>{state.statistics.sin_reparacion}</strong></p>
-                            <span className="icon-cancel icon-home"></span>
+                            <span className="icon-irreparable f-30"></span>
                         </div>
                         <p className="m-0"><strong>Sin Reparación </strong></p>
                     </div>

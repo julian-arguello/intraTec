@@ -60,11 +60,11 @@ function ProfileEdit(props){
                         </label>
                     </div>
                     <button type="submit" className="btn-confirm" onClick={props.function}>
-                        <span className="icon-confirm me-2"></span>Confirmar
+                        <span className="icon-confirmar me-2 f-20"></span>Confirmar
                     </button>
                     {state.error !== '' ? <p className="text-center text-danger pt-2">{state.error}</p> : ''}
                     <span className='btn-cancel d-flex justify-content-center align-items-center' onClick={props.function} role="button">
-                        <span className="icon-cancel f-18 me-2"></span>Cancelar
+                        <span className="icon-cancelar f-20 me-2"></span>Cancelar
                     </span> 
                     
                 </Form>
