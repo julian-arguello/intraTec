@@ -78,7 +78,7 @@ export function newPass(req, res) {
                     let dateToken = Dnow - data.date
                     let isExpired = (dateToken > 300000) ? true : false
                     if (isExpired) {
-                        res.status(500).json({ error: 500, 'status': 'error', msg: "EL token expiro." })
+                        res.status(500).json({ error: 500, 'status': 'error', msg: "EL token expiró." })
                         return
                     }
                     schemaUserUpdatePassword.validate({ password: entity.password })
