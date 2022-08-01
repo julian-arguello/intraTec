@@ -20,36 +20,16 @@ export function stateClass(state){
 export function stateIcon(state) {
     switch(state) {
         case "Recepcionado":
-            return (
-                <div className="d-flex justify-content-center justify-content-sm-start align-items-center">
-                    <span>Recepcionado</span>
-                    <span className="icon-recepcionado ms-3"></span>  
-                </div>
-            );
+            return "icon-recepcionado";
 
         case "Revisado":
-            return (
-                <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
-                    <span>Revisado</span>
-                    <span className="icon-revisado ms-3"></span>  
-                </div>
-            );
+            return "icon-revisado";
         
         case "Reparado":
-            return (
-                <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
-                    <span>Reparado</span>
-                    <span className="icon-reparado ms-3"></span>  
-                </div>
-            );
+            return "icon-reparado";
         
         case "Sin reparación":
-            return (
-                <div className="d-flex justify-content-center justify-content-sm-between align-items-center w-100">
-                    <span>Sin reparación</span>
-                    <span className="icon-irreparable ms-3"></span>  
-                </div>
-            );
+            return "icon-irreparable";
     }
 }    
 

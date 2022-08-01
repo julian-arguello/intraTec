@@ -14,7 +14,7 @@ function ProfileDetail(){
     }
  
     return(        
-        <div>
+        <main>
             <h2 className='my-5 text-center text-sm-start'>Perfil de {authRole(state.user.role.role_name)}</h2>
             <button className="btn-add btn-edit d-flex justify-content-center align-items-center" onClick={ toggleEditForm }>                   
                 <span className="icon-editar me-2 f-20"></span>Editar
@@ -48,7 +48,7 @@ function ProfileDetail(){
                     function = {toggleEditForm}
                 />
             </div> 
-        </div>
+        </main>
     )
 } 
 export default ProfileDetail;

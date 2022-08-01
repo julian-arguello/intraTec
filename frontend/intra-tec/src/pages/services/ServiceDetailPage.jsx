@@ -15,7 +15,7 @@ export function ServiceDetailPage(){
   }, [])
 
   return( 
-    <div>{loading ? <Loading /> : <ServiceDetail service={state.service}/>}</div>
+    <main>{loading ? <Loading /> : <ServiceDetail service={state.service}/>}</main>
   )    
 }
 export default ServiceDetailPage

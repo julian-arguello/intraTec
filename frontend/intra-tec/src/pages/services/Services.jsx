@@ -16,7 +16,7 @@ function Services(){
     }, [] )
 
     return(
-        <div>
+        <main>
             <div className="row justify-content-between align-items-center mt-5 mt-sm-0">
                 <div className="col-12 col-sm-auto my-5">
                     <h2 className='mt-5 mt-sm-0 text-center text-sm-start'>Servicios</h2>
@@ -31,7 +31,7 @@ function Services(){
                 </div>
             </div>
             {loading ? <Loading /> : <ServiceList />}
-        </div>
+        </main>
     )
 }
 export default Services;

@@ -1,5 +1,5 @@
 import mongodb from 'mongodb';
-import { conection } from './databaseConection.js';
+import { conection } from './DatabaseConection.dao.js';
 const collectionDb = "roles";
 
 /*-------------------------------------------------------------------------------------------*/

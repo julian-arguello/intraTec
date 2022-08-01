@@ -10,11 +10,10 @@ const db = client.db(config.db.dbName);
  * @param {function} callback 
  * @returns 
  */
-export async function conection(callback)
-{
+export async function conection(callback) {
     await client.connect() //Esperamos la conexion.
     const result = await callback(db);
-   
+
     return result;
 }
 /*-------------------------------------------------------------------------------------------*/

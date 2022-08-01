@@ -24,7 +24,7 @@ function Home(){
     }, [] )
 
     return(
-        <div className='d-flex flex-column mt-3 mt-sm-5'>
+        <main className='d-flex flex-column mt-3 mt-sm-5'>
             <div className='order-1 order-sm-3 mt-5 mt-sm-0 mb-5 mb-sm-0'>
                 <h2 className='my-5 text-center text-sm-start'>Servicios más recientes</h2>
                 {loadingServiceRecent ? <Loading/> : <HomeListServiceRecent />}
@@ -41,7 +41,7 @@ function Home(){
                 </RoleAdmin>
                 {loadingStatistics ? <Loading/> : <HomeStatistics />}
             </div>
-        </div>
+        </main>
     )
 }
 export default Home;

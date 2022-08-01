@@ -3,11 +3,11 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 //importamos routers
-import usersRouter from './routers/users.router.js'; 
-import clientsRouter from './routers/clients.router.js';
-import servicesRouter from './routers/services.router.js';
-import authRouter from './routers/auth.router.js';
-import stateRouter from './routers/state.router.js';
+import usersRouter from './routers/Users.router.js'; 
+import clientsRouter from './routers/Clients.router.js';
+import servicesRouter from './routers/Services.router.js';
+import authRouter from './routers/Auth.router.js';
+import stateRouter from './routers/State.router.js';
 
 
 const app = express();

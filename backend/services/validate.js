@@ -23,7 +23,7 @@ export const schemaUserRegister = yup.object().shape({
 /**
  * Esquema para acatualizar usuario.
  */
- export const schemaUserUpdate = yup.object().shape({
+export const schemaUserUpdate = yup.object().shape({
     name: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El nombre es obligatorio.'),
     /*------------------------------------------------------------*/
     lastname: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El apellido es obligatorio.'),
@@ -32,16 +32,16 @@ export const schemaUserRegister = yup.object().shape({
 /**
  * Esquema para acatualizar usuario.
  */
- export const schemaUserUpdatePassword = yup.object().shape({
+export const schemaUserUpdatePassword = yup.object().shape({
     password: yup.string()
-    .min(6, "Verificar contraseña.")
-    .required('La contraseña es obligatoria.'),
+        .min(6, "Verificar contraseña.")
+        .required('La contraseña es obligatoria.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
 /**
  * Esquema para acatualizar usuario como super admin.
  */
- export const schemaUserUpdateSA = yup.object().shape({
+export const schemaUserUpdateSA = yup.object().shape({
     name: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El nombre es obligatorio.'),
     /*------------------------------------------------------------*/
     lastname: yup.string().min(3, 'Este campo debe tener como mínimo tres caracteres.').required('El apellido es obligatorio.'),
@@ -113,8 +113,8 @@ export const schemaLogin = yup.object().shape({
 */
 export const schemaRecovery = yup.object().shape({
     email: yup.string()
-    .email('El correo electrónico no es válido.')
-    .required('El email es obligatorio.'),
+        .email('El correo electrónico no es válido.')
+        .required('El email es obligatorio.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
 /*
@@ -124,8 +124,8 @@ export const schemaRecovery = yup.object().shape({
 */
 export const schemaNewPassword = yup.object().shape({
     password: yup.string()
-    .min(6, "Verificar contraseña.")
-    .required('La contraseña es obligatoria.'),
+        .min(6, "Verificar contraseña.")
+        .required('La contraseña es obligatoria.'),
     /*------------------------------------------------------------*/
     token: yup.string().min(10, "link invalido").required("link invalido"),
 }).noUnknown()

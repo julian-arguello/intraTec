@@ -1,4 +1,4 @@
-import stateDao from '../model/states.dao.js';
+import stateDao from '../model/States.dao.js';
 
 /*-------------------------------------------------------------------------------------------*/
 /**
@@ -15,7 +15,7 @@ function viewAlls(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ err: 500, 'status':'error', msg: err.msg })
+            res.status(500).json({ err: 500, 'status': 'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/

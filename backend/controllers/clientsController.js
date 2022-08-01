@@ -1,6 +1,6 @@
-import clientsDao from '../model/clients.dao.js';
-import servicesDao from '../model/services.dao.js';
-import UserDao from '../model/users.dao.js';
+import clientsDao from '../model/Clients.dao.js';
+import servicesDao from '../model/Services.dao.js';
+import UserDao from '../model/Users.dao.js';
 import { schemaClientRegister, schemaClientUpdate, schemaClientUpdateService } from '../services/validate.js';
 
 
@@ -19,7 +19,7 @@ function viewAlls(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ err: 500, 'status':'error', msg: err.msg })
+            res.status(500).json({ err: 500, 'status': 'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -34,9 +34,9 @@ function viewId(req, res) {
         .then(async (client) => {
             const services = await servicesDao.find();
             const Users = await UserDao.find()
-            services.map((service) =>{
+            services.map((service) => {
                 Users.map((user) => {
-                    if(user._id.toString() === service.user_id){
+                    if (user._id.toString() === service.user_id) {
                         service.user = user
                         service.user.password = null;
                     }
@@ -58,7 +58,7 @@ function viewId(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
+            res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -77,19 +77,19 @@ function register(req, res) {
                 entity.services = {};
                 clientsDao.insert(entity)
                     .then((user) => {
-                        res.status(200).json({'status':'success', msg: 'El cliente fue registrado correctamente.' });
+                        res.status(200).json({ 'status': 'success', msg: 'El cliente fue registrado correctamente.' });
                     })
                     .catch((err) => {
                         console.log('[Error] ', err);
-                        res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
+                        res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
                     })
             } else {
-                res.status(400).json({ error: 400, 'status':'error', msg: "El cliente ya existe" })
+                res.status(400).json({ error: 400, 'status': 'error', msg: "El cliente ya existe" })
             }
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "Error al validar", 'status':'error', validateError: err.errors
+                error: 500, msg: "Error al validar", 'status': 'error', validateError: err.errors
             })
         })
 }
@@ -103,21 +103,21 @@ function register(req, res) {
 function update(req, res) {
     schemaClientUpdate.validate(req.body)
         .then(async (entity) => {
-            console.log("Cliente",entity)
+            console.log("Cliente", entity)
             clientsDao.update(req.params.id, entity)
                 .then((user) => {
                     console.log('[entity]', user)
-                    res.status(200).json({ 'status':'success', msg:'El cliente fue modificado correctamente.' });
-                    
+                    res.status(200).json({ 'status': 'success', msg: 'El cliente fue modificado correctamente.' });
+
                 })
                 .catch((err) => {
                     console.log('[Error] ', err);
-                    res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
+                    res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
                 })
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "[Error] ", 'status':'error', validateError: err.errors
+                error: 500, msg: "[Error] ", 'status': 'error', validateError: err.errors
             })
         })
 }
@@ -133,18 +133,18 @@ function addService(req, res) {
     schemaClientUpdateService.validate(req.body)
         .then((data) => {
             clientsDao.addService(req.params.id, data.service_id)
-                .then((data)=>{
-                    console.log('Controller',data)
-                    res.status(200).json({'status':'success', msg: 'El servicio fue agregado correctamente.' });
+                .then((data) => {
+                    console.log('Controller', data)
+                    res.status(200).json({ 'status': 'success', msg: 'El servicio fue agregado correctamente.' });
                 })
                 .catch((err) => {
                     console.log('[Error] ', err);
-                    res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
+                    res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
                 })
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "[Error] ", 'status':'error', validateError: err.errors
+                error: 500, msg: "[Error] ", 'status': 'error', validateError: err.errors
             })
         })
 }
@@ -161,16 +161,16 @@ export function deleteEntity(req, res) {
             await servicesDao.deleteEntityclient(req.params.id)
             clientsDao.deleteEntity(req.params.id)
                 .then((client) => {
-                    res.status(200).json({'status':'succes', msg:'El cliente fue eliminado correctamente.' });
+                    res.status(200).json({ 'status': 'succes', msg: 'El cliente fue eliminado correctamente.' });
                 })
                 .catch((err) => {
                     console.log('[Error] ', err);
-                    res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
+                    res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
                 })
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
+            res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/

@@ -33,9 +33,9 @@ function Login(){
                 {( { errors, touched } )=>(
                     <Form className="w-100 m-auto text-center">
                         <div className="fondo">
-
-                            <div className="position-absolute top-50 start-50 translate-middle d-md-flex p-5 loginBox">
+                            <main className="position-absolute top-50 start-50 translate-middle d-md-flex p-5 loginBox">
                                 <div className="flex-shrink-0 mb-auto text-center d-xs-inline">
+                                    <h1 className='d-none'>intratec</h1>
                                     <img src={ imagenes.desk } alt="logo" className="d-none d-md-inline col-10 w-auto" />
                                     <img src={ imagenes.tablet } alt="logo" className="d-none d-sm-inline d-md-none col-12 w-auto" />
                                     <img src={ imagenes.mob } alt="logo" className="d-xs-inline d-sm-none col-12 w-auto" />                    
@@ -72,7 +72,7 @@ function Login(){
                                         Recuperar contraseña
                                     </Link>  
                                 </div>
-                            </div>
+                            </main>
                         </div>
                     </Form>
                 )}

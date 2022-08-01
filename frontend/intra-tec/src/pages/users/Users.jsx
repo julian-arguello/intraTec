@@ -16,10 +16,8 @@ export function Users(){
       }
     }
 
-
-      
     return (
-        <div>
+        <main>
             <div className="col-12 col-sm-auto my-5">
               <h2 className='mt-5 mt-sm-0 text-center text-sm-start'>Usuarios</h2>
             </div>
@@ -32,7 +30,7 @@ export function Users(){
             <div>
                 {renderSwitch(section)}
             </div>
-        </div>
+        </main>
     )
 }
 export default Users

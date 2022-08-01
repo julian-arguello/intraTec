@@ -1,5 +1,5 @@
-import usersDao from '../model/users.dao.js';
-import rolesDao from '../model/roles.dao.js';
+import usersDao from '../model/Users.dao.js';
+import rolesDao from '../model/Roles.dao.js';
 import { schemaUserRegister, schemaUserUpdate, schemaUserUpdateSA } from '../services/validate.js';
 import bcrypt from 'bcrypt';
 
@@ -17,21 +17,21 @@ function viewAlls(req, res) {
             const roles = await rolesDao.find();
             let userRes = []
             for (const user of users) {
-                delete user.password 
+                delete user.password
                 roles.forEach(function (role) {
                     if (role._id.toString() === user.role_id) {
                         user.role = role;
                     }
                 });
-                if(user.role.role_name != 'super_admin'){
-                    userRes.push(user) 
+                if (user.role.role_name != 'super_admin') {
+                    userRes.push(user)
                 }
             }
             res.status(200).json(userRes);
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ err: 500, 'status':'error', msg: err.msg })
+            res.status(500).json({ err: 500, 'status': 'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -50,7 +50,7 @@ function viewId(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
+            res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -60,7 +60,7 @@ function viewId(req, res) {
  * @param {*} req 
  * @param {*} res 
  */
- function viewRoles(req, res) {
+function viewRoles(req, res) {
     console.log('[roles] Todos los roles.');
     rolesDao.find()
         .then(async (roles) => {
@@ -69,7 +69,7 @@ function viewId(req, res) {
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ err: 500, 'status':'error', msg: err.msg })
+            res.status(500).json({ err: 500, 'status': 'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/
@@ -90,19 +90,19 @@ function register(req, res) {
                 entity.softDelete = "false";
                 usersDao.insert(entity)
                     .then((user) => {
-                        res.status(200).json({ 'status':'success', msg: 'El usuario fue registrado correctamente.' });
+                        res.status(200).json({ 'status': 'success', msg: 'El usuario fue registrado correctamente.' });
                     })
                     .catch((err) => {
                         console.log('[Error] ', err);
-                        res.status(500).json({ error: 500, 'status':'error',  msg: err.msg })
+                        res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
                     })
             } else {
-                res.status(400).json({ error: 400, 'status':'error', msg: "El usario ya existe" })
+                res.status(400).json({ error: 400, 'status': 'error', msg: "El usario ya existe" })
             }
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "Error al validar.", 'status':'error', validateError: err.errors
+                error: 500, msg: "Error al validar.", 'status': 'error', validateError: err.errors
             })
         })
 }
@@ -120,16 +120,16 @@ function update(req, res) {
         .then(async (entity) => {
             usersDao.update(req.params.id, entity)
                 .then((user) => {
-                    res.status(200).json({ 'status':'success', msg: 'El usuario fue modificado correctamente.' });
+                    res.status(200).json({ 'status': 'success', msg: 'El usuario fue modificado correctamente.' });
                 })
                 .catch((err) => {
                     console.log('[Error] ', err);
-                    res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
+                    res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
                 })
         })
         .catch((err) => {
             res.status(500).json({
-                error: 500, msg: "[Error] ", 'status':'error', validateError: err.errors
+                error: 500, msg: "[Error] ", 'status': 'error', validateError: err.errors
             })
         })
 }
@@ -144,11 +144,11 @@ export function deleteEntity(req, res) {
     usersDao.deleteEntity(req.params.id)
         .then((user) => {
             console.log('[entity]', user)
-            res.status(200).json({'status':'success', msg: 'El usuario fue eliminado correctamente.' });
+            res.status(200).json({ 'status': 'success', msg: 'El usuario fue eliminado correctamente.' });
         })
         .catch((err) => {
             console.log('[Error] ', err);
-            res.status(500).json({ error: 500, 'status':'error', msg: err.msg })
+            res.status(500).json({ error: 500, 'status': 'error', msg: err.msg })
         })
 }
 /*-------------------------------------------------------------------------------------------*/

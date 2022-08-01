@@ -15,7 +15,7 @@ function Clients(props){
     }, [] )
 
     return(
-        <div>
+        <main>
             <div className="d-flex justify-content-between align-items-center mt-5 mt-sm-0">
                 <div className="col-12 col-sm-auto my-5">
                     <h2 className='mt-5 mt-sm-0 text-center text-sm-start'>Clientes</h2>
@@ -30,7 +30,7 @@ function Clients(props){
                 </div>
             </div>
             {loading ? <Loading /> : <ClientList />}
-        </div>
+        </main>
     )
 }
 export default Clients;

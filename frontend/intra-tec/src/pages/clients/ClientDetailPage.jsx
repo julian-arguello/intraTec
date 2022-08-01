@@ -15,7 +15,7 @@ export function ClientDetailPage(){
   }, [])
 
   return( 
-    <div>{loading ? <Loading /> : <ClientDetail client={state.client}/>}</div>
+    <main>{loading ? <Loading /> : <ClientDetail client={state.client}/>}</main>
   )    
 }
 export default ClientDetailPage

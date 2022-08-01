@@ -1,5 +1,5 @@
 import mongodb from 'mongodb';
-import { conection } from './databaseConection.js';
+import { conection } from './DatabaseConection.dao.js';
 const collectionDb = "services";
 
 /*-------------------------------------------------------------------------------------------*/
@@ -42,10 +42,10 @@ export async function findById(id) {
  * @param {int} cant 
  * @returns 
  */
- export async function findRecent(cant = 3) {
+export async function findRecent(cant = 3) {
     console.log('findRecent.');
     return await conection(async function (db) {
-        
+
         return await db.collection(collectionDb).find().sort({ create_at: -1 }).limit(cant).toArray();
 
     })

@@ -38,7 +38,11 @@ export function ServiceDetail(props){
             <li className="col col-md-3 d-flex flex-column justify-content-between align-items-center align-items-sm-start">
                 <h3 className='h4 mb-3 text-center text-sm-start'>Estado</h3>
                 <div className={stateClass(props.service.state) + ' mb-0 py-2 px-4 rounded-2 text-white'}>
-                    {stateIcon(props.service.state)}
+                    
+                    <div className="d-flex justify-content-center justify-content-sm-start align-items-center w-100">
+                        <span>{props.service.state}</span>
+                    <span className={stateIcon(props.service.state) + ' ms-3'}></span>  
+                </div>
                 </div>
             </li>
          </ul>

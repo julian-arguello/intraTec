@@ -1,5 +1,5 @@
 import mongodb from 'mongodb';
-import { conection } from './databaseConection.js';
+import { conection } from './DatabaseConection.dao.js';
 
 const collectionDb = "clients";
 
@@ -112,7 +112,7 @@ export async function addService(id, serviceId) {
  * @param {id del servicio} serviceId 
  * @returns 
  */
-export async function deleteService(id, serviceId){
+export async function deleteService(id, serviceId) {
     return await conection(async function (db) {
         try {
             const data = await db.collection(collectionDb).findOne({ _id: mongodb.ObjectId(id) });
