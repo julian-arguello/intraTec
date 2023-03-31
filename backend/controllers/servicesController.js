@@ -1,6 +1,7 @@
 import servicesDao from '../model/Services.dao.js';
 import clientsDao from '../model/Clients.dao.js';
 import UserDao from '../model/Users.dao.js';
+import lastServiceRegister from '../model/lastServiceRegister.dao.js';
 import { schemaServicesCreate, schemaServicesUpdate } from '../services/validate.js';
 
 /*-------------------------------------------------------------------------------------------*/
@@ -147,6 +148,8 @@ function create(req, res) {
             entity.create_at = new Date;
             entity.user_id = req.user._id.toString();
             entity.softDelete = false;
+            await lastServiceRegister.update();
+            entity.service_id = await lastServiceRegister.find();
             servicesDao.insert(entity)
                 .then((entityInsert) => {
                     clientsDao.addService(entity.client_id, entityInsert.insertedId.toString())

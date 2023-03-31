@@ -16,6 +16,6 @@ router.route('/')
 router.route('/:id')
     .get([isAuth], controller.viewId)
     .patch([isAuth, isAdmin], controller.update)
-    .delete([isAuth, isSuperAdmin], controller.deleteEntity);
+    .delete([isAuth, isAdmin], controller.deleteEntity);
 
 export default router;

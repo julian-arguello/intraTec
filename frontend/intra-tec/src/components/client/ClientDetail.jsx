@@ -42,7 +42,7 @@ export function ClientDetail(props){
         <hr className='hr'/>
         <h3 className='my-5'>Servicios asociados</h3>
         <div className="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 gy-5 gx-0 gx-sm-5 mb-5 mb-sm-0">
-            {(props.client.services.length == 0) && <p>Aún no tienes servicios asociados</p>}
+            {(props.client.services.length == 0) && <p>Aún no tiene servicios asociados</p>}
             {props.client.services.map((service)=>(
                 <ServiceItem key={service._id} service={service} clientDetail={true}/>
             ))}

@@ -9,6 +9,8 @@ import servicesRouter from './routers/Services.router.js';
 import authRouter from './routers/Auth.router.js';
 import stateRouter from './routers/State.router.js';
 
+import testRouter from './routers/test.router.js';
+
 
 const app = express();
 //Aclaramos que esperamos informacion por la url encode.
@@ -33,6 +35,8 @@ app.use('/api/auth', authRouter);
 //States
 app.use('/api/state', stateRouter);
 //Recovery
+
+//app.use('/api/test', testRouter);
 
 
 /*-----------------------------------------------------------------------*/

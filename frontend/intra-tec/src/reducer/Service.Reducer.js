@@ -3,11 +3,20 @@ export default function ServiceReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/   
         case "GET":
-            console.log("ServiceReducer->GET")
+            console.log("ServiceReducer->GET", action.payload)
+            console.log("ServiceReducer->GET_services", state.services)
+            console.log("ServiceReducer->GET_servicesFilter", state.servicesFilter)
+
             return {
                 ...state,
-                services:  action.payload   
+                services:  action.payload,
+                servicesFilter: action.payload,
             }
+            
+            //console.log('services'. state.services)
+           // console.log('servicesFilter'. state.servicesFilter)
+
+            
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "GETID":
@@ -63,6 +72,20 @@ export default function ServiceReducer(state, action){
             return {
                 ...state,
                 stateService:  action.payload   
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/ 
+        case "FILTER":
+            console.log("service_reducer->FILTER", state.services)
+            return {
+                ...state,
+                servicesFilter:  action.payload != '' ? state.services.filter(services => {
+                    if(isNaN(parseInt(action.payload))){
+                        return services.client.name_busines.toLowerCase().trim().includes(action.payload.toLowerCase().trim()) 
+                    }else{
+                        return services.service_id == action.payload
+                    }
+                }) : state.services
             }
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/                

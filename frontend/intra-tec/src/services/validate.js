@@ -41,7 +41,16 @@ export const schemaUserUpdate = yup.object().shape({
     softDelete: yup.string().min(1).required('El estado es obligatorio.'),
 }).noUnknown()
 /*-------------------------------------------------------------------------------------------*/
-
+/*
+|--------------------------------------------------------------------------
+| Search
+|--------------------------------------------------------------------------
+*/
+export const schemaSearch = yup.object().shape({
+    search: yup.string()
+    .min(1, 'Este campo debe contener al menos un caracteres.')
+}).noUnknown()
+/*-------------------------------------------------------------------------------------------*/
 /*
 |--------------------------------------------------------------------------
 | Clients

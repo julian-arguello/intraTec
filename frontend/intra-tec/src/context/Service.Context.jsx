@@ -1,6 +1,6 @@
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
 import ServiceReducer from "../reducer/Service.Reducer";
-import { ActionAdd, ActionRemove, ActionGet, ActionGetId, ActionUpdate, ActionStateService, ActionGetRecent, ActionGetStatistics } from "../action/Service.Actions"
+import { ActionAdd, ActionRemove, ActionGet, ActionGetId, ActionUpdate, ActionStateService, ActionGetRecent, ActionGetStatistics, ActionFilterService } from "../action/Service.Actions"
 import * as API from '../api/service.api';
 
 const ServiceContext = createContext();
@@ -10,9 +10,9 @@ export function ServiceProvider({ children }){
 
     //useReduce
     //useReducer recibe dos parametros (funcion reduce, {states por defectos})
-    const [state, dispatch] = useReducer(ServiceReducer, { statistics: {}, serviceRecent: [], services:[], service: {}, stateService: []})
+    const [state, dispatch] = useReducer(ServiceReducer, { statistics: {}, serviceRecent: [], services: [], servicesFilter: [], service: {}, stateService: []})
     /*-----------------------------------------------------------------*/
-    
+
     //Estado de los servicios
     const findStateService = async () =>{
         try{
@@ -23,6 +23,11 @@ export function ServiceProvider({ children }){
             return {status: "error", msg: err.message} 
         }
     }
+    /*-----------------------------------------------------------------*/   
+    const serviceSearch = (filter) =>{
+        dispatch(ActionFilterService(filter))
+    }
+        
     /*-----------------------------------------------------------------*/    
 
     //traemos todos los servicios
@@ -114,7 +119,7 @@ export function ServiceProvider({ children }){
 
     //return
     return(
-        <ServiceContext.Provider value={{ state, dispatch, findService, findServiceId, addService, editService, findStateService, delService, findServiceRecent, findStatistics }}>
+        <ServiceContext.Provider value={{ state, dispatch, findService, findServiceId, addService, editService, findStateService, delService, findServiceRecent, findStatistics, serviceSearch }}>
             {children}
         </ServiceContext.Provider>
     );
