@@ -1,5 +1,5 @@
 import mongodb from 'mongodb';
-import { conection } from './DatabaseConection.dao.js';
+import { conection } from './databaseConection.dao.js';
 const collectionDb = "last_service_record";
 
 /*-------------------------------------------------------------------------------------------*/

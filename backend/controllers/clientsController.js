@@ -1,6 +1,6 @@
-import clientsDao from '../model/Clients.dao.js';
-import servicesDao from '../model/Services.dao.js';
-import UserDao from '../model/Users.dao.js';
+import clientsDao from '../model/clients.dao.js';
+import servicesDao from '../model/services.dao.js';
+import UserDao from '../model/users.dao.js';
 import { schemaClientRegister, schemaClientUpdate, schemaClientUpdateService } from '../services/validate.js';
 
 

@@ -1,5 +1,5 @@
-import usersDao from '../model/Users.dao.js';
-import rolesDao from '../model/Roles.dao.js';
+import usersDao from '../model/users.dao.js';
+import rolesDao from '../model/roles.dao.js';
 import { schemaUserRegister, schemaUserUpdate, schemaUserUpdateSA } from '../services/validate.js';
 import bcrypt from 'bcrypt';
 

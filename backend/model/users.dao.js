@@ -1,7 +1,7 @@
 import mongodb from 'mongodb';
-import { conection } from './DatabaseConection.dao.js';
+import { conection } from './databaseConection.dao.js';
 const collectionDb = "users";
-import rolesDao from './Roles.dao.js';
+import rolesDao from './roles.dao.js';
 
 /*-------------------------------------------------------------------------------------------*/
 /**

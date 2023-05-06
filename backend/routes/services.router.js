@@ -1,9 +1,9 @@
 import express from 'express';
-import controller from '../controllers/ServicesController.js';
+import controller from '../controllers/servicesController.js';
 //middleware
-import { isAuth } from '../middleware/Auth.js';
-import { isAdmin } from '../middleware/IsAdmin.js';
-import { isSuperAdmin } from '../middleware/IsSuperAdmin.js';
+import { isAuth } from '../middleware/auth.js';
+import { isAdmin } from '../middleware/isAdmin.js';
+import { isSuperAdmin } from '../middleware/isSuperAdmin.js';
 
 const router = express.Router();
 router.route('/recent/:cant')

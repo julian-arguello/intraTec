@@ -1,4 +1,4 @@
-import stateDao from '../model/States.dao.js';
+import stateDao from '../model/states.dao.js';
 
 /*-------------------------------------------------------------------------------------------*/
 /**
