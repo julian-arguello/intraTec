@@ -1,19 +1,19 @@
 import mongodb from 'mongodb';
 import config from '../config.js';
-const client = new mongodb.MongoClient(`mongodb://${config.db.host}:${config.db.port}`);
+const client = new mongodb.MongoClient(config.db.host);
 const db = client.db(config.db.dbName);
 /*-------------------------------------------------------------------------------------------*/
 /**
  * Esta función se encarga de abrir y cerrar la coneccion
  * recibiendo las funciones a ejecutar por medio de callback
- * 
- * @param {function} callback 
- * @returns 
+ *
+ * @param {function} callback
+ * @returns
  */
 export async function conection(callback) {
-    await client.connect() //Esperamos la conexion.
-    const result = await callback(db);
+  await client.connect(); //Esperamos la conexion.
+  const result = await callback(db);
 
-    return result;
+  return result;
 }
 /*-------------------------------------------------------------------------------------------*/
